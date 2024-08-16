@@ -1,3 +1,115 @@
-[gd_scene format=3 uid="uid://dnvuvgfe657qg"]
+[gd_scene load_steps=7 format=3 uid="uid://dnvuvgfe657qg"]
 
-[node name="Main" type="Node2D"]
+[ext_resource type="Theme" uid="uid://cp861720njnfi" path="res://paleo_theme.tres" id="1_e6a0c"]
+[ext_resource type="Texture2D" uid="uid://dohesrf5gnuuo" path="res://assets/Background/Cave.jpg" id="1_vloy7"]
+[ext_resource type="Script" path="res://src/buttons/ChangeSceneButton.gd" id="3_elk5d"]
+[ext_resource type="PackedScene" uid="uid://bg1iqmn86sxtm" path="res://temp.tscn" id="4_vlq0f"]
+[ext_resource type="Script" path="res://src/buttons/OptionsButton.gd" id="5_bs3o5"]
+[ext_resource type="Script" path="res://src/buttons/CloseOptionsMenu.gd" id="6_a88st"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_e6a0c")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_vloy7")
+expand_mode = 1
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -219.5
+offset_top = 70.0
+offset_right = 219.5
+offset_bottom = 112.0
+grow_horizontal = 2
+theme = ExtResource("1_e6a0c")
+theme_type_variation = &"HeaderLarge"
+text = "Title game GMTK game jam 2024"
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -304.0
+offset_right = 144.0
+offset_bottom = -128.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="PlayButton" type="Button" parent="Buttons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+text = "Play"
+script = ExtResource("3_elk5d")
+next_scene = ExtResource("4_vlq0f")
+
+[node name="Spacer" type="Control" parent="Buttons"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+
+[node name="OptionsButton" type="Button" parent="Buttons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+text = "Temp
+"
+script = ExtResource("5_bs3o5")
+
+[node name="OptionsMenu" type="ColorRect" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 328.0
+offset_top = 192.0
+offset_right = 832.0
+offset_bottom = 568.0
+color = Color(0.815686, 0.815686, 0.815686, 0.65098)
+
+[node name="CloseOptionsMenu" type="Button" parent="OptionsMenu"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 28.0
+grow_horizontal = 0
+text = "X"
+script = ExtResource("6_a88st")
+
+[node name="Title" type="Label" parent="OptionsMenu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -108.0
+offset_right = 108.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_type_variation = &"HeaderMedium"
+text = "Options
+"
+horizontal_alignment = 1
+
+[connection signal="button_up" from="Buttons/PlayButton" to="Buttons/PlayButton" method="_on_button_up"]
+[connection signal="button_up" from="Buttons/OptionsButton" to="Buttons/OptionsButton" method="_on_button_up"]
+[connection signal="button_up" from="OptionsMenu/CloseOptionsMenu" to="OptionsMenu/CloseOptionsMenu" method="_on_button_up"]

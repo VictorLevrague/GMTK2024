@@ -1,0 +1,13 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cp861720njnfi"]
+
+[ext_resource type="FontFile" uid="uid://btwvam22x0s06" path="res://cro.ttf" id="1_moorm"]
+
+[resource]
+default_font = ExtResource("1_moorm")
+HeaderLarge/base_type = &"Label"
+HeaderLarge/font_sizes/font_size = 50
+HeaderMedium/base_type = &"Label"
+HeaderMedium/font_sizes/font_size = 38
+Label/fonts/font = ExtResource("1_moorm")
+MainButton/base_type = &"Button"
+MainButton/font_sizes/font_size = 38
