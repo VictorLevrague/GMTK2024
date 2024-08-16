@@ -1,15 +1,24 @@
-[gd_scene load_steps=7 format=3 uid="uid://qvhqhiw0r5yx"]
+[gd_scene load_steps=9 format=3 uid="uid://qvhqhiw0r5yx"]
 
 [ext_resource type="Script" path="res://src/screen/game_grid.gd" id="1_n2vyq"]
 [ext_resource type="Texture2D" uid="uid://deasecq0cy4tn" path="res://assets/body/kenney_planets/Planets/planet00_128px.png" id="2_b55ob"]
 [ext_resource type="Texture2D" uid="uid://bvc3s66bk15sv" path="res://assets/transparent_outline_128px.png" id="3_g75xt"]
+[ext_resource type="Texture2D" uid="uid://7td8e3x6lwvv" path="res://assets/body/kenney_planets/Planets/planet06_128px.png" id="3_w2gys"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hox8h"]
+resource_name = "BluePlanet"
 texture = ExtResource("2_b55ob")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ly6hb"]
+resource_name = "RedPlanet"
+texture = ExtResource("3_w2gys")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g6e3p"]
+resource_name = "TransparentOutline"
 texture = ExtResource("3_g75xt")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
@@ -17,7 +26,8 @@ texture_region_size = Vector2i(128, 128)
 [sub_resource type="TileSet" id="TileSet_4rvf5"]
 tile_size = Vector2i(128, 128)
 sources/0 = SubResource("TileSetAtlasSource_hox8h")
-sources/3 = SubResource("TileSetAtlasSource_g6e3p")
+sources/1 = SubResource("TileSetAtlasSource_ly6hb")
+sources/100 = SubResource("TileSetAtlasSource_g6e3p")
 
 [node name="GameGrid" type="TileMap"]
 tile_set = SubResource("TileSet_4rvf5")

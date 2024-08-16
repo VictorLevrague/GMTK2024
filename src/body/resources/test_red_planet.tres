@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://m6qp54iqjj0w"]
+
+[ext_resource type="Script" path="res://src/body/resources/test_red_planet.gd" id="1_7xh5j"]
+
+[resource]
+script = ExtResource("1_7xh5j")
+fixed = true
+x = 1
+y = 1
+size = null
+tileID = 1
