@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dnvuvgfe657qg"]
+[gd_scene load_steps=8 format=3 uid="uid://dnvuvgfe657qg"]
 
 [ext_resource type="Theme" uid="uid://cp861720njnfi" path="res://paleo_theme.tres" id="1_e6a0c"]
 [ext_resource type="Texture2D" uid="uid://dohesrf5gnuuo" path="res://assets/Background/Cave.jpg" id="1_vloy7"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bg1iqmn86sxtm" path="res://temp.tscn" id="4_vlq0f"]
 [ext_resource type="Script" path="res://src/buttons/OptionsButton.gd" id="5_bs3o5"]
 [ext_resource type="Script" path="res://src/buttons/CloseOptionsMenu.gd" id="6_a88st"]
+[ext_resource type="Texture2D" uid="uid://ckqu3v7v4nd6o" path="res://assets/Logo/GMTK_jam_logo.png" id="7_7ed75"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -109,6 +110,21 @@ theme_type_variation = &"HeaderMedium"
 text = "Options
 "
 horizontal_alignment = 1
+
+[node name="Logo" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -296.0
+offset_top = -132.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("7_7ed75")
+expand_mode = 1
 
 [connection signal="button_up" from="Buttons/PlayButton" to="Buttons/PlayButton" method="_on_button_up"]
 [connection signal="button_up" from="Buttons/OptionsButton" to="Buttons/OptionsButton" method="_on_button_up"]
