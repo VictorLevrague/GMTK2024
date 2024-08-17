@@ -1,6 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://bptmw4sf06kaw"]
-
-[ext_resource type="PackedScene" uid="uid://cui087pw5nsjk" path="res://src/Ui_items/constraint_hbox.tscn" id="1_d2vjh"]
+[gd_scene format=3 uid="uid://bptmw4sf06kaw"]
 
 [node name="BodyHoverWindow" type="Control"]
 layout_mode = 3
@@ -49,14 +47,3 @@ offset_right = 80.0
 offset_bottom = 84.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="ConstraintHbox" parent="Panel/ConstraintContainer" instance=ExtResource("1_d2vjh")]
-layout_mode = 2
-
-[node name="ConstraintHbox2" parent="Panel/ConstraintContainer" instance=ExtResource("1_d2vjh")]
-layout_mode = 2
-
-[node name="Label" parent="Panel/ConstraintContainer/ConstraintHbox2" index="1"]
-text = "Constraint 2"
-
-[editable path="Panel/ConstraintContainer/ConstraintHbox2"]

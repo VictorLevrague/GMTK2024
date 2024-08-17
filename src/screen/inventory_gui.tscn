@@ -9,7 +9,7 @@ modulate = Color(0.392157, 0.392157, 0.392157, 1)
 layout_mode = 0
 offset_right = 264.0
 offset_bottom = 648.0
-color = Color(0.329412, 0.329412, 0.329412, 1)
+color = Color(0.329412, 0.329412, 0.329412, 0.623529)
 
 [node name="InventoryGrid" type="GridContainer" parent="."]
 unique_name_in_owner = true

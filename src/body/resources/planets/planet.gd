@@ -5,10 +5,10 @@ extends BodyData
 var constraint_array: Array[Constraint] = []
 
 var constraint1 = Constraint.new()
-var constraint1_description := "Constraint 1"
+var constraint1_description := "No neighboring\n planets"
 
 var constraint2 = Constraint.new()
-var constraint2_description := "Constraint 2"
+var constraint2_description := "Existing"
 
 func _init():
     constraint1.init(false, constraint1_description, has_no_neighbour_planet)

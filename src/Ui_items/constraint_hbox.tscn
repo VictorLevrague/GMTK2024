@@ -3,12 +3,15 @@
 [node name="ConstraintHbox" type="HBoxContainer"]
 
 [node name="CheckBox" type="CheckBox" parent="."]
+unique_name_in_owner = true
+modulate = Color(0.737255, 0, 0.384314, 1)
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-size_flags_horizontal = 2
+size_flags_horizontal = 3
 disabled = true
 
-[node name="Label" type="Label" parent="."]
+[node name="Description" type="Label" parent="."]
+unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 0
-theme_override_font_sizes/font_size = 16
-text = "Constraint 1"
+size_flags_horizontal = 3
+text = "Constraint"
