@@ -1,7 +1,9 @@
 extends Node
 
 var bodies_load = ["res://src/body/resources/test_purple_planet.tres",
-                    "res://src/body/resources/test_red_planet.tres"]
+                    "res://src/body/resources/test_red_planet.tres",
+                    "res://src/body/resources/test_ship_north.tres",
+                    "res://src/body/resources/test_ship_east.tres"]
 @onready var grids: Array[GridContainer] = [get_node('InventoryGUI/InventoryGrid'), get_node('GameGridGUI/GameGrid')]
 var grids_size:Array[int] = [6, 9]
 var grids_columns:Array[int] = [2, 3]

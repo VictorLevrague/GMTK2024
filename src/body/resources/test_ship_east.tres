@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="BodyData" load_steps=3 format=3 uid="uid://c4nwym7yglusx"]
+
+[ext_resource type="Script" path="res://src/body/body_data.gd" id="1_tttr3"]
+[ext_resource type="Texture2D" uid="uid://cqqr01e6cy4no" path="res://assets/body/kenney_planets/spaceShips_007_east.png" id="2_bpyf8"]
+
+[resource]
+script = ExtResource("1_tttr3")
+name = ""
+fixed = false
+is_planet = false
+texture = ExtResource("2_bpyf8")
+orientation_vector = Vector2(1, 0)

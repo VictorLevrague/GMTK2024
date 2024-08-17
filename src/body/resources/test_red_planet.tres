@@ -10,5 +10,5 @@ fixed = false
 x = 1
 y = 1
 size = null
-tileID = 1
+is_planet = false
 texture = ExtResource("2_7r3r8")

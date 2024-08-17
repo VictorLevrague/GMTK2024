@@ -12,7 +12,7 @@ func _ready() -> void:
     expand_mode = TextureRect.EXPAND_IGNORE_SIZE
     stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
     texture = body_data.texture
-    tooltip_text = "%s\n%s" % [body_data.name, body_data.x]
+    tooltip_text = "%s\n%s" % [body_data.name, body_data.name]
     
     Signals.mouse_in_slot.connect(mouse_entered_slot)
     Signals.mouse_exited_slot.connect(mouse_exited_slot)
