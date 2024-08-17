@@ -23,11 +23,11 @@ func mouse_entered_slot(panelC: PanelContainer):
         panelC.theme_type_variation = "HighlightedPanel"
 
 func mouse_exited_slot(panelC: PanelContainer):
-     if dragging:
-        panelC.theme_type_variation = ""
+    panelC.theme_type_variation = ""
 
-func body_dropped():
+func body_dropped(panelC: PanelContainer):
     dragging = false
+    panelC.theme_type_variation = ""
 
 func _get_drag_data(at_position: Vector2):
     dragging = true

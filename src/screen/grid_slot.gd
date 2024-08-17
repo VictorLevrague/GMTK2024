@@ -22,10 +22,13 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 #        if body == data:
 #            return
 #        body.reparent(data.get_parent())
-#    self.get_parent().dragging = false
     data.reparent(self) #Change le parent de data (body) au slot actuel
-    Signals.emit_signal("drop")
+    Signals.emit_signal("drop", self)
     self.theme_type_variation = ""
+
+func _notification(what: int) -> void:
+  if what == NOTIFICATION_DRAG_END and not get_viewport().gui_is_drag_successful():
+    Signals.emit_signal("drop", self)
 
 func _on_mouse_entered():
     Signals.emit_signal("mouse_in_slot", self)

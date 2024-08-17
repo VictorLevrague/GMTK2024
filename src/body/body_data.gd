@@ -7,8 +7,7 @@ class_name BodyData
 @export var x: int = 1
 @export var y: int = 1
 @export var size:= Vector2(x, y)
-enum TILE_ID_LIST {BluePlanet, RedPlanet}
-@export var tileID: TILE_ID_LIST
+@export var is_planet: bool = false
 
 @export var texture: Texture
 
