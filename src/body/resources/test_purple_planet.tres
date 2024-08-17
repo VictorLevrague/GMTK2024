@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Body" load_steps=3 format=3 uid="uid://bogd8ey4jkvqv"]
+[gd_resource type="Resource" script_class="BodyData" load_steps=3 format=3 uid="uid://bogd8ey4jkvqv"]
 
 [ext_resource type="Script" path="res://src/body/body_data.gd" id="1_tc31t"]
 [ext_resource type="Texture2D" uid="uid://cu5rf3shoiqy6" path="res://assets/body/kenney_planets/Planets/planet09_512px.png" id="2_tvl4p"]
@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_tc31t")
 name = "PurplePlanet"
-fixed = true
+fixed = false
 x = 1
 y = 1
 size = null

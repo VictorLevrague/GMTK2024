@@ -17,3 +17,4 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 #            return
 #        body.reparent(data.get_parent())
     data.reparent(self) #Change le parent de data (body) au slot actuel
+

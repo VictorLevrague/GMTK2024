@@ -14,10 +14,9 @@ func _ready() -> void:
     tooltip_text = "%s\n%s" % [body_data.name, body_data.x]
 
 func _get_drag_data(at_position: Vector2):
-    print('at posi: ',at_position)
-    set_drag_preview(make_drag_preview(at_position))
-#    texture.hide()
-    return self
+    if not body_data.fixed:
+        set_drag_preview(make_drag_preview(at_position))
+        return self
 
 func make_drag_preview(at_position: Vector2):
     var drag_texture:= TextureRect.new()
