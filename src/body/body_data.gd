@@ -8,5 +8,5 @@ class_name BodyData
 @export var texture: Texture
 @export var orientation_vector: Vector2
 
-func check_constraints(game_grid: GridContainer, coordinates: Vector2):
+func check_constraints(game_grid: GridContainer, coordinates: Vector2) -> bool:
     return true

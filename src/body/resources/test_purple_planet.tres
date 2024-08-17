@@ -7,8 +7,6 @@
 script = ExtResource("1_tc31t")
 name = "PurplePlanet"
 fixed = false
-x = 1
-y = 1
-size = null
-tileID = 0
+is_planet = true
 texture = ExtResource("2_tvl4p")
+orientation_vector = Vector2(0, 0)
