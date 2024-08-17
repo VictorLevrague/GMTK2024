@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dnvuvgfe657qg"]
 
-[ext_resource type="Theme" uid="uid://cp861720njnfi" path="res://paleo_theme.tres" id="1_e6a0c"]
+[ext_resource type="Theme" uid="uid://cp861720njnfi" path="res://game_theme.tres" id="1_sb5qa"]
 [ext_resource type="Texture2D" uid="uid://dohesrf5gnuuo" path="res://assets/Background/Cave.jpg" id="1_vloy7"]
 [ext_resource type="Script" path="res://src/buttons/ChangeSceneButton.gd" id="3_elk5d"]
 [ext_resource type="PackedScene" uid="uid://bg1iqmn86sxtm" path="res://temp.tscn" id="4_vlq0f"]
@@ -15,7 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_e6a0c")
+theme = ExtResource("1_sb5qa")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -37,7 +37,7 @@ offset_top = 70.0
 offset_right = 219.5
 offset_bottom = 112.0
 grow_horizontal = 2
-theme = ExtResource("1_e6a0c")
+theme = ExtResource("1_sb5qa")
 theme_type_variation = &"HeaderLarge"
 text = "Title game GMTK game jam 2024"
 

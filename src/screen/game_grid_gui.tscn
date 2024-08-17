@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b8nieoij4kv8a"]
+[gd_scene load_steps=3 format=3 uid="uid://b8nieoij4kv8a"]
 
 [ext_resource type="Script" path="res://src/screen/GameGridGUI.gd" id="1_400ya"]
+[ext_resource type="Theme" uid="uid://cp861720njnfi" path="res://game_theme.tres" id="2_71mr0"]
 
 [node name="GameGridGUI" type="CanvasLayer"]
 script = ExtResource("1_400ya")
@@ -31,3 +32,12 @@ modulate = Color(0.392157, 0.392157, 0.392157, 1)
 offset_right = 216.0
 offset_bottom = 656.0
 color = Color(0.329412, 0.329412, 0.329412, 1)
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+visible = false
+offset_left = 512.0
+offset_top = 240.0
+offset_right = 792.0
+offset_bottom = 408.0
+theme = ExtResource("2_71mr0")
+theme_type_variation = &"HighlightedPanel"
