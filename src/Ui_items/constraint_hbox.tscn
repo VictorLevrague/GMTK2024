@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cui087pw5nsjk"]
+
+[node name="ConstraintHbox" type="HBoxContainer"]
+
+[node name="CheckBox" type="CheckBox" parent="."]
+layout_mode = 2
+size_flags_horizontal = 2
+disabled = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 16
+text = "Constraint 1"

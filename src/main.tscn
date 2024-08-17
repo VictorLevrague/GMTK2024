@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://cp861720njnfi" path="res://game_theme.tres" id="1_sb5qa"]
 [ext_resource type="Texture2D" uid="uid://dohesrf5gnuuo" path="res://assets/Background/Cave.jpg" id="1_vloy7"]
 [ext_resource type="Script" path="res://src/buttons/ChangeSceneButton.gd" id="3_elk5d"]
-[ext_resource type="PackedScene" uid="uid://bg1iqmn86sxtm" path="res://temp.tscn" id="4_vlq0f"]
+[ext_resource type="PackedScene" uid="uid://mhxfjgv5ebrk" path="res://src/levels/level.tscn" id="4_vv3td"]
 [ext_resource type="Script" path="res://src/buttons/OptionsButton.gd" id="5_bs3o5"]
 [ext_resource type="Script" path="res://src/buttons/CloseOptionsMenu.gd" id="6_a88st"]
 [ext_resource type="Texture2D" uid="uid://ckqu3v7v4nd6o" path="res://assets/Logo/GMTK_jam_logo.png" id="7_7ed75"]
@@ -48,9 +48,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -128.0
-offset_top = -304.0
-offset_right = 144.0
+offset_left = -208.0
+offset_top = -352.0
+offset_right = 216.0
 offset_bottom = -128.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -58,22 +58,21 @@ grow_vertical = 0
 [node name="PlayButton" type="Button" parent="Buttons"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 45
 text = "Play"
 script = ExtResource("3_elk5d")
-next_scene = ExtResource("4_vlq0f")
+next_scene = ExtResource("4_vv3td")
 
 [node name="Spacer" type="Control" parent="Buttons"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.3
 
-[node name="OptionsButton" type="Button" parent="Buttons"]
+[node name="LevelsButton" type="Button" parent="Buttons"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-text = "Temp
-"
+theme_override_font_sizes/font_size = 45
+text = "LEvels"
 script = ExtResource("5_bs3o5")
 
 [node name="OptionsMenu" type="ColorRect" parent="."]
@@ -84,7 +83,7 @@ offset_left = 328.0
 offset_top = 192.0
 offset_right = 832.0
 offset_bottom = 568.0
-color = Color(0.815686, 0.815686, 0.815686, 0.65098)
+color = Color(0.298039, 0.176471, 0.662745, 0.929412)
 
 [node name="CloseOptionsMenu" type="Button" parent="OptionsMenu"]
 layout_mode = 1
@@ -111,6 +110,95 @@ text = "Options
 "
 horizontal_alignment = 1
 
+[node name="LevelSelection" type="GridContainer" parent="OptionsMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -244.0
+offset_top = -100.0
+offset_right = 236.0
+offset_bottom = 164.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 5
+
+[node name="Button" type="Button" parent="OptionsMenu/LevelSelection"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 45
+text = "1"
+script = ExtResource("3_elk5d")
+next_scene = ExtResource("4_vv3td")
+
+[node name="Button2" type="Button" parent="OptionsMenu/LevelSelection"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 45
+text = "2"
+
+[node name="Button3" type="Button" parent="OptionsMenu/LevelSelection"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 45
+text = "3"
+
+[node name="Button4" type="Button" parent="OptionsMenu/LevelSelection"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 45
+text = "4"
+
+[node name="Button5" type="Button" parent="OptionsMenu/LevelSelection"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 45
+text = "5"
+
+[node name="Button6" type="Button" parent="OptionsMenu/LevelSelection"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 45
+text = "6"
+
+[node name="Button7" type="Button" parent="OptionsMenu/LevelSelection"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 45
+text = "7"
+
+[node name="Button8" type="Button" parent="OptionsMenu/LevelSelection"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 45
+text = "8"
+
+[node name="Button9" type="Button" parent="OptionsMenu/LevelSelection"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 45
+text = "9"
+
+[node name="Button10" type="Button" parent="OptionsMenu/LevelSelection"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 45
+text = "10"
+
 [node name="Logo" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 6
@@ -127,5 +215,6 @@ texture = ExtResource("7_7ed75")
 expand_mode = 1
 
 [connection signal="button_up" from="Buttons/PlayButton" to="Buttons/PlayButton" method="_on_button_up"]
-[connection signal="button_up" from="Buttons/OptionsButton" to="Buttons/OptionsButton" method="_on_button_up"]
+[connection signal="button_up" from="Buttons/LevelsButton" to="Buttons/LevelsButton" method="_on_button_up"]
 [connection signal="button_up" from="OptionsMenu/CloseOptionsMenu" to="OptionsMenu/CloseOptionsMenu" method="_on_button_up"]
+[connection signal="button_up" from="OptionsMenu/LevelSelection/Button" to="OptionsMenu/LevelSelection/Button" method="_on_button_up"]

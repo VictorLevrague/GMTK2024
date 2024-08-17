@@ -14,6 +14,7 @@ func _ready() -> void:
     for i in grids.size():
         init_grid(grids[i], grids_size[i], grids_columns[i])
         fill_grid(grids[i])
+    Signals.all_constraints_validated.connect(show_victory_screen)
 
 func init_grid(grid: GridContainer, grid_size: int, grid_columns: int):
     grid.columns = grid_columns
@@ -27,3 +28,6 @@ func fill_grid(grid: GridContainer):
         var body_grid := GridBody.new()
         body_grid.init(load(bodies_load[i]))
         grid.get_child(i).add_child(body_grid)
+
+func show_victory_screen():
+    %WinningLevelScreen.show()

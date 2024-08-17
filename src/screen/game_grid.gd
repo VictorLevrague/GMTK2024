@@ -11,4 +11,5 @@ func check_all_body_constraints(_body_slot_dropped: PanelContainer):
                 print("failed constraint")
                 return false
     print("All constraints validated !")
+    Signals.emit_signal("all_constraints_validated")
     return true

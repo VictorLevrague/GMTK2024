@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://mhxfjgv5ebrk"]
+[gd_scene load_steps=5 format=3 uid="uid://mhxfjgv5ebrk"]
 
 [ext_resource type="PackedScene" uid="uid://b8nieoij4kv8a" path="res://src/screen/game_grid_gui.tscn" id="1_dofn8"]
 [ext_resource type="Script" path="res://src/screen/grid_gui.gd" id="2_jb1bc"]
 [ext_resource type="PackedScene" uid="uid://b60hpvyenvlpr" path="res://src/screen/inventory_gui.tscn" id="3_20iw5"]
+[ext_resource type="Script" path="res://src/buttons/ChangeSceneButton.gd" id="4_io0a7"]
 
 [node name="Level" type="Control"]
 layout_mode = 3
@@ -34,3 +35,72 @@ anchors_preset = 9
 anchor_bottom = 1.0
 offset_right = 264.0
 grow_vertical = 2
+
+[node name="WinningLevelScreen" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="Background" type="ColorRect" parent="WinningLevelScreen"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 376.0
+offset_top = 136.0
+offset_right = -128.0
+offset_bottom = -136.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.533333, 1, 0.647059, 0.235294)
+
+[node name="Label" type="Label" parent="WinningLevelScreen/Background"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -92.0
+offset_right = 108.0
+offset_bottom = 48.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 24
+text = "Congratulations!
+ 
+Your solar system is perfectly balanced"
+horizontal_alignment = 1
+
+[node name="Buttons" type="VBoxContainer" parent="WinningLevelScreen/Background"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -132.0
+offset_top = -216.0
+offset_right = 140.0
+offset_bottom = -112.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="PlayButton" type="Button" parent="WinningLevelScreen/Background/Buttons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+text = "Next Level"
+script = ExtResource("4_io0a7")
+
+[node name="Spacer" type="Control" parent="WinningLevelScreen/Background/Buttons"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+
+[node name="MenuButton" type="Button" parent="WinningLevelScreen/Background/Buttons"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+text = "Menu
+"
+script = ExtResource("4_io0a7")
+
+[connection signal="button_up" from="WinningLevelScreen/Background/Buttons/PlayButton" to="WinningLevelScreen/Background/Buttons/PlayButton" method="_on_button_up"]
+[connection signal="button_up" from="WinningLevelScreen/Background/Buttons/MenuButton" to="WinningLevelScreen/Background/Buttons/MenuButton" method="_on_button_up"]

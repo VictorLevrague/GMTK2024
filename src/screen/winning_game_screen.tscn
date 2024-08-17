@@ -1,0 +1,58 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3po37kpn8cpg"]
+
+[ext_resource type="Script" path="res://src/buttons/ChangeSceneButton.gd" id="1_wjj1n"]
+
+[node name="WinningGameScreen" type="CanvasLayer"]
+visible = false
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 376.0
+offset_top = 136.0
+offset_right = -128.0
+offset_bottom = -136.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.533333, 1, 0.647059, 0.235294)
+
+[node name="Label" type="Label" parent="Background"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -316.0
+offset_right = 332.0
+offset_bottom = 200.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 24
+text = "Congratulations,
+You are now the galaxy maker master.
+
+Thank you so much for playing our game !!!"
+horizontal_alignment = 1
+
+[node name="Buttons" type="VBoxContainer" parent="Background"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -132.0
+offset_top = -216.0
+offset_right = 140.0
+offset_bottom = -112.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="MenuButton" type="Button" parent="Background/Buttons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+text = "Menu
+"
+script = ExtResource("1_wjj1n")
+
+[connection signal="button_up" from="Background/Buttons/MenuButton" to="Background/Buttons/MenuButton" method="_on_button_up"]
