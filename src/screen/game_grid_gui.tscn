@@ -27,10 +27,11 @@ grow_horizontal = 2
 grow_vertical = 2
 columns = 3
 
-[node name="TextureLeft" type="ColorRect" parent="."]
+[node name="Inventory" type="ColorRect" parent="."]
+visible = false
 modulate = Color(0.392157, 0.392157, 0.392157, 1)
-offset_right = 216.0
-offset_bottom = 656.0
+offset_right = 256.0
+offset_bottom = 648.0
 color = Color(0.329412, 0.329412, 0.329412, 1)
 
 [node name="PanelContainer" type="PanelContainer" parent="."]

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://mhxfjgv5ebrk"]
+
+[ext_resource type="PackedScene" uid="uid://b8nieoij4kv8a" path="res://src/screen/game_grid_gui.tscn" id="1_dofn8"]
+[ext_resource type="Script" path="res://src/screen/grid_gui.gd" id="2_jb1bc"]
+[ext_resource type="PackedScene" uid="uid://b60hpvyenvlpr" path="res://src/screen/inventory_gui.tscn" id="3_20iw5"]
+
+[node name="Level" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_jb1bc")
+
+[node name="GameGridGUI" parent="." instance=ExtResource("1_dofn8")]
+script = null
+
+[node name="InventoryGUI" parent="." instance=ExtResource("3_20iw5")]
+unique_name_in_owner = true

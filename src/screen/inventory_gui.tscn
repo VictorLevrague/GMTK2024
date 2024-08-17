@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b60hpvyenvlpr"]
+
+[node name="InventoryGUI" type="CanvasLayer"]
+
+[node name="InventoryPanel" type="ColorRect" parent="."]
+modulate = Color(0.392157, 0.392157, 0.392157, 1)
+offset_right = 264.0
+offset_bottom = 648.0
+color = Color(0.329412, 0.329412, 0.329412, 1)
+
+[node name="InventoryGrid" type="GridContainer" parent="."]
+unique_name_in_owner = true
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_top = 88.0
+offset_right = 256.0
+offset_bottom = -48.0
+grow_vertical = 2
+columns = 3
