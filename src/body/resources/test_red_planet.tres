@@ -7,8 +7,6 @@
 script = ExtResource("1_3e7gm")
 name = "RedPlanet"
 fixed = false
-x = 1
-y = 1
-size = null
 is_planet = false
 texture = ExtResource("2_7r3r8")
+orientation_vector = Vector2(0, 0)
