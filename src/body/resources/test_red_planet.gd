@@ -1,2 +1,2 @@
-extends Body
+extends BodyData
 

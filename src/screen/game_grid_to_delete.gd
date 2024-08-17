@@ -27,14 +27,15 @@ func fill_game_grid_with_empty_values():
 
 #Fonction uniquement pour test
 func test_manual_game_grid_filling_with_bodies():
+    pass
     #Tile1 test
-    var new_body_class_test = Body.new(Tile.RedPlanet)
-    game_grid[Vector2(0,1)] = new_body_class_test
-    set_cell(0, Vector2(0,1), new_body_class_test.tileID, Vector2i(0, 0), 0)
-#    #Tile2 test
-    var new_body_class_test2 = Body.new(Tile.BluePlanet)
-    game_grid[Vector2(1,2)] = new_body_class_test2
-    set_cell(0, Vector2(1,2), new_body_class_test2.tileID, Vector2i(0, 0), 0)
+#    var new_body_class_test = Body.new(Tile.RedPlanet)
+#    game_grid[Vector2(0,1)] = new_body_class_test
+#    set_cell(0, Vector2(0,1), new_body_class_test.tileID, Vector2i(0, 0), 0)
+##    #Tile2 test
+#    var new_body_class_test2 = Body.new(Tile.BluePlanet)
+#    game_grid[Vector2(1,2)] = new_body_class_test2
+#    set_cell(0, Vector2(1,2), new_body_class_test2.tileID, Vector2i(0, 0), 0)
 
 #Tile3 test. Ce test n'est pas compatible avec les 2 précédents: il faut enlever la fonction _init du fichier body.gd
 #Cette méthode là sera celle utilisé pour après parce que je vais utiliser les ressources (.tres) pour chaque body, pour mettre leur Tile_id propre et leur fonction contrainte
