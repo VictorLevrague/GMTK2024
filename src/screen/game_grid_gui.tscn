@@ -1,21 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://b8nieoij4kv8a"]
+[gd_scene load_steps=2 format=3 uid="uid://b8nieoij4kv8a"]
 
-[ext_resource type="Script" path="res://src/screen/GameGridGUI.gd" id="1_400ya"]
-[ext_resource type="Theme" uid="uid://cp861720njnfi" path="res://game_theme.tres" id="2_71mr0"]
+[ext_resource type="Texture2D" uid="uid://dd2sscjfibxyp" path="res://assets/Background/space_background.png" id="2_xpdcm"]
 
-[node name="GameGridGUI" type="CanvasLayer"]
-script = ExtResource("1_400ya")
+[node name="GameGridGUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Background" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-metadata/_edit_use_anchors_ = true
+texture = ExtResource("2_xpdcm")
 
 [node name="GameGrid" type="GridContainer" parent="."]
 unique_name_in_owner = true
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -26,19 +29,3 @@ offset_bottom = -144.0
 grow_horizontal = 2
 grow_vertical = 2
 columns = 3
-
-[node name="Inventory" type="ColorRect" parent="."]
-visible = false
-modulate = Color(0.392157, 0.392157, 0.392157, 1)
-offset_right = 256.0
-offset_bottom = 648.0
-color = Color(0.329412, 0.329412, 0.329412, 1)
-
-[node name="PanelContainer" type="PanelContainer" parent="."]
-visible = false
-offset_left = 512.0
-offset_top = 240.0
-offset_right = 792.0
-offset_bottom = 408.0
-theme = ExtResource("2_71mr0")
-theme_type_variation = &"HighlightedPanel"
