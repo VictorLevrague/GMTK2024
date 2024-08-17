@@ -13,14 +13,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_jb1bc")
 
-[node name="InventoryGUI" parent="." instance=ExtResource("3_20iw5")]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 264.0
-grow_vertical = 2
-
 [node name="GameGridGUI" parent="." instance=ExtResource("1_dofn8")]
 layout_mode = 1
 anchors_preset = 8
@@ -28,9 +20,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -256.0
+offset_left = -232.0
 offset_top = -324.0
-offset_right = 440.0
+offset_right = 464.0
 offset_bottom = 324.0
 grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InventoryGUI" parent="." instance=ExtResource("3_20iw5")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 264.0
 grow_vertical = 2

@@ -14,6 +14,12 @@ func _ready() -> void:
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
     if data is GridBody and get_child_count() == 0:
         return true
+    if get_child_count() > 0:
+        var body:= get_child(0)
+        if body != data:
+            self.theme_type_variation = "ForbiddenPanel"
+        else :
+            self.theme_type_variation = ""
     return false
 
 func _drop_data(at_position: Vector2, data: Variant) -> void:
