@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://nn2nuye8cwu2"]
+[gd_scene load_steps=9 format=3 uid="uid://nn2nuye8cwu2"]
 
 [ext_resource type="Script" path="res://src/levels/level3.gd" id="1_5oai6"]
 [ext_resource type="PackedScene" uid="uid://b8nieoij4kv8a" path="res://src/screen/game_grid_gui.tscn" id="2_dghhx"]
 [ext_resource type="PackedScene" uid="uid://b60hpvyenvlpr" path="res://src/screen/inventory_gui.tscn" id="3_vp82c"]
 [ext_resource type="Script" path="res://src/buttons/ChangeSceneButton.gd" id="4_1scjd"]
+[ext_resource type="AudioStream" uid="uid://cpjke71oxp8nt" path="res://src/body/resources/sounds/effects/body_movement.wav" id="5_yh7vb"]
+[ext_resource type="AudioStream" uid="uid://n71c8lbs26e8" path="res://src/body/resources/sounds/effects/button_click.mp3" id="6_bearc"]
+[ext_resource type="AudioStream" uid="uid://bdf3x2e10v8le" path="res://src/body/resources/sounds/effects/validation_success.mp3" id="7_fw25k"]
+[ext_resource type="AudioStream" uid="uid://ck2kmbjr4rqj2" path="res://src/body/resources/sounds/musics/Equatorial Complex.mp3" id="8_ra3uy"]
 
 [node name="Level3" type="Control"]
 layout_mode = 3
@@ -101,6 +105,19 @@ theme_override_font_sizes/font_size = 30
 text = "Menu
 "
 script = ExtResource("4_1scjd")
+
+[node name="BodyMovement" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_yh7vb")
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_bearc")
+
+[node name="ValidationSuccess" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_fw25k")
+
+[node name="Music3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_ra3uy")
+autoplay = true
 
 [connection signal="button_up" from="WinningLevelScreen/Background/Buttons/PlayButton" to="WinningLevelScreen/Background/Buttons/PlayButton" method="_on_button_up"]
 [connection signal="button_up" from="WinningLevelScreen/Background/Buttons/MenuButton" to="WinningLevelScreen/Background/Buttons/MenuButton" method="_on_button_up"]

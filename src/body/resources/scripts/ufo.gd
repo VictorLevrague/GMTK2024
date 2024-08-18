@@ -88,7 +88,7 @@ func find_body_with_distances(game_grid: GridContainer, coordinates: Vector2, in
                     if grid_slot.get_child(0).body_data.name != "Black Hole":
                         neighbours_temp.append(grid_slot.get_child(0))
     return neighbours_temp
-    
+
 func has_earth_at_2_boxes(game_grid: GridContainer, coordinates: Vector2) -> bool:
     var is_earth_found: bool = false
     var neighbours:Array = find_body_with_distances(game_grid, coordinates, Vector2(sqrt(4) - 0.1, sqrt(8) + 0.1), 2 + 0.3)
