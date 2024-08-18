@@ -22,7 +22,6 @@ func _ready() -> void:
     self.mouse_exited.connect(mouse_exited_body_grid)
 
 func mouse_entered_body_grid():
-    print("mouse entered")
     display_tooltip()
 
 func display_tooltip():
@@ -86,7 +85,10 @@ func display_tooltip():
             offset = Vector2(offset_x, offset_y)
             tool_tip_title_instance.position = offset
         #
-        tool_tip_title_instance.get_node("%Title").text = body_data.name
+        if body_data.name != "Black Hole":
+            tool_tip_title_instance.get_node("%Title").text = body_data.name
+        else:
+            tool_tip_title_instance.get_node("%Title").text = body_data.name + "\n (This is not a body)"
         self.add_child(tool_tip_title_instance)
 
 func get_tooltip_info(tool_tip_instance):
@@ -99,15 +101,9 @@ func get_tooltip_info(tool_tip_instance):
         constraint_display.get_node("%CheckBox").button_pressed = constraint.is_validated
 
 func mouse_exited_body_grid():
-    print("mouse exit")
     var tooltip_to_remove = get_node("ToolTip")
     var tooltip_title_to_remove = get_node("ToolTipTitleOnly")
 #    self.remove_child(node_to_remove) 
-    if get_child_count() >0:
-        print()
-        for child in get_children():
-            print(child)
-        print()
     if tooltip_to_remove:
         tooltip_to_remove.hide()
         tooltip_to_remove.queue_free() #Attention: bug si on fait cette commande et qu'il y a 2 instances de ressources (.tres) identiques en jeu
