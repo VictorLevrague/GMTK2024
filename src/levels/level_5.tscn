@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://tnuge4fjfe27"]
+[gd_scene load_steps=6 format=3 uid="uid://tnuge4fjfe27"]
 
 [ext_resource type="Script" path="res://src/levels/level5.gd" id="1_gwnn4"]
 [ext_resource type="PackedScene" uid="uid://b8nieoij4kv8a" path="res://src/screen/game_grid_gui.tscn" id="2_g08h1"]
 [ext_resource type="PackedScene" uid="uid://b60hpvyenvlpr" path="res://src/screen/inventory_gui.tscn" id="3_gwlxh"]
 [ext_resource type="Script" path="res://src/buttons/ChangeSceneButton.gd" id="4_xhvk0"]
+[ext_resource type="PackedScene" uid="uid://durtns400qy7j" path="res://src/levels/level_6.tscn" id="5_0pv0b"]
 
 [node name="Level5" type="Control"]
 layout_mode = 3
@@ -87,6 +88,7 @@ size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 text = "Next Level"
 script = ExtResource("4_xhvk0")
+next_scene = ExtResource("5_0pv0b")
 
 [node name="Spacer" type="Control" parent="WinningLevelScreen/Background/Buttons"]
 layout_mode = 2

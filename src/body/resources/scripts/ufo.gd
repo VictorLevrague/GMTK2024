@@ -69,6 +69,19 @@ func find_body_with_distances(game_grid: GridContainer, coordinates: Vector2, in
         var x_to_compare = int(grid_slot.position[0]/grid_slot.custom_minimum_size[0])
         var y_to_compare = int(grid_slot.position[1]/grid_slot.custom_minimum_size[1])
         var distance = coordinates.distance_to(Vector2(x_to_compare, y_to_compare))
+        if grid_slot.get_child_count() >0:
+            print("name: ", grid_slot.get_child(0).body_data.name)
+            print("distance: ", distance)
+            print(distance>= in_between_distance[0])
+            print(distance <= in_between_distance[1])
+            print("x: ", abs(x_to_compare - coordinates[0]))
+            print("y: ", abs(y_to_compare - coordinates[0]))
+            print((distance != 0))
+            print(distance>= in_between_distance[0])
+            print(distance <= in_between_distance[1])
+            print(abs(x_to_compare - coordinates[0]) <= distance_max)
+            print(abs(x_to_compare - coordinates[0]))
+            print(abs(y_to_compare - coordinates[1]) <= distance_max)
         if (distance != 0) and (distance>= in_between_distance[0]) and (distance <= in_between_distance[1]):
             if (abs(x_to_compare - coordinates[0]) <= distance_max) and (abs(y_to_compare - coordinates[1]) <= distance_max):
                 if grid_slot.get_child_count() > 0:
@@ -78,7 +91,7 @@ func find_body_with_distances(game_grid: GridContainer, coordinates: Vector2, in
     
 func has_earth_at_2_boxes(game_grid: GridContainer, coordinates: Vector2) -> bool:
     var is_earth_found: bool = false
-    var neighbours:Array = find_body_with_distances(game_grid, coordinates, Vector2(sqrt(4) - 0.1, sqrt(8) + 0.1), 2 + 0.1)
+    var neighbours:Array = find_body_with_distances(game_grid, coordinates, Vector2(sqrt(4) - 0.1, sqrt(8) + 0.1), 2 + 0.3)
     for neighbour in neighbours:
         if neighbour.body_data.name == "Earth":
             is_earth_found = true

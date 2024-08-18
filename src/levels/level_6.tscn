@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://durtns400qy7j"]
 
-[ext_resource type="Script" path="res://src/levels/level5.gd" id="1_6xthe"]
+[ext_resource type="Script" path="res://src/levels/level6.gd" id="1_q0ko7"]
 [ext_resource type="PackedScene" uid="uid://b8nieoij4kv8a" path="res://src/screen/game_grid_gui.tscn" id="2_gkod4"]
 [ext_resource type="PackedScene" uid="uid://b60hpvyenvlpr" path="res://src/screen/inventory_gui.tscn" id="3_uhcf0"]
 [ext_resource type="Script" path="res://src/buttons/ChangeSceneButton.gd" id="4_dcr4l"]
@@ -12,7 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_6xthe")
+script = ExtResource("1_q0ko7")
 
 [node name="GameGridGUI" parent="." instance=ExtResource("2_gkod4")]
 layout_mode = 1

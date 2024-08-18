@@ -32,7 +32,7 @@ func find_body_in_direction(game_grid: GridContainer, coordinates: Vector2, dire
             var x_comet = coordinates[0]
             var y_comet = coordinates[1]
             if int(y_comet) == int(y_to_compare): #pb de normalisation qui revient
-                if x_to_compare - x_comet > 0:
+                if int(x_to_compare) - int(x_comet) > 0:
                     if grid_slot.get_child_count() >0:
                         neighbours_temp.append(grid_slot.get_child(0))
         #Les directions suivantes sont non testées
@@ -42,7 +42,7 @@ func find_body_in_direction(game_grid: GridContainer, coordinates: Vector2, dire
             var x_comet = coordinates[0]
             var y_comet = coordinates[1]
             if int(y_comet) == int(y_to_compare): #pb de normalisation qui revient
-                if x_to_compare - x_comet < 0:
+                if int(x_to_compare) - int(x_comet) < 0:
                     if grid_slot.get_child_count() >0:
                         neighbours_temp.append(grid_slot.get_child(0))
         elif direction == Vector2(0,1):
@@ -51,7 +51,7 @@ func find_body_in_direction(game_grid: GridContainer, coordinates: Vector2, dire
             var x_comet = coordinates[0]
             var y_comet = coordinates[1]
             if int(x_comet) == int(x_to_compare): #pb de normalisation qui revient
-                if y_to_compare - y_comet > 0:
+                if int(y_to_compare) - int(y_comet) > 0:
                     if grid_slot.get_child_count() >0:
                         neighbours_temp.append(grid_slot.get_child(0))
         elif direction == Vector2(0,-1):
@@ -60,7 +60,7 @@ func find_body_in_direction(game_grid: GridContainer, coordinates: Vector2, dire
             var x_comet = coordinates[0]
             var y_comet = coordinates[1]
             if int(x_comet) == int(x_to_compare): #pb de normalisation qui revient
-                if y_to_compare - y_comet < 0:
+                if int(y_to_compare) - int(y_comet) < 0:
                     if grid_slot.get_child_count() >0:
                         if grid_slot.get_child(0).body_data.name != "Black Hole":
                             neighbours_temp.append(grid_slot.get_child(0))

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://c3jrelivue351"]
+
+[ext_resource type="Script" path="res://src/body/resources/scripts/comet.gd" id="1_jqgpu"]
+[ext_resource type="Texture2D" uid="uid://cwmlouc0agu0q" path="res://assets/body/Mathilde/fixed/comet_top_fixed.png" id="2_yr5v1"]
+
+[resource]
+script = ExtResource("1_jqgpu")
+name = "Comet"
+fixed = true
+is_planet = false
+texture = ExtResource("2_yr5v1")
+orientation_vector = Vector2(0, -1)

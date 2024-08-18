@@ -85,10 +85,12 @@ func display_tooltip():
             offset = Vector2(offset_x, offset_y)
             tool_tip_title_instance.position = offset
         #
-        if body_data.name != "Black Hole":
-            tool_tip_title_instance.get_node("%Title").text = body_data.name
-        else:
+        if body_data.name == "Black Hole":
             tool_tip_title_instance.get_node("%Title").text = body_data.name + "\n (This is not a body)"
+        elif body_data.name != "Dwarf Planet":
+            tool_tip_title_instance.get_node("%Title").text = body_data.name + "\n (This is not a planet)"
+        else:
+            tool_tip_title_instance.get_node("%Title").text = body_data.name
         self.add_child(tool_tip_title_instance)
 
 func get_tooltip_info(tool_tip_instance):
