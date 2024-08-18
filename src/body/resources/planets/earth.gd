@@ -23,7 +23,7 @@ func find_direct_neighbour(game_grid: GridContainer, coordinates: Vector2) ->Arr
     var neighbours_temp : Array
     var grid_slots = game_grid.get_children()
     for grid_slot in grid_slots:
-        var distance = coordinates.distance_to(grid_slot.position/grid_slot.size)
+        var distance = coordinates.distance_to(grid_slot.position/grid_slot.custom_minimum_size)
         if distance <= sqrt(2) + 0.5 and distance > 0:
             #LE + 0.5 est là pour la marge liées aux pb de normalization et erreurs numériques. Je laisse juste en sécurité.
             if grid_slot.get_child_count() >0:
@@ -49,8 +49,8 @@ func find_body_with_distances(game_grid: GridContainer, coordinates: Vector2, in
     var grid_slots = game_grid.get_children()
     for grid_slot in grid_slots:
         #C'est très très moche les conversions en entiers que j'ai mis. C'est un pansement pour la normalisation qui ne se fait pas bien selon les tailles de body, je ne sais pas encore pourquoi. ça passe peut-être avec ce pansement
-        var x_to_compare = int(grid_slot.position[0]/grid_slot.size[0])
-        var y_to_compare = int(grid_slot.position[1]/grid_slot.size[1])
+        var x_to_compare = int(grid_slot.position[0]/grid_slot.custom_minimum_size[0])
+        var y_to_compare = int(grid_slot.position[1]/grid_slot.custom_minimum_size[1])
         var distance = coordinates.distance_to(Vector2(x_to_compare, y_to_compare))
         if grid_slot.get_child_count() >0:
             print("name: ", grid_slot.get_child(0).body_data.name)
