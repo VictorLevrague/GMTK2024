@@ -40,7 +40,7 @@ func has_no_neighbour_planet(game_grid: GridContainer, coordinates: Vector2) -> 
             has_planet_around = true
     return not has_planet_around
 
-func find_body_with_distances(game_grid: GridContainer, coordinates: Vector2, in_between_distance: Vector2, distance_to: int) ->Array:
+func find_body_with_distances(game_grid: GridContainer, coordinates: Vector2, in_between_distance: Vector2, distance_max: float) ->Array:
     """La Fonction permet à la fois de:
     - trouver les cases à une distance précise (en précisant distant_to à celle voulue, et en mettant les bornes minimales de distance associées)
     - trouver les cases en dessous d'une certaine distance (avec la borne min d'in_between_distance à 0)
@@ -62,20 +62,20 @@ func find_body_with_distances(game_grid: GridContainer, coordinates: Vector2, in
             print((distance != 0))
             print(distance>= in_between_distance[0])
             print(distance <= in_between_distance[1])
-            print(abs(x_to_compare - coordinates[0]) <= distance_to)
+            print(abs(x_to_compare - coordinates[0]) <= distance_max)
             print(abs(x_to_compare - coordinates[0]))
-            print(abs(y_to_compare - coordinates[1]) <= distance_to)
-#            print("2: ", in_between_distance[1])
+            print(abs(y_to_compare - coordinates[1]) <= distance_max)
         if (distance != 0) and (distance>= in_between_distance[0]) and (distance <= in_between_distance[1]):
         #Suite mise à la ligne d'en dessous pour gagner de la place. Pourrait être mieux fait encore une fois
-            if (abs(x_to_compare - coordinates[0]) <= distance_to + 0.4) and (abs(y_to_compare - coordinates[1]) <= distance_to + 0.4): #Encore une fois, maths un peu bancales liées aux pb de normalization je pense et p-e erreurs numériques
+            if (abs(x_to_compare - coordinates[0]) <= distance_max) and (abs(y_to_compare - coordinates[1]) <= distance_max):
                 if grid_slot.get_child_count() > 0:
                     neighbours_temp.append(grid_slot.get_child(0))
     return neighbours_temp
 
 func has_sun_at_3_boxes(game_grid: GridContainer, coordinates: Vector2) -> bool:
     var is_sun_found: bool = false
-    var neighbours:Array = find_body_with_distances(game_grid, coordinates, Vector2(sqrt(9) - 0.2, sqrt(27)), 3)
+    var neighbours:Array = find_body_with_distances(game_grid, coordinates, Vector2(sqrt(9) - 0.1, sqrt(27)), 3 + 0.4)
+     #Encore une fois, maths un peu bancales (le +0.4) liées aux pb de normalization je pense et p-e erreurs numériques
     print('has_sun_at_3_boxes neigh: ', neighbours)
     for neighbour in neighbours:
         if neighbour.body_data.name == "Sun":
@@ -84,8 +84,8 @@ func has_sun_at_3_boxes(game_grid: GridContainer, coordinates: Vector2) -> bool:
 
 func has_no_sun_below_2_boxes(game_grid: GridContainer, coordinates: Vector2):
     var has_no_sun: bool = true
-#    var neighbours:Array = find_body_with_distances(game_grid, coordinates, Vector2(0, sqrt(8)+0.05), 2)
-#    for neighbour in neighbours:
-#        if neighbour.body_data.name == "Sun":
-#            has_no_sun = false
+    var neighbours:Array = find_body_with_distances(game_grid, coordinates, Vector2(0, sqrt(8)+0.1), 2 +0.1)
+    for neighbour in neighbours:
+        if neighbour.body_data.name == "Sun":
+            has_no_sun = false
     return has_no_sun
