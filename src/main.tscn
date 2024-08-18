@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dnvuvgfe657qg"]
+[gd_scene load_steps=15 format=3 uid="uid://dnvuvgfe657qg"]
 
 [ext_resource type="Theme" uid="uid://cp861720njnfi" path="res://game_theme.tres" id="1_sb5qa"]
 [ext_resource type="Texture2D" uid="uid://c71bqos75p4xm" path="res://assets/Background/main_background_menu.png" id="2_f4qt2"]
@@ -11,6 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://cvwhx4k338txl" path="res://src/levels/level_2.tscn" id="8_uyd1y"]
 [ext_resource type="PackedScene" uid="uid://c6krwsow3lab2" path="res://src/levels/level_4.tscn" id="9_adpkm"]
 [ext_resource type="Texture2D" uid="uid://o2wycfsp2m25" path="res://assets/Logo/game_logo.png" id="11_sschh"]
+[ext_resource type="PackedScene" uid="uid://tnuge4fjfe27" path="res://src/levels/level_5.tscn" id="11_v4rjx"]
+[ext_resource type="PackedScene" uid="uid://durtns400qy7j" path="res://src/levels/level_6.tscn" id="12_f2j21"]
+[ext_resource type="PackedScene" uid="uid://cdn2esm8mp2y" path="res://src/levels/level_7.tscn" id="13_pwn2n"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -188,6 +191,7 @@ size_flags_vertical = 3
 theme_override_font_sizes/font_size = 45
 text = "5"
 script = ExtResource("3_elk5d")
+next_scene = ExtResource("11_v4rjx")
 
 [node name="Button6" type="Button" parent="OptionsMenu/LevelSelection"]
 layout_mode = 2
@@ -196,6 +200,7 @@ size_flags_vertical = 3
 theme_override_font_sizes/font_size = 45
 text = "6"
 script = ExtResource("3_elk5d")
+next_scene = ExtResource("12_f2j21")
 
 [node name="Button7" type="Button" parent="OptionsMenu/LevelSelection"]
 layout_mode = 2
@@ -204,8 +209,10 @@ size_flags_vertical = 3
 theme_override_font_sizes/font_size = 45
 text = "7"
 script = ExtResource("3_elk5d")
+next_scene = ExtResource("13_pwn2n")
 
 [node name="Button8" type="Button" parent="OptionsMenu/LevelSelection"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -214,6 +221,7 @@ text = "8"
 script = ExtResource("3_elk5d")
 
 [node name="Button9" type="Button" parent="OptionsMenu/LevelSelection"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -222,6 +230,7 @@ text = "9"
 script = ExtResource("3_elk5d")
 
 [node name="Button10" type="Button" parent="OptionsMenu/LevelSelection"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3

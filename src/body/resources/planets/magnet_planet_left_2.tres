@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://ds6dq2nptlwaw"]
+
+[ext_resource type="Script" path="res://src/body/resources/scripts/magnet_planet.gd" id="1_14qmk"]
+[ext_resource type="Texture2D" uid="uid://comvn57ehc4br" path="res://assets/body/Mathilde/magnet_planet_left.png" id="2_w4y8g"]
+
+[resource]
+script = ExtResource("1_14qmk")
+name = "Magnet Planet"
+fixed = false
+is_planet = true
+texture = ExtResource("2_w4y8g")
+orientation_vector = Vector2(-1, 0)

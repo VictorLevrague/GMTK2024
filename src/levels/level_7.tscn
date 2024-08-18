@@ -1,0 +1,70 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdn2esm8mp2y"]
+
+[ext_resource type="Script" path="res://src/levels/level7.gd" id="1_e1l70"]
+[ext_resource type="PackedScene" uid="uid://b8nieoij4kv8a" path="res://src/screen/game_grid_gui.tscn" id="2_k7ljt"]
+[ext_resource type="PackedScene" uid="uid://b60hpvyenvlpr" path="res://src/screen/inventory_gui.tscn" id="3_semam"]
+[ext_resource type="FontFile" uid="uid://b36pl36vm8q6a" path="res://good times rg.otf" id="4_nw1rm"]
+
+[node name="Level7" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e1l70")
+
+[node name="GameGridGUI" parent="." instance=ExtResource("2_k7ljt")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -232.0
+offset_top = -324.0
+offset_right = 464.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InventoryGUI" parent="." instance=ExtResource("3_semam")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 264.0
+grow_vertical = 2
+
+[node name="WinningLevelScreen" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="Background" type="ColorRect" parent="WinningLevelScreen"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.352941, 0.14902, 1)
+
+[node name="Label" type="Label" parent="WinningLevelScreen/Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_nw1rm")
+theme_override_font_sizes/font_size = 50
+text = "Congratulations !!!
+You are the 
+master of celestial bodies!
+
+Thanks a lot for playing !
+Fell free to give your comments 
+on Itch.io. We'll read them with
+ pleasure :)
+ 
+"
+horizontal_alignment = 1
