@@ -17,7 +17,7 @@ func _init():
     constraint1.init(false, constraint1_description, has_no_neighbour_planet)
     constraint2.init(false, constraint2_description, has_sun_at_3_boxes)
     constraint3.init(false, constraint3_description, has_no_sun_below_2_boxes)
-    constraint_array = [constraint1, constraint2, constraint3]
+    constraint_array = [constraint1, constraint2]
 
 func find_direct_neighbour(game_grid: GridContainer, coordinates: Vector2) ->Array:
     var neighbours_temp : Array

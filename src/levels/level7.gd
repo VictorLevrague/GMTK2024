@@ -19,7 +19,7 @@ func _ready() -> void:
     fill_game_grid_manually(grids[1])
     #
     Signals.all_constraints_validated.connect(show_victory_screen)
-    grids[1].check_all_body_constraints(null) #Check contrainte avant début du jeu
+    grids[1].check_all_body_constraints(null) #Check contraite avant début du jeu
 
 func init_grid(grid: GridContainer, grid_size: int, grid_columns: int):
     grid.columns = grid_columns

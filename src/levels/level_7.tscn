@@ -1,13 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://gf3iosm7egnc"]
+[gd_scene load_steps=10 format=3 uid="uid://cdn2esm8mp2y"]
 
 [ext_resource type="Script" path="res://src/levels/level7.gd" id="1_e1l70"]
 [ext_resource type="PackedScene" uid="uid://b8nieoij4kv8a" path="res://src/screen/game_grid_gui.tscn" id="2_k7ljt"]
 [ext_resource type="PackedScene" uid="uid://b60hpvyenvlpr" path="res://src/screen/inventory_gui.tscn" id="3_semam"]
-[ext_resource type="FontFile" uid="uid://b36pl36vm8q6a" path="res://good times rg.otf" id="4_nw1rm"]
-[ext_resource type="AudioStream" uid="uid://cpjke71oxp8nt" path="res://src/body/resources/sounds/effects/body_movement.wav" id="5_f824o"]
-[ext_resource type="AudioStream" uid="uid://n71c8lbs26e8" path="res://src/body/resources/sounds/effects/button_click.mp3" id="6_isjwe"]
-[ext_resource type="AudioStream" uid="uid://bdf3x2e10v8le" path="res://src/body/resources/sounds/effects/validation_success.mp3" id="7_seabm"]
-[ext_resource type="AudioStream" uid="uid://dmoc6kl0cft1" path="res://src/body/resources/sounds/musics/Blippy Trance.mp3" id="8_h1svf"]
+[ext_resource type="Script" path="res://src/buttons/ChangeSceneButton.gd" id="4_nktrb"]
+[ext_resource type="AudioStream" uid="uid://cpjke71oxp8nt" path="res://src/body/resources/sounds/effects/body_movement.wav" id="5_imsjd"]
+[ext_resource type="AudioStream" uid="uid://n71c8lbs26e8" path="res://src/body/resources/sounds/effects/button_click.mp3" id="6_niiwl"]
+[ext_resource type="AudioStream" uid="uid://bdf3x2e10v8le" path="res://src/body/resources/sounds/effects/validation_success.mp3" id="7_fdqh8"]
+[ext_resource type="AudioStream" uid="uid://dmoc6kl0cft1" path="res://src/body/resources/sounds/musics/Blippy Trance.mp3" id="8_q8x6n"]
+[ext_resource type="PackedScene" uid="uid://cbb1kg7buku6i" path="res://src/levels/level_8.tscn" id="9_t1ujx"]
 
 [node name="Level7" type="Control"]
 layout_mode = 3
@@ -40,6 +41,19 @@ anchor_bottom = 1.0
 offset_right = 264.0
 grow_vertical = 2
 
+[node name="BodyMovement" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_imsjd")
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_niiwl")
+
+[node name="ValidationSuccess" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_fdqh8")
+
+[node name="Music2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_q8x6n")
+autoplay = true
+
 [node name="WinningLevelScreen" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
 visible = false
@@ -48,40 +62,64 @@ visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 376.0
+offset_top = 136.0
+offset_right = -128.0
+offset_bottom = -136.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0.352941, 0.14902, 1)
+color = Color(0.533333, 1, 0.647059, 0.235294)
 
 [node name="Label" type="Label" parent="WinningLevelScreen/Background"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -92.0
+offset_right = 108.0
+offset_bottom = 48.0
 grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("4_nw1rm")
-theme_override_font_sizes/font_size = 50
-text = "Congratulations !!!
-You are the 
-master of celestial bodies!
-
-Thanks a lot for playing !
-Fell free to give your comments 
-on Itch.io. We'll read them with
- pleasure :)
+theme_override_font_sizes/font_size = 24
+text = "Congratulations!
  
-"
+Your solar system is perfectly balanced"
 horizontal_alignment = 1
 
-[node name="BodyMovement" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_f824o")
+[node name="Buttons" type="VBoxContainer" parent="WinningLevelScreen/Background"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -132.0
+offset_top = -216.0
+offset_right = 140.0
+offset_bottom = -112.0
+grow_horizontal = 2
+grow_vertical = 0
 
-[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_isjwe")
+[node name="PlayButton" type="Button" parent="WinningLevelScreen/Background/Buttons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+text = "Next Level"
+script = ExtResource("4_nktrb")
+next_scene = ExtResource("9_t1ujx")
 
-[node name="ValidationSuccess" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_seabm")
+[node name="Spacer" type="Control" parent="WinningLevelScreen/Background/Buttons"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
 
-[node name="Music2" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_h1svf")
-autoplay = true
+[node name="MenuButton" type="Button" parent="WinningLevelScreen/Background/Buttons"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+text = "Menu
+"
+script = ExtResource("4_nktrb")
+
+[connection signal="button_up" from="WinningLevelScreen/Background/Buttons/PlayButton" to="WinningLevelScreen/Background/Buttons/PlayButton" method="_on_button_up"]
+[connection signal="button_up" from="WinningLevelScreen/Background/Buttons/MenuButton" to="WinningLevelScreen/Background/Buttons/MenuButton" method="_on_button_up"]

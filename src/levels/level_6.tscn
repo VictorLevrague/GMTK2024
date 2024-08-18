@@ -1,14 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://bxq3qdlvs17xm"]
+[gd_scene load_steps=10 format=3 uid="uid://durtns400qy7j"]
 
 [ext_resource type="Script" path="res://src/levels/level6.gd" id="1_q0ko7"]
 [ext_resource type="PackedScene" uid="uid://b8nieoij4kv8a" path="res://src/screen/game_grid_gui.tscn" id="2_gkod4"]
 [ext_resource type="PackedScene" uid="uid://b60hpvyenvlpr" path="res://src/screen/inventory_gui.tscn" id="3_uhcf0"]
 [ext_resource type="Script" path="res://src/buttons/ChangeSceneButton.gd" id="4_dcr4l"]
-[ext_resource type="PackedScene" uid="uid://gf3iosm7egnc" path="res://src/levels/level_7.tscn" id="5_bfnuv"]
-[ext_resource type="AudioStream" uid="uid://cpjke71oxp8nt" path="res://src/body/resources/sounds/effects/body_movement.wav" id="5_bhvgd"]
-[ext_resource type="AudioStream" uid="uid://n71c8lbs26e8" path="res://src/body/resources/sounds/effects/button_click.mp3" id="6_dpq0t"]
-[ext_resource type="AudioStream" uid="uid://bdf3x2e10v8le" path="res://src/body/resources/sounds/effects/validation_success.mp3" id="7_y2grq"]
-[ext_resource type="AudioStream" uid="uid://d3eicufy0ma5e" path="res://src/body/resources/sounds/musics/Galactic Rap.mp3" id="8_fu4nr"]
+[ext_resource type="PackedScene" uid="uid://cdn2esm8mp2y" path="res://src/levels/level_7.tscn" id="5_bfnuv"]
+[ext_resource type="AudioStream" uid="uid://cpjke71oxp8nt" path="res://src/body/resources/sounds/effects/body_movement.wav" id="6_st7k0"]
+[ext_resource type="AudioStream" uid="uid://n71c8lbs26e8" path="res://src/body/resources/sounds/effects/button_click.mp3" id="7_7f4bf"]
+[ext_resource type="AudioStream" uid="uid://bdf3x2e10v8le" path="res://src/body/resources/sounds/effects/validation_success.mp3" id="8_pyk85"]
+[ext_resource type="AudioStream" uid="uid://d3eicufy0ma5e" path="res://src/body/resources/sounds/musics/Galactic Rap.mp3" id="9_8h5ql"]
 
 [node name="Level6" type="Control"]
 layout_mode = 3
@@ -109,16 +109,16 @@ text = "Menu
 script = ExtResource("4_dcr4l")
 
 [node name="BodyMovement" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_bhvgd")
+stream = ExtResource("6_st7k0")
 
 [node name="ButtonClick" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_dpq0t")
+stream = ExtResource("7_7f4bf")
 
 [node name="ValidationSuccess" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_y2grq")
+stream = ExtResource("8_pyk85")
 
 [node name="Music1" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_fu4nr")
+stream = ExtResource("9_8h5ql")
 autoplay = true
 
 [connection signal="button_up" from="WinningLevelScreen/Background/Buttons/PlayButton" to="WinningLevelScreen/Background/Buttons/PlayButton" method="_on_button_up"]

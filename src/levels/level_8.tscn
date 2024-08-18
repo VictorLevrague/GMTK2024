@@ -1,0 +1,91 @@
+[gd_scene load_steps=9 format=3 uid="uid://cbb1kg7buku6i"]
+
+[ext_resource type="Script" path="res://src/levels/level8.gd" id="1_2uhll"]
+[ext_resource type="PackedScene" uid="uid://b8nieoij4kv8a" path="res://src/screen/game_grid_gui.tscn" id="2_qpvoe"]
+[ext_resource type="PackedScene" uid="uid://b60hpvyenvlpr" path="res://src/screen/inventory_gui.tscn" id="3_8c0u4"]
+[ext_resource type="FontFile" uid="uid://b36pl36vm8q6a" path="res://good times rg.otf" id="4_lled0"]
+[ext_resource type="AudioStream" uid="uid://cpjke71oxp8nt" path="res://src/body/resources/sounds/effects/body_movement.wav" id="5_hh737"]
+[ext_resource type="AudioStream" uid="uid://n71c8lbs26e8" path="res://src/body/resources/sounds/effects/button_click.mp3" id="6_kmvv0"]
+[ext_resource type="AudioStream" uid="uid://bdf3x2e10v8le" path="res://src/body/resources/sounds/effects/validation_success.mp3" id="7_of00e"]
+[ext_resource type="AudioStream" uid="uid://ck2kmbjr4rqj2" path="res://src/body/resources/sounds/musics/Equatorial Complex.mp3" id="8_gmykk"]
+
+[node name="Level8" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2uhll")
+
+[node name="GameGridGUI" parent="." instance=ExtResource("2_qpvoe")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -232.0
+offset_top = -324.0
+offset_right = 464.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InventoryGUI" parent="." instance=ExtResource("3_8c0u4")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 264.0
+grow_vertical = 2
+
+[node name="BodyMovement" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_hh737")
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_kmvv0")
+
+[node name="ValidationSuccess" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_of00e")
+
+[node name="Music3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_gmykk")
+autoplay = true
+
+[node name="WinningLevelScreen" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="Background" type="ColorRect" parent="WinningLevelScreen"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 144.0
+offset_top = 72.0
+offset_right = -48.0
+offset_bottom = -96.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.454902, 0, 0.541176, 0.67451)
+
+[node name="Label" type="Label" parent="WinningLevelScreen/Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_lled0")
+theme_override_font_sizes/font_size = 40
+text = "Congratulations !!!
+You are the 
+master of celestial bodies!
+
+Thanks a lot for playing !
+Fell free to give your comments 
+on Itch.io. We'll read them with
+ pleasure :)
+ 
+"
+horizontal_alignment = 1

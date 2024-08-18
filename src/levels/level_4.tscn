@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dh1tid80pqqcq"]
+[gd_scene load_steps=10 format=3 uid="uid://c6krwsow3lab2"]
 
 [ext_resource type="Script" path="res://src/levels/level4.gd" id="1_cx61x"]
 [ext_resource type="PackedScene" uid="uid://b8nieoij4kv8a" path="res://src/screen/game_grid_gui.tscn" id="2_edh7l"]
 [ext_resource type="PackedScene" uid="uid://b60hpvyenvlpr" path="res://src/screen/inventory_gui.tscn" id="3_t5lrb"]
 [ext_resource type="Script" path="res://src/buttons/ChangeSceneButton.gd" id="4_66l63"]
+[ext_resource type="PackedScene" uid="uid://tnuge4fjfe27" path="res://src/levels/level_5.tscn" id="5_buy7i"]
 [ext_resource type="AudioStream" uid="uid://cpjke71oxp8nt" path="res://src/body/resources/sounds/effects/body_movement.wav" id="6_2cpjy"]
 [ext_resource type="AudioStream" uid="uid://n71c8lbs26e8" path="res://src/body/resources/sounds/effects/button_click.mp3" id="7_wt8jy"]
 [ext_resource type="AudioStream" uid="uid://eyg4d05tqdp5" path="res://src/body/resources/sounds/musics/Mesmerizing Galaxy Loop.mp3" id="8_hbru5"]
@@ -91,7 +92,7 @@ size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 text = "Next Level"
 script = ExtResource("4_66l63")
-next_scene = null
+next_scene = ExtResource("5_buy7i")
 
 [node name="Spacer" type="Control" parent="WinningLevelScreen/Background/Buttons"]
 layout_mode = 2
