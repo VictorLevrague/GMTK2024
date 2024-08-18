@@ -1,21 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://cvwhx4k338txl"]
+[gd_scene load_steps=5 format=3 uid="uid://nn2nuye8cwu2"]
 
-[ext_resource type="Script" path="res://src/levels/level2.gd" id="1_p7gmt"]
-[ext_resource type="PackedScene" uid="uid://b8nieoij4kv8a" path="res://src/screen/game_grid_gui.tscn" id="2_mgn1p"]
-[ext_resource type="PackedScene" uid="uid://b60hpvyenvlpr" path="res://src/screen/inventory_gui.tscn" id="3_xdm5w"]
-[ext_resource type="Script" path="res://src/buttons/ChangeSceneButton.gd" id="4_240ol"]
-[ext_resource type="PackedScene" uid="uid://nn2nuye8cwu2" path="res://src/levels/level_3.tscn" id="5_qmx3y"]
+[ext_resource type="Script" path="res://src/levels/level3.gd" id="1_5oai6"]
+[ext_resource type="PackedScene" uid="uid://b8nieoij4kv8a" path="res://src/screen/game_grid_gui.tscn" id="2_dghhx"]
+[ext_resource type="PackedScene" uid="uid://b60hpvyenvlpr" path="res://src/screen/inventory_gui.tscn" id="3_vp82c"]
+[ext_resource type="Script" path="res://src/buttons/ChangeSceneButton.gd" id="4_1scjd"]
 
-[node name="Level2" type="Control"]
+[node name="Level3" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_p7gmt")
+script = ExtResource("1_5oai6")
 
-[node name="GameGridGUI" parent="." instance=ExtResource("2_mgn1p")]
+[node name="GameGridGUI" parent="." instance=ExtResource("2_dghhx")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -29,7 +28,7 @@ offset_bottom = 324.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="InventoryGUI" parent="." instance=ExtResource("3_xdm5w")]
+[node name="InventoryGUI" parent="." instance=ExtResource("3_vp82c")]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 9
@@ -87,8 +86,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 text = "Next Level"
-script = ExtResource("4_240ol")
-next_scene = ExtResource("5_qmx3y")
+script = ExtResource("4_1scjd")
 
 [node name="Spacer" type="Control" parent="WinningLevelScreen/Background/Buttons"]
 layout_mode = 2
@@ -102,7 +100,7 @@ size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 text = "Menu
 "
-script = ExtResource("4_240ol")
+script = ExtResource("4_1scjd")
 
 [connection signal="button_up" from="WinningLevelScreen/Background/Buttons/PlayButton" to="WinningLevelScreen/Background/Buttons/PlayButton" method="_on_button_up"]
 [connection signal="button_up" from="WinningLevelScreen/Background/Buttons/MenuButton" to="WinningLevelScreen/Background/Buttons/MenuButton" method="_on_button_up"]
