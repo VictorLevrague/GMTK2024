@@ -7,6 +7,7 @@ class_name BodyData
 @export var is_planet: bool = false
 @export var texture: Texture
 @export var orientation_vector: Vector2
+var constraint_array = []
 
 func check_constraints(constraint_array: Array, game_grid: GridContainer, coordinates: Vector2) -> bool:
     var all_constraints_validated:= true

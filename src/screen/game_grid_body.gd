@@ -42,7 +42,8 @@ func get_tooltip_info(tool_tip_instance):
 func mouse_exited_body_grid():
     var node_to_remove = get_node("ToolTip")
 #    self.remove_child(node_to_remove) 
-    node_to_remove.queue_free() #Attention: bug si on fait cette commande et qu'il y a 2 instances de ressources (.tres) identiques en jeu
+    if node_to_remove:
+        node_to_remove.queue_free() #Attention: bug si on fait cette commande et qu'il y a 2 instances de ressources (.tres) identiques en jeu
 
 func mouse_entered_slot(body_slot: PanelContainer):
     if dragging:

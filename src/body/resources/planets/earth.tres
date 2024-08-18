@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://clfomt1q6tuer"]
+
+[ext_resource type="Script" path="res://src/body/resources/planets/earth.gd" id="1_bhucd"]
+[ext_resource type="Texture2D" uid="uid://de26g86cefdnu" path="res://assets/body/Mathilde/earth.png" id="2_ua3ll"]
+
+[resource]
+script = ExtResource("1_bhucd")
+name = "Earth"
+fixed = false
+is_planet = true
+texture = ExtResource("2_ua3ll")
+orientation_vector = Vector2(0, 0)

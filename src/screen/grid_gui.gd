@@ -4,11 +4,13 @@ extends Node
 #                    "res://src/body/resources/test_red_planet.tres",
 #                    "res://src/body/resources/test_ship_north.tres",
 #                    "res://src/body/resources/test_ship_east.tres"]
-var game_grid_bodies_load = ["res://src/body/resources/planets/telluric_planet.tres"]
-var inventory_bodies_load = ["res://src/body/resources/planets/gazeous_planet.tres"]
+var game_grid_bodies_load = ["res://src/body/resources/planets/telluric_planet.tres",
+                            "res://src/body/resources/sun.tres"]
+var inventory_bodies_load = ["res://src/body/resources/planets/gazeous_planet.tres",
+                            "res://src/body/resources/planets/earth.tres"]
 @onready var grids: Array[GridContainer] = [get_node('InventoryGUI/InventoryGrid'), get_node('GameGridGUI/GameGrid')]
-var grids_size:Array[int] = [6, 9]
-var grids_columns:Array[int] = [2, 3]
+var grids_size:Array[int] = [6, 25]
+var grids_columns:Array[int] = [2, 5]
 
 func _ready() -> void:
     for i in grids.size():
