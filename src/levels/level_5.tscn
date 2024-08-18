@@ -1,10 +1,21 @@
+<<<<<<< HEAD
 [gd_scene load_steps=6 format=3 uid="uid://tnuge4fjfe27"]
+=======
+[gd_scene load_steps=9 format=3 uid="uid://dbwydx5tn1fw"]
+>>>>>>> fae8819 (add loop to songs)
 
 [ext_resource type="Script" path="res://src/levels/level5.gd" id="1_gwnn4"]
 [ext_resource type="PackedScene" uid="uid://b8nieoij4kv8a" path="res://src/screen/game_grid_gui.tscn" id="2_g08h1"]
 [ext_resource type="PackedScene" uid="uid://b60hpvyenvlpr" path="res://src/screen/inventory_gui.tscn" id="3_gwlxh"]
 [ext_resource type="Script" path="res://src/buttons/ChangeSceneButton.gd" id="4_xhvk0"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://durtns400qy7j" path="res://src/levels/level_6.tscn" id="5_0pv0b"]
+=======
+[ext_resource type="AudioStream" uid="uid://cpjke71oxp8nt" path="res://src/body/resources/sounds/effects/body_movement.wav" id="5_563wy"]
+[ext_resource type="AudioStream" uid="uid://n71c8lbs26e8" path="res://src/body/resources/sounds/effects/button_click.mp3" id="6_c8f5t"]
+[ext_resource type="AudioStream" uid="uid://bdf3x2e10v8le" path="res://src/body/resources/sounds/effects/validation_success.mp3" id="7_2pq60"]
+[ext_resource type="AudioStream" uid="uid://eyg4d05tqdp5" path="res://src/body/resources/sounds/musics/Mesmerizing Galaxy Loop.mp3" id="8_p478o"]
+>>>>>>> fae8819 (add loop to songs)
 
 [node name="Level5" type="Control"]
 layout_mode = 3
@@ -103,6 +114,19 @@ theme_override_font_sizes/font_size = 30
 text = "Menu
 "
 script = ExtResource("4_xhvk0")
+
+[node name="BodyMovement" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_563wy")
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_c8f5t")
+
+[node name="ValidationSuccess" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_2pq60")
+
+[node name="Music5" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_p478o")
+autoplay = true
 
 [connection signal="button_up" from="WinningLevelScreen/Background/Buttons/PlayButton" to="WinningLevelScreen/Background/Buttons/PlayButton" method="_on_button_up"]
 [connection signal="button_up" from="WinningLevelScreen/Background/Buttons/MenuButton" to="WinningLevelScreen/Background/Buttons/MenuButton" method="_on_button_up"]

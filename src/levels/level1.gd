@@ -8,7 +8,7 @@ var grids_size:Array[int] = [6, 12]
 var grids_columns:Array[int] = [2, 3]
 
 func _ready() -> void:
-	get_tree().root.get_child(1).get_node("Music1")._play_music()
+	get_tree().root.get_child(1).get_node("Music1").play()
 	for i in grids.size():
 		init_grid(grids[i], grids_size[i], grids_columns[i])
 	fill_grid(grids[0], inventory_bodies_load)

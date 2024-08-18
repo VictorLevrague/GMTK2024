@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene load_steps=15 format=3 uid="uid://dnvuvgfe657qg"]
+=======
+[gd_scene load_steps=13 format=3 uid="uid://dnvuvgfe657qg"]
+>>>>>>> fae8819 (add loop to songs)
 
 [ext_resource type="Theme" uid="uid://cp861720njnfi" path="res://game_theme.tres" id="1_sb5qa"]
 [ext_resource type="Texture2D" uid="uid://c71bqos75p4xm" path="res://assets/Background/main_background_menu.png" id="2_f4qt2"]
@@ -9,7 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://c0gqg8o2upioa" path="res://src/levels/level_1.tscn" id="7_l4o0d"]
 [ext_resource type="PackedScene" uid="uid://nn2nuye8cwu2" path="res://src/levels/level_3.tscn" id="8_6ff2n"]
 [ext_resource type="PackedScene" uid="uid://cvwhx4k338txl" path="res://src/levels/level_2.tscn" id="8_uyd1y"]
-[ext_resource type="PackedScene" uid="uid://c6krwsow3lab2" path="res://src/levels/level_4.tscn" id="9_adpkm"]
+[ext_resource type="PackedScene" uid="uid://dh1tid80pqqcq" path="res://src/levels/level_4.tscn" id="9_adpkm"]
+[ext_resource type="AudioStream" uid="uid://n71c8lbs26e8" path="res://src/body/resources/sounds/effects/button_click.mp3" id="10_qrg7k"]
 [ext_resource type="Texture2D" uid="uid://o2wycfsp2m25" path="res://assets/Logo/game_logo.png" id="11_sschh"]
 [ext_resource type="PackedScene" uid="uid://tnuge4fjfe27" path="res://src/levels/level_5.tscn" id="11_v4rjx"]
 [ext_resource type="PackedScene" uid="uid://durtns400qy7j" path="res://src/levels/level_6.tscn" id="12_f2j21"]
@@ -253,6 +258,12 @@ grow_vertical = 2
 texture = ExtResource("7_7ed75")
 expand_mode = 1
 
+<<<<<<< HEAD
+=======
+[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_qrg7k")
+
+>>>>>>> fae8819 (add loop to songs)
 [connection signal="button_up" from="Buttons/PlayButton" to="Buttons/PlayButton" method="_on_button_up"]
 [connection signal="button_up" from="Buttons/LevelsButton" to="Buttons/LevelsButton" method="_on_button_up"]
 [connection signal="button_up" from="OptionsMenu/CloseOptionsMenu" to="OptionsMenu/CloseOptionsMenu" method="_on_button_up"]

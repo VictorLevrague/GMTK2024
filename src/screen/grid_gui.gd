@@ -15,6 +15,7 @@ var grids_size:Array[int] = [6, 25]
 var grids_columns:Array[int] = [2, 5]
 
 func _ready() -> void:
+	#get_tree().root.get_child(1).get_node("Music<NUMERO_DE_LA_MUSIQUE>").play()
 	for i in grids.size():
 		init_grid(grids[i], grids_size[i], grids_columns[i])
 	fill_grid(grids[0], inventory_bodies_load)
@@ -36,5 +37,6 @@ func fill_grid(grid: GridContainer, bodies: Array):
 		grid.get_child(i).add_child(body_grid)
 
 func show_victory_screen():
+	#get_tree().root.get_child(1).get_node("ValidationSuccess").play()
 #    %WinningLevelScreen.show()
 	pass
