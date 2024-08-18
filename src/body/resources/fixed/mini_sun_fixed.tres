@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dda7wmwbleasf"]
+
+[ext_resource type="Script" path="res://src/body/resources/scripts/mini_sun.gd" id="1_ityps"]
+[ext_resource type="Texture2D" uid="uid://c76fqseajlx4e" path="res://assets/body/Mathilde/fixed/mini_sun_lock.png" id="2_ywpj6"]
+
+[resource]
+script = ExtResource("1_ityps")
+name = "Mini Sun"
+fixed = true
+is_planet = false
+texture = ExtResource("2_ywpj6")
+orientation_vector = Vector2(0, 0)

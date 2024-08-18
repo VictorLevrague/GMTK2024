@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bj5gtgygpit62"]
+
+[ext_resource type="Script" path="res://src/body/resources/scripts/sister_planet.gd" id="1_8sja6"]
+[ext_resource type="Texture2D" uid="uid://ddchgi5easv2b" path="res://assets/body/Mathilde/fixed/sister_planet1_fixed.png" id="2_ynn4y"]
+
+[resource]
+script = ExtResource("1_8sja6")
+name = "Sister Planet"
+fixed = true
+is_planet = true
+texture = ExtResource("2_ynn4y")
+orientation_vector = Vector2(0, 0)
