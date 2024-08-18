@@ -1,12 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://dnvuvgfe657qg"]
+[gd_scene load_steps=10 format=3 uid="uid://dnvuvgfe657qg"]
 
 [ext_resource type="Theme" uid="uid://cp861720njnfi" path="res://game_theme.tres" id="1_sb5qa"]
-[ext_resource type="Texture2D" uid="uid://dohesrf5gnuuo" path="res://assets/Background/Cave.jpg" id="1_vloy7"]
+[ext_resource type="Texture2D" uid="uid://bk0uacer4bs1y" path="res://assets/Background/space_background_cut.png" id="2_biv0x"]
 [ext_resource type="Script" path="res://src/buttons/ChangeSceneButton.gd" id="3_elk5d"]
 [ext_resource type="Script" path="res://src/buttons/OptionsButton.gd" id="5_bs3o5"]
 [ext_resource type="Script" path="res://src/buttons/CloseOptionsMenu.gd" id="6_a88st"]
 [ext_resource type="Texture2D" uid="uid://ckqu3v7v4nd6o" path="res://assets/Logo/GMTK_jam_logo.png" id="7_7ed75"]
 [ext_resource type="PackedScene" uid="uid://c0gqg8o2upioa" path="res://src/levels/level_1.tscn" id="7_l4o0d"]
+[ext_resource type="PackedScene" uid="uid://nn2nuye8cwu2" path="res://src/levels/level_3.tscn" id="8_6ff2n"]
 [ext_resource type="PackedScene" uid="uid://cvwhx4k338txl" path="res://src/levels/level_2.tscn" id="8_uyd1y"]
 
 [node name="MainMenu" type="Control"]
@@ -25,8 +26,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_vloy7")
-expand_mode = 1
+texture = ExtResource("2_biv0x")
+expand_mode = 2
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 1
@@ -40,7 +41,8 @@ offset_bottom = 112.0
 grow_horizontal = 2
 theme = ExtResource("1_sb5qa")
 theme_type_variation = &"HeaderLarge"
-text = "Title game GMTK game jam 2024"
+theme_override_font_sizes/font_size = 60
+text = "Celestial MAKER"
 
 [node name="Buttons" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -49,10 +51,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -208.0
-offset_top = -352.0
-offset_right = 216.0
-offset_bottom = -128.0
+offset_left = -264.0
+offset_top = -392.0
+offset_right = 272.0
+offset_bottom = -88.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -107,7 +109,7 @@ offset_right = 108.0
 offset_bottom = 40.0
 grow_horizontal = 2
 theme_type_variation = &"HeaderMedium"
-text = "Options
+text = "Level Selection
 "
 horizontal_alignment = 1
 
@@ -153,6 +155,7 @@ size_flags_vertical = 3
 theme_override_font_sizes/font_size = 45
 text = "3"
 script = ExtResource("3_elk5d")
+next_scene = ExtResource("8_6ff2n")
 
 [node name="Button4" type="Button" parent="OptionsMenu/LevelSelection"]
 layout_mode = 2

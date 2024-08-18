@@ -8,7 +8,8 @@ var inventory_bodies_load = ["res://src/body/resources/planets/earth.tres",
                             "res://src/body/resources/mini_sun2.tres",
                             "res://src/body/resources/mini_sun3.tres",
                             "res://src/body/resources/mini_sun4.tres",
-                            "res://src/body/resources/mini_sun5.tres"]
+                            "res://src/body/resources/mini_sun5.tres",
+                            "res://src/body/resources/ufo.tres"]
 @onready var grids: Array[GridContainer] = [get_node('InventoryGUI/InventoryGrid'), get_node('GameGridGUI/GameGrid')]
 var grids_size:Array[int] = [10, 25]
 var grids_columns:Array[int] = [2, 5]

@@ -43,7 +43,7 @@ func display_tooltip():
             tool_tip_instance.position = 2* offset
         elif (x_mouse < x_window / 2) and (y_mouse < y_window / 2):
             print("upper left")
-            offset = 1.05 * tool_tip_instance.size
+            offset = 1.2 * tool_tip_instance.size
             tool_tip_instance.position = offset
         elif (x_mouse > x_window / 2) and (y_mouse < y_window / 2):
             print("upper right")

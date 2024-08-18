@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://drrxl1yqtbaex"]
 
-[ext_resource type="Script" path="res://src/body/resources/mini_sun.gd" id="1_56xmd"]
+[ext_resource type="Script" path="res://src/body/resources/scripts/mini_sun.gd" id="1_56xmd"]
 [ext_resource type="Texture2D" uid="uid://rgr1241d2pxq" path="res://assets/body/Mathilde/mini_sun.png" id="2_lnhxc"]
 
 [resource]
