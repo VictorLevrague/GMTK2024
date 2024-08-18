@@ -8,7 +8,8 @@ var game_grid_bodies_load = ["res://src/body/resources/planets/telluric_planet.t
                             "res://src/body/resources/sun.tres"]
 var inventory_bodies_load = ["res://src/body/resources/planets/ring_planet.tres",
                             "res://src/body/resources/planets/earth.tres",
-                            "res://src/body/resources/asteroid.tres"]
+                            "res://src/body/resources/asteroid.tres",
+                            "res://src/body/resources/satellite.tres"]
 @onready var grids: Array[GridContainer] = [get_node('InventoryGUI/InventoryGrid'), get_node('GameGridGUI/GameGrid')]
 var grids_size:Array[int] = [6, 25]
 var grids_columns:Array[int] = [2, 5]
