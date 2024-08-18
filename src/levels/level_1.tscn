@@ -1,0 +1,108 @@
+[gd_scene load_steps=6 format=3 uid="uid://c0gqg8o2upioa"]
+
+[ext_resource type="Script" path="res://src/levels/level1.gd" id="1_ccjm6"]
+[ext_resource type="PackedScene" uid="uid://b8nieoij4kv8a" path="res://src/screen/game_grid_gui.tscn" id="2_3biw5"]
+[ext_resource type="PackedScene" uid="uid://b60hpvyenvlpr" path="res://src/screen/inventory_gui.tscn" id="3_nunol"]
+[ext_resource type="Script" path="res://src/buttons/ChangeSceneButton.gd" id="4_uw5qy"]
+[ext_resource type="PackedScene" uid="uid://cvwhx4k338txl" path="res://src/levels/level_2.tscn" id="5_eph16"]
+
+[node name="Level1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ccjm6")
+
+[node name="GameGridGUI" parent="." instance=ExtResource("2_3biw5")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -232.0
+offset_top = -324.0
+offset_right = 464.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InventoryGUI" parent="." instance=ExtResource("3_nunol")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 264.0
+grow_vertical = 2
+
+[node name="WinningLevelScreen" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="Background" type="ColorRect" parent="WinningLevelScreen"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 376.0
+offset_top = 136.0
+offset_right = -128.0
+offset_bottom = -136.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.533333, 1, 0.647059, 0.235294)
+
+[node name="Label" type="Label" parent="WinningLevelScreen/Background"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -92.0
+offset_right = 108.0
+offset_bottom = 48.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 24
+text = "Congratulations!
+ 
+Your solar system is perfectly balanced"
+horizontal_alignment = 1
+
+[node name="Buttons" type="VBoxContainer" parent="WinningLevelScreen/Background"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -132.0
+offset_top = -216.0
+offset_right = 140.0
+offset_bottom = -112.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="PlayButton" type="Button" parent="WinningLevelScreen/Background/Buttons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+text = "Next Level"
+script = ExtResource("4_uw5qy")
+next_scene = ExtResource("5_eph16")
+
+[node name="Spacer" type="Control" parent="WinningLevelScreen/Background/Buttons"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+
+[node name="MenuButton" type="Button" parent="WinningLevelScreen/Background/Buttons"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+text = "Menu
+"
+script = ExtResource("4_uw5qy")
+
+[connection signal="button_up" from="WinningLevelScreen/Background/Buttons/PlayButton" to="WinningLevelScreen/Background/Buttons/PlayButton" method="_on_button_up"]
+[connection signal="button_up" from="WinningLevelScreen/Background/Buttons/MenuButton" to="WinningLevelScreen/Background/Buttons/MenuButton" method="_on_button_up"]

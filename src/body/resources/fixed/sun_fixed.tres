@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="BodyData" load_steps=3 format=3 uid="uid://b7qggw1jck8ux"]
+
+[ext_resource type="Script" path="res://src/body/body_data.gd" id="1_akus6"]
+[ext_resource type="Texture2D" uid="uid://d08la4cradqpo" path="res://assets/body/Mathilde/sun.png" id="2_tw8yd"]
+
+[resource]
+script = ExtResource("1_akus6")
+name = "Sun"
+fixed = true
+is_planet = false
+texture = ExtResource("2_tw8yd")
+orientation_vector = Vector2(0, 0)
