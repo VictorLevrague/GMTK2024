@@ -58,8 +58,8 @@ func body_dropped(panelC: PanelContainer):
     panelC.theme_type_variation = ""
 
 func _get_drag_data(at_position: Vector2):
-    dragging = true
     if not body_data.fixed:
+        dragging = true
         set_drag_preview(make_drag_preview(at_position))
         return self
 
