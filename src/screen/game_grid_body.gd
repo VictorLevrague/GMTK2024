@@ -33,7 +33,7 @@ func display_tooltip():
     var x_window = get_viewport().get_visible_rect().size[0]
     var y_window = get_viewport().get_visible_rect().size[1]
     var offset: Vector2
-    if body_data.constraint_array.size() > 0 and not body_data.fixed:
+    if body_data.constraint_array.size() > 0:
         var tool_tip_instance = tool_tip.instantiate()
         tool_tip_instance.size = Vector2(100,125)
         if (x_mouse > x_window / 2) and (y_mouse > y_window / 2):
