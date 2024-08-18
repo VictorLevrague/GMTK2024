@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://bme1vj273yph3"]
+[gd_scene load_steps=2 format=3 uid="uid://bme1vj273yph3"]
+
+[ext_resource type="FontFile" uid="uid://cgvkqd4gdbrx7" path="res://SpaceQuest-Xj4o.ttf" id="1_ah35r"]
 
 [node name="ToolTip" type="Control"]
 z_index = 100
@@ -6,7 +8,7 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -968.0
+offset_right = -928.0
 offset_bottom = -448.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -32,6 +34,7 @@ offset_top = 16.0
 offset_right = 60.0
 offset_bottom = 52.0
 grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_ah35r")
 text = "Type"
 horizontal_alignment = 1
 

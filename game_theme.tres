@@ -1,7 +1,7 @@
 [gd_resource type="Theme" load_steps=6 format=3 uid="uid://cp861720njnfi"]
 
 [ext_resource type="FontFile" uid="uid://c2felii4vpnho" path="res://cro.ttf" id="1_n1jwx"]
-[ext_resource type="FontFile" uid="uid://cgvkqd4gdbrx7" path="res://SpaceQuest-Xj4o.ttf" id="2_whnww"]
+[ext_resource type="FontFile" uid="uid://b36pl36vm8q6a" path="res://good times rg.otf" id="2_oqf25"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nu1f3"]
 bg_color = Color(0.823529, 0.121569, 0.188235, 0.188235)
@@ -13,7 +13,7 @@ bg_color = Color(0.278431, 0.482353, 0.113725, 0.188235)
 bg_color = Color(0.239216, 0.239216, 0.239216, 0)
 
 [resource]
-default_font = ExtResource("2_whnww")
+default_font = ExtResource("2_oqf25")
 ForbiddenPanel/base_type = &"PanelContainer"
 ForbiddenPanel/styles/panel = SubResource("StyleBoxFlat_nu1f3")
 HeaderLarge/base_type = &"Label"

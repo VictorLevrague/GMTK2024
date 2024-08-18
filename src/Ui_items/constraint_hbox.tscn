@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://cui087pw5nsjk"]
+[gd_scene load_steps=2 format=3 uid="uid://cui087pw5nsjk"]
+
+[ext_resource type="FontFile" uid="uid://b36pl36vm8q6a" path="res://good times rg.otf" id="1_a6sgg"]
 
 [node name="ConstraintHbox" type="HBoxContainer"]
 
@@ -14,4 +16,6 @@ disabled = true
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_a6sgg")
+theme_override_font_sizes/font_size = 14
 text = "Constraint"

@@ -16,10 +16,10 @@ var constraint4_description := "Has no Star Dust\n neighbor"
 func _init():
     constraint1.init(false, constraint1_description, has_earth_at_2_boxes)
     constraint2.init(false, constraint2_description, has_no_sun_or_mini_sun_neighbor)
-    constraint3.init(false, constraint3_description, has_no_ufo_neighbor)
+#    constraint3.init(false, constraint3_description, has_no_ufo_neighbor)
     constraint4.init(false, constraint4_description, has_no_stardust_neighbor)
-#    constraint_array = [constraint1, constraint2, constraint3, constraint4]
-    constraint_array = [constraint1, constraint2, constraint3]
+    constraint_array = [constraint1, constraint2, constraint4]
+#    constraint_array = [constraint1, constraint2, constraint3]
 
 func find_direct_neighbour(game_grid: GridContainer, coordinates: Vector2) ->Array:
     var neighbours_temp : Array

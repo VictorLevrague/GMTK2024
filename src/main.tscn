@@ -1,7 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://dnvuvgfe657qg"]
+[gd_scene load_steps=12 format=3 uid="uid://dnvuvgfe657qg"]
 
 [ext_resource type="Theme" uid="uid://cp861720njnfi" path="res://game_theme.tres" id="1_sb5qa"]
-[ext_resource type="Texture2D" uid="uid://bk0uacer4bs1y" path="res://assets/Background/space_background_cut.png" id="2_biv0x"]
+[ext_resource type="Texture2D" uid="uid://c71bqos75p4xm" path="res://assets/Background/main_background_menu.png" id="2_f4qt2"]
 [ext_resource type="Script" path="res://src/buttons/ChangeSceneButton.gd" id="3_elk5d"]
 [ext_resource type="Script" path="res://src/buttons/OptionsButton.gd" id="5_bs3o5"]
 [ext_resource type="Script" path="res://src/buttons/CloseOptionsMenu.gd" id="6_a88st"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://nn2nuye8cwu2" path="res://src/levels/level_3.tscn" id="8_6ff2n"]
 [ext_resource type="PackedScene" uid="uid://cvwhx4k338txl" path="res://src/levels/level_2.tscn" id="8_uyd1y"]
 [ext_resource type="PackedScene" uid="uid://c6krwsow3lab2" path="res://src/levels/level_4.tscn" id="9_adpkm"]
+[ext_resource type="Texture2D" uid="uid://o2wycfsp2m25" path="res://assets/Logo/game_logo.png" id="11_sschh"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -27,10 +28,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_biv0x")
+texture = ExtResource("2_f4qt2")
 expand_mode = 2
 
 [node name="Title" type="Label" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -45,6 +47,18 @@ theme_type_variation = &"HeaderLarge"
 theme_override_font_sizes/font_size = 60
 text = "Celestial MAKER"
 
+[node name="GameLogo" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 176.0
+offset_top = -16.0
+offset_right = -128.0
+offset_bottom = 384.0
+grow_horizontal = 2
+texture = ExtResource("11_sschh")
+expand_mode = 1
+
 [node name="Buttons" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 7
@@ -52,10 +66,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -264.0
-offset_top = -392.0
-offset_right = 272.0
-offset_bottom = -88.0
+offset_left = -256.0
+offset_top = -352.0
+offset_right = 280.0
+offset_bottom = -48.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -215,7 +229,7 @@ theme_override_font_sizes/font_size = 45
 text = "10"
 script = ExtResource("3_elk5d")
 
-[node name="Logo" type="TextureRect" parent="."]
+[node name="GMTKLogo" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0

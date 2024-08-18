@@ -35,7 +35,7 @@ func display_tooltip():
     var offset: Vector2
     if body_data.constraint_array.size() > 0:
         var tool_tip_instance = tool_tip.instantiate()
-        tool_tip_instance.size = Vector2(100,125)
+        tool_tip_instance.size = Vector2(150,125)
         if (x_mouse > x_window / 2) and (y_mouse > y_window / 2):
             print("bottom right")
             offset = - 1.05 * tool_tip_instance.size
