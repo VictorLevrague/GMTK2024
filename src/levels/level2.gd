@@ -1,11 +1,12 @@
 extends Node
 
-var inventory_bodies_load = ["res://src/body/resources/planets/earth.tres",
-                            "res://src/body/resources/planets/ring_planet.tres",
-                            "res://src/body/resources/satellite.tres"]
+var inventory_bodies_load = ["res://src/body/resources/planets/sister_planet1.tres",
+                            "res://src/body/resources/planets/sister_planet2.tres",
+                            "res://src/body/resources/satellite.tres",
+                            "res://src/body/resources/planets/gazeous_planet.tres"]
 @onready var grids: Array[GridContainer] = [get_node('InventoryGUI/InventoryGrid'), get_node('GameGridGUI/GameGrid')]
-var grids_size:Array[int] = [6, 12]
-var grids_columns:Array[int] = [2, 3]
+var grids_size:Array[int] = [6, 16]
+var grids_columns:Array[int] = [2, 4]
 
 func _ready() -> void:
     for i in grids.size():
@@ -31,17 +32,17 @@ func fill_grid(grid: GridContainer, bodies: Array):
 
 func fill_game_grid_manually(grid: GridContainer):
 #Pas ouf, mais ça marchera pour aujourd'hui
-#    var body_grid1 := GridBody.new()
-#    body_grid1.init(load("res://src/body/resources/fixed/sun_fixed.tres"))
-#    grid.get_child(0).add_child(body_grid1)
+    var body_grid1 := GridBody.new()
+    body_grid1.init(load("res://src/body/resources/fixed/asteroid_fixed1.tres"))
+    grid.get_child(2).add_child(body_grid1)
     ###
     var body_grid2 := GridBody.new()
-    body_grid2.init(load("res://src/body/resources/fixed/asteroid_fixed1.tres"))
-    grid.get_child(3).add_child(body_grid2)
+    body_grid2.init(load("res://src/body/resources/fixed/asteroid_fixed2.tres"))
+    grid.get_child(5).add_child(body_grid2)
     ###
     var body_grid3 := GridBody.new()
-    body_grid3.init(load("res://src/body/resources/fixed/asteroid_fixed2.tres"))
-    grid.get_child(8).add_child(body_grid3)
+    body_grid3.init(load("res://src/body/resources/fixed/sun_fixed.tres"))
+    grid.get_child(10).add_child(body_grid3)
 
 func show_victory_screen():
     %WinningLevelScreen.show()
