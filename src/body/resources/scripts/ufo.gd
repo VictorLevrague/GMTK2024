@@ -29,7 +29,8 @@ func find_direct_neighbour(game_grid: GridContainer, coordinates: Vector2) ->Arr
         if distance <= sqrt(2) + 0.5 and distance > 0:
             #LE + 0.5 est là pour la marge liées aux pb de normalization. Je pense que je peux l'enlever maintenant, je laisse juste en sécurité.
             if grid_slot.get_child_count() >0:
-                neighbours_temp.append(grid_slot.get_child(0))
+                if grid_slot.get_child(0).body_data.name != "Black Hole":
+                    neighbours_temp.append(grid_slot.get_child(0))
     return neighbours_temp
 
 func has_no_sun_or_mini_sun_neighbor(game_grid: GridContainer, coordinates: Vector2) -> bool:
@@ -71,7 +72,8 @@ func find_body_with_distances(game_grid: GridContainer, coordinates: Vector2, in
         if (distance != 0) and (distance>= in_between_distance[0]) and (distance <= in_between_distance[1]):
             if (abs(x_to_compare - coordinates[0]) <= distance_max) and (abs(y_to_compare - coordinates[1]) <= distance_max):
                 if grid_slot.get_child_count() > 0:
-                    neighbours_temp.append(grid_slot.get_child(0))
+                    if grid_slot.get_child(0).body_data.name != "Black Hole":
+                        neighbours_temp.append(grid_slot.get_child(0))
     return neighbours_temp
     
 func has_earth_at_2_boxes(game_grid: GridContainer, coordinates: Vector2) -> bool:

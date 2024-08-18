@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dnvuvgfe657qg"]
+[gd_scene load_steps=11 format=3 uid="uid://dnvuvgfe657qg"]
 
 [ext_resource type="Theme" uid="uid://cp861720njnfi" path="res://game_theme.tres" id="1_sb5qa"]
 [ext_resource type="Texture2D" uid="uid://bk0uacer4bs1y" path="res://assets/Background/space_background_cut.png" id="2_biv0x"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c0gqg8o2upioa" path="res://src/levels/level_1.tscn" id="7_l4o0d"]
 [ext_resource type="PackedScene" uid="uid://nn2nuye8cwu2" path="res://src/levels/level_3.tscn" id="8_6ff2n"]
 [ext_resource type="PackedScene" uid="uid://cvwhx4k338txl" path="res://src/levels/level_2.tscn" id="8_uyd1y"]
+[ext_resource type="PackedScene" uid="uid://c6krwsow3lab2" path="res://src/levels/level_4.tscn" id="9_adpkm"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -163,6 +164,8 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 45
 text = "4"
+script = ExtResource("3_elk5d")
+next_scene = ExtResource("9_adpkm")
 
 [node name="Button5" type="Button" parent="OptionsMenu/LevelSelection"]
 layout_mode = 2
@@ -170,6 +173,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 45
 text = "5"
+script = ExtResource("3_elk5d")
 
 [node name="Button6" type="Button" parent="OptionsMenu/LevelSelection"]
 layout_mode = 2
@@ -177,6 +181,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 45
 text = "6"
+script = ExtResource("3_elk5d")
 
 [node name="Button7" type="Button" parent="OptionsMenu/LevelSelection"]
 layout_mode = 2
@@ -184,6 +189,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 45
 text = "7"
+script = ExtResource("3_elk5d")
 
 [node name="Button8" type="Button" parent="OptionsMenu/LevelSelection"]
 layout_mode = 2
@@ -191,6 +197,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 45
 text = "8"
+script = ExtResource("3_elk5d")
 
 [node name="Button9" type="Button" parent="OptionsMenu/LevelSelection"]
 layout_mode = 2
@@ -198,6 +205,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 45
 text = "9"
+script = ExtResource("3_elk5d")
 
 [node name="Button10" type="Button" parent="OptionsMenu/LevelSelection"]
 layout_mode = 2
@@ -205,6 +213,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 45
 text = "10"
+script = ExtResource("3_elk5d")
 
 [node name="Logo" type="TextureRect" parent="."]
 layout_mode = 1
@@ -227,3 +236,10 @@ expand_mode = 1
 [connection signal="button_up" from="OptionsMenu/LevelSelection/Button" to="OptionsMenu/LevelSelection/Button" method="_on_button_up"]
 [connection signal="button_up" from="OptionsMenu/LevelSelection/Button2" to="OptionsMenu/LevelSelection/Button2" method="_on_button_up"]
 [connection signal="button_up" from="OptionsMenu/LevelSelection/Button3" to="OptionsMenu/LevelSelection/Button3" method="_on_button_up"]
+[connection signal="button_up" from="OptionsMenu/LevelSelection/Button4" to="OptionsMenu/LevelSelection/Button4" method="_on_button_up"]
+[connection signal="button_up" from="OptionsMenu/LevelSelection/Button5" to="OptionsMenu/LevelSelection/Button5" method="_on_button_up"]
+[connection signal="button_up" from="OptionsMenu/LevelSelection/Button6" to="OptionsMenu/LevelSelection/Button6" method="_on_button_up"]
+[connection signal="button_up" from="OptionsMenu/LevelSelection/Button7" to="OptionsMenu/LevelSelection/Button7" method="_on_button_up"]
+[connection signal="button_up" from="OptionsMenu/LevelSelection/Button8" to="OptionsMenu/LevelSelection/Button8" method="_on_button_up"]
+[connection signal="button_up" from="OptionsMenu/LevelSelection/Button9" to="OptionsMenu/LevelSelection/Button9" method="_on_button_up"]
+[connection signal="button_up" from="OptionsMenu/LevelSelection/Button10" to="OptionsMenu/LevelSelection/Button10" method="_on_button_up"]

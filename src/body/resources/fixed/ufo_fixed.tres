@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cqlkx4gwbbh28"]
+
+[ext_resource type="Script" path="res://src/body/resources/scripts/ufo.gd" id="1_kpebn"]
+[ext_resource type="Texture2D" uid="uid://dkr4yjy6ywdqs" path="res://assets/body/Mathilde/fixed/ufo_fixed.png" id="2_af65h"]
+
+[resource]
+script = ExtResource("1_kpebn")
+name = "UFO"
+fixed = true
+is_planet = false
+texture = ExtResource("2_af65h")
+orientation_vector = Vector2(0, 0)
