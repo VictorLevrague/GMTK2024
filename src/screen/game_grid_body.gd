@@ -64,7 +64,28 @@ func display_tooltip():
     else:
         var tool_tip_title_instance = tool_tip_title_only.instantiate()
         tool_tip_title_instance.size = Vector2(10,10)
-        tool_tip_title_instance.position = get_local_mouse_position()
+        #
+        if (x_mouse > x_window / 2) and (y_mouse > y_window / 2):
+            print("bottom right")
+            offset = - 1.05 * tool_tip_title_instance.size
+            tool_tip_title_instance.position = 2* offset
+        elif (x_mouse < x_window / 2) and (y_mouse < y_window / 2):
+            print("upper left")
+            offset = 1.05 * tool_tip_title_instance.size
+            tool_tip_title_instance.position = offset
+        elif (x_mouse > x_window / 2) and (y_mouse < y_window / 2):
+            print("upper right")
+            var offset_x = - 2* tool_tip_title_instance.size[0]
+            var offset_y = 1.2*tool_tip_title_instance.size[1]
+            offset = Vector2(offset_x, offset_y)
+            tool_tip_title_instance.position = offset
+        elif (x_mouse < x_window / 2) and (y_mouse > y_window / 2):
+            print("bottom left")
+            var offset_x = 1.2* tool_tip_title_instance.size[1] 
+            var offset_y = - 2* tool_tip_title_instance.size[0]
+            offset = Vector2(offset_x, offset_y)
+            tool_tip_title_instance.position = offset
+        #
         tool_tip_title_instance.get_node("%Title").text = body_data.name
         self.add_child(tool_tip_title_instance)
 
