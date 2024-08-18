@@ -5,6 +5,7 @@ class_name GridBody
 var body_data: BodyData
 var dragging: bool = false
 @onready var tool_tip = preload("res://src/Ui_items/tool_tip.tscn")
+@onready var tool_tip_title_only = preload("res://src/Ui_items/tool_tip_title_only.tscn")
 
 func init(_data: BodyData) -> void:
     body_data = _data
@@ -24,11 +25,18 @@ func mouse_entered_body_grid():
     display_tooltip()
 
 func display_tooltip():
-    var tool_tip_instance = tool_tip.instantiate()
-    tool_tip_instance.size = Vector2(100,125)
-    tool_tip_instance.position = get_local_mouse_position()
-    get_tooltip_info(tool_tip_instance)
-    self.add_child(tool_tip_instance)
+    if body_data.constraint_array.size() > 0 and not body_data.fixed:
+        var tool_tip_instance = tool_tip.instantiate()
+        tool_tip_instance.size = Vector2(100,125)
+        tool_tip_instance.position = get_local_mouse_position()
+        get_tooltip_info(tool_tip_instance)
+        self.add_child(tool_tip_instance)
+    else:
+        var tool_tip_title_instance = tool_tip_title_only.instantiate()
+        tool_tip_title_instance.size = Vector2(10,10)
+        tool_tip_title_instance.position = get_local_mouse_position()
+        tool_tip_title_instance.get_node("%Title").text = body_data.name
+        self.add_child(tool_tip_title_instance)
 
 func get_tooltip_info(tool_tip_instance):
     tool_tip_instance.get_node("%Title").text = body_data.name
@@ -40,10 +48,14 @@ func get_tooltip_info(tool_tip_instance):
         constraint_display.get_node("%CheckBox").button_pressed = constraint.is_validated
 
 func mouse_exited_body_grid():
-    var node_to_remove = get_node("ToolTip")
+    var tooltip_to_remove = get_node("ToolTip")
+    var tooltip_title_to_remove = get_node("ToolTipTitleOnly")
 #    self.remove_child(node_to_remove) 
-    if node_to_remove:
-        node_to_remove.queue_free() #Attention: bug si on fait cette commande et qu'il y a 2 instances de ressources (.tres) identiques en jeu
+    if tooltip_to_remove:
+        tooltip_to_remove.queue_free() #Attention: bug si on fait cette commande et qu'il y a 2 instances de ressources (.tres) identiques en jeu
+    if tooltip_title_to_remove:
+        tooltip_title_to_remove.queue_free() #Attention: bug si on fait cette commande et qu'il y a 2 instances de ressources (.tres) identiques en jeu
+
 
 func mouse_entered_slot(body_slot: PanelContainer):
     if dragging:
