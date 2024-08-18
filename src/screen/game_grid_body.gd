@@ -22,13 +22,43 @@ func _ready() -> void:
     self.mouse_exited.connect(mouse_exited_body_grid)
 
 func mouse_entered_body_grid():
+    print("mouse entered")
     display_tooltip()
 
 func display_tooltip():
+#    print("view size: ", get_viewport().get_visible_rect().size)
+#    print("local mouse posi: ", get_local_mouse_position())
+#    print("global mouse posi: ", get_global_mouse_position())
+    var x_mouse = get_global_mouse_position()[0]
+    var y_mouse = get_global_mouse_position()[1]
+    var x_window = get_viewport().get_visible_rect().size[0]
+    var y_window = get_viewport().get_visible_rect().size[1]
+    var offset: Vector2
     if body_data.constraint_array.size() > 0 and not body_data.fixed:
         var tool_tip_instance = tool_tip.instantiate()
         tool_tip_instance.size = Vector2(100,125)
-        tool_tip_instance.position = get_local_mouse_position()
+        if (x_mouse > x_window / 2) and (y_mouse > y_window / 2):
+            print("bottom right")
+            offset = - 1.05 * tool_tip_instance.size
+            tool_tip_instance.position = 2* offset
+        elif (x_mouse < x_window / 2) and (y_mouse < y_window / 2):
+            print("upper left")
+            offset = 1.05 * tool_tip_instance.size
+            tool_tip_instance.position = offset
+        elif (x_mouse > x_window / 2) and (y_mouse < y_window / 2):
+            print("upper right")
+            var offset_x = - 2* tool_tip_instance.size[0]
+            var offset_y = 1.2*tool_tip_instance.size[1]
+            offset = Vector2(offset_x, offset_y)
+            tool_tip_instance.position = offset
+        elif (x_mouse < x_window / 2) and (y_mouse > y_window / 2):
+            print("bottom left")
+            var offset_x = 1.2* tool_tip_instance.size[1] 
+            var offset_y = - 2* tool_tip_instance.size[0]
+            offset = Vector2(offset_x, offset_y)
+            tool_tip_instance.position = offset
+#        else:
+#            tool_tip_instance.position = get_local_mouse_position()
         get_tooltip_info(tool_tip_instance)
         self.add_child(tool_tip_instance)
     else:
@@ -48,12 +78,20 @@ func get_tooltip_info(tool_tip_instance):
         constraint_display.get_node("%CheckBox").button_pressed = constraint.is_validated
 
 func mouse_exited_body_grid():
+    print("mouse exit")
     var tooltip_to_remove = get_node("ToolTip")
     var tooltip_title_to_remove = get_node("ToolTipTitleOnly")
 #    self.remove_child(node_to_remove) 
+    if get_child_count() >0:
+        print()
+        for child in get_children():
+            print(child)
+        print()
     if tooltip_to_remove:
+        tooltip_to_remove.hide()
         tooltip_to_remove.queue_free() #Attention: bug si on fait cette commande et qu'il y a 2 instances de ressources (.tres) identiques en jeu
     if tooltip_title_to_remove:
+        tooltip_title_to_remove.hide()
         tooltip_title_to_remove.queue_free() #Attention: bug si on fait cette commande et qu'il y a 2 instances de ressources (.tres) identiques en jeu
 
 

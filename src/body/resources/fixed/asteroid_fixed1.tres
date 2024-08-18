@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="BodyData" load_steps=3 format=3 uid="uid://x8tddcj2gq3w"]
 
 [ext_resource type="Script" path="res://src/body/body_data.gd" id="1_innyn"]
-[ext_resource type="Texture2D" uid="uid://cbs8s36cgt4mc" path="res://assets/body/Mathilde/asteroid.png" id="2_nr7d1"]
+[ext_resource type="Texture2D" uid="uid://remhrcu7nyqn" path="res://assets/body/Mathilde/fixed/asteroid1_lock.png" id="2_fempk"]
 
 [resource]
 script = ExtResource("1_innyn")
 name = "Asteroid"
 fixed = true
 is_planet = false
-texture = ExtResource("2_nr7d1")
+texture = ExtResource("2_fempk")
 orientation_vector = Vector2(0, 0)

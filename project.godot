@@ -22,7 +22,6 @@ Signals="*res://src/autoload/signals.gd"
 [display]
 
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
 
 [gui]
 
