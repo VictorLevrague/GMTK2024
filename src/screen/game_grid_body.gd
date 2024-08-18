@@ -85,16 +85,18 @@ func display_tooltip():
             offset = Vector2(offset_x, offset_y)
             tool_tip_title_instance.position = offset
         #
+        print("name: ", body_data.name)
         if body_data.name == "Black Hole":
             tool_tip_title_instance.get_node("%Title").text = body_data.name + "\n (This is not a body)"
-        elif body_data.name != "Dwarf Planet":
-            tool_tip_title_instance.get_node("%Title").text = body_data.name + "\n (This is not a planet)"
         else:
             tool_tip_title_instance.get_node("%Title").text = body_data.name
         self.add_child(tool_tip_title_instance)
 
 func get_tooltip_info(tool_tip_instance):
-    tool_tip_instance.get_node("%Title").text = body_data.name
+    if body_data.name == "Dwarf Planet":
+        tool_tip_instance.get_node("%Title").text = body_data.name + "\n (This is not a planet)"
+    else:
+        tool_tip_instance.get_node("%Title").text = body_data.name
     var constraint_container = tool_tip_instance.get_node("%ConstraintContainer")
     for constraint in body_data.constraint_array:
         var constraint_display = load("res://src/Ui_items/constraint_hbox.tscn").instantiate()
