@@ -5,10 +5,10 @@ extends BodyData
 #var constraint_array: Array[Constraint] = []
 
 var constraint1 = Constraint.new()
-var constraint1_description := "No neighboring\n planets"
+var constraint1_description := "No neighboring\n bodies"
 
 func _init():
-    constraint1.init(false, constraint1_description, has_no_neighbour_planet)
+    constraint1.init(false, constraint1_description, has_no_neighbour_body)
     constraint_array = [constraint1]
 
 func find_direct_neighbour(game_grid: GridContainer, coordinates: Vector2) ->Array:
@@ -22,10 +22,10 @@ func find_direct_neighbour(game_grid: GridContainer, coordinates: Vector2) ->Arr
                 neighbours_temp.append(grid_slot.get_child(0))
     return neighbours_temp
 
-func has_no_neighbour_planet(game_grid: GridContainer, coordinates: Vector2) -> bool:
-    var has_planet_around: bool = false
+func has_no_neighbour_body(game_grid: GridContainer, coordinates: Vector2) -> bool:
+    var has_body_around: bool = false
     var neighbours:Array = find_direct_neighbour(game_grid, coordinates)
     for neighbour in neighbours:
-        if neighbour.body_data.is_planet:
-            has_planet_around = true
-    return not has_planet_around
+        if neighbour != null:
+            has_body_around = true
+    return not has_body_around
