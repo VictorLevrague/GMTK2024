@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://gtrusyuwk562"]
 
-[ext_resource type="Script" path="res://src/body/resources/scripts/magnet_planet.gd" id="1_bud3c"]
+[ext_resource type="Script" path="res://src/body/resources/body_scripts/magnet_planet.gd" id="1_bud3c"]
 [ext_resource type="Texture2D" uid="uid://dxxqs8rvm0dx2" path="res://assets/body/Mathilde/fixed/magnet_planet_top_fixed.png" id="2_y3yue"]
 
 [resource]

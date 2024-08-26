@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://tnuge4fjfe27"]
 
 [ext_resource type="Script" path="res://src/levels/level5.gd" id="1_gwnn4"]
-[ext_resource type="PackedScene" uid="uid://b8nieoij4kv8a" path="res://src/screen/game_grid_gui.tscn" id="2_g08h1"]
-[ext_resource type="PackedScene" uid="uid://b60hpvyenvlpr" path="res://src/screen/inventory_gui.tscn" id="3_gwlxh"]
+[ext_resource type="PackedScene" uid="uid://dwag07f80ylsl" path="res://src/screen/game_grid_gui.tscn" id="2_g08h1"]
+[ext_resource type="PackedScene" path="res://src/screen/inventory_gui.tscn" id="3_gwlxh"]
 [ext_resource type="Script" path="res://src/buttons/ChangeSceneButton.gd" id="4_xhvk0"]
 [ext_resource type="PackedScene" uid="uid://durtns400qy7j" path="res://src/levels/level_6.tscn" id="5_0pv0b"]
 [ext_resource type="AudioStream" uid="uid://cpjke71oxp8nt" path="res://src/body/resources/sounds/effects/body_movement.wav" id="5_563wy"]

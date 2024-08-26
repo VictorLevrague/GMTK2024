@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://bggved8m3vgmk"]
 
-[ext_resource type="Script" path="res://src/body/resources/scripts/earth.gd" id="1_tiyao"]
+[ext_resource type="Script" path="res://src/body/resources/body_scripts/earth.gd" id="1_tiyao"]
 [ext_resource type="Texture2D" uid="uid://b6ae04v2xr6xn" path="res://assets/body/Mathilde/fixed/earth_lock.png" id="2_5wins"]
 
 [resource]

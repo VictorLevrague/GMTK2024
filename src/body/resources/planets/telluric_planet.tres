@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://m6qp54iqjj0w"]
 
-[ext_resource type="Script" path="res://src/body/resources/scripts/planet.gd" id="1_5ipx2"]
+[ext_resource type="Script" path="res://src/body/resources/body_scripts/planet.gd" id="1_5ipx2"]
 [ext_resource type="Texture2D" uid="uid://mgde3viwpcpb" path="res://assets/body/Mathilde/telluric_planet.png" id="2_k2iq4"]
 
 [resource]

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://bq0x01y6oq2fk"]
 
-[ext_resource type="Script" path="res://src/body/resources/scripts/comet.gd" id="1_bnxe1"]
+[ext_resource type="Script" path="res://src/body/resources/body_scripts/comet.gd" id="1_bnxe1"]
 [ext_resource type="Texture2D" uid="uid://bx4mak8abpn3j" path="res://assets/body/Mathilde/comet_right.png" id="2_78xva"]
 
 [resource]

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://bke8nhs4khb7v"]
 
-[ext_resource type="Script" path="res://src/body/resources/scripts/planet.gd" id="1_83bnc"]
+[ext_resource type="Script" path="res://src/body/resources/body_scripts/planet.gd" id="1_83bnc"]
 [ext_resource type="Texture2D" uid="uid://u8b4t7m14x8d" path="res://assets/body/Mathilde/fixed/gazeous_planet_lock.png" id="2_48qcw"]
 
 [resource]

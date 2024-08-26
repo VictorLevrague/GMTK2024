@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://b0q0yt0p2eg2t"]
 
-[ext_resource type="Script" path="res://src/body/resources/scripts/ring_planet.gd" id="1_jug14"]
+[ext_resource type="Script" path="res://src/body/resources/body_scripts/ring_planet.gd" id="1_jug14"]
 [ext_resource type="Texture2D" uid="uid://dof5wbe01jrsr" path="res://assets/body/Mathilde/ring_planet.png" id="2_kvqc8"]
 
 [resource]

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://cpr2w5ptn35vt"]
 
-[ext_resource type="Script" path="res://src/body/resources/scripts/sister_planet.gd" id="1_xuj8j"]
+[ext_resource type="Script" path="res://src/body/resources/body_scripts/sister_planet.gd" id="1_xuj8j"]
 [ext_resource type="Texture2D" uid="uid://b1u0823cqvl38" path="res://assets/body/Mathilde/sister1.png" id="2_jy62v"]
 
 [resource]

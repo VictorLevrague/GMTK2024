@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://cb13dt247ra87"]
 
-[ext_resource type="Script" path="res://src/body/resources/scripts/star_dust.gd" id="1_okvsw"]
+[ext_resource type="Script" path="res://src/body/resources/body_scripts/star_dust.gd" id="1_okvsw"]
 [ext_resource type="Texture2D" uid="uid://iaxyt4hha8ud" path="res://assets/body/Mathilde/star_dust.png" id="2_swvxn"]
 
 [resource]
