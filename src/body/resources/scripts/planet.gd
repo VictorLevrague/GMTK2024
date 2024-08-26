@@ -6,8 +6,12 @@ var constraint1 = Constraint.new()
 var constraint1_description := "No neighboring\n planets"
 
 func _init():
+    planet_init()
+
+func planet_init():
     constraint1.init(false, constraint1_description, has_no_neighbour_planet)
-    constraint_array = [constraint1]
+    constraint_array.append(constraint1)
+    print("in planet init")
 
 func has_no_neighbour_planet(game_grid: GridContainer, coordinates_center_body: Vector2) -> bool:
     var has_planet_around: bool = false
