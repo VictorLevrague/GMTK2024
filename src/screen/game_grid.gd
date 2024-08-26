@@ -27,3 +27,18 @@ func check_all_body_constraints(_slot: PanelContainer):
             Signals.emit_signal("all_constraints_validated")
 
     return are_are_constraints_validated
+
+func find_body_in_grid_with_condition(game_grid: GridContainer, coordinates_center_body: Vector2, condition:Callable) ->Array:
+    var neighbours_temp : Array
+    var grid_slots = game_grid.get_children()
+    for grid_slot in grid_slots:
+        #En théorie, toutes les cases sont censés faire la même taille, donc le calcul suivant est fait plusieurs fois "pour rien"
+        var grid_slot_size_normalized_in_grid = grid_slot.size + Vector2(game_grid["theme_override_constants/h_separation"], game_grid["theme_override_constants/v_separation"])
+        var grid_slot_position_normalized = grid_slot.position / grid_slot_size_normalized_in_grid
+        var abs_diff_to_center_body = abs(coordinates_center_body - grid_slot_position_normalized)
+        var max_distance_to_center_body = max(abs_diff_to_center_body.x, abs_diff_to_center_body.y)
+        if condition.call(max_distance_to_center_body):
+            if grid_slot.get_child_count()>0:
+                if grid_slot.get_child(0).body_data.name != "Black Hole":
+                    neighbours_temp.append(grid_slot.get_child(0))
+    return neighbours_temp
