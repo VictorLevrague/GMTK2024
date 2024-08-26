@@ -16,7 +16,7 @@ func has_no_neighbour_planet_except_sister(game_grid: GridContainer, coordinates
     var has_planet_around: bool = false
     var neighbours:Array = game_grid.find_body_in_grid_with_condition(game_grid, coordinates_center_body, func distance_equal_one(x): return x == 1)
     for neighbour in neighbours:
-        if neighbour.body_data.is_planet and neighbour.body_data.name != "Sister Planet":
+        if neighbour.body_data is Planet and neighbour.body_data.name != "Sister Planet":
             has_planet_around = true
     return not has_planet_around
 

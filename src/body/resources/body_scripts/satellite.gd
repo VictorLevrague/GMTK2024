@@ -12,6 +12,6 @@ func has_unique_neighbor_planet(game_grid: GridContainer, coordinates_center_bod
     var neighbours:Array = game_grid.find_body_in_grid_with_condition(game_grid, coordinates_center_body, func distance_equal_one(x): return x == 1)
     if neighbours.size() == 1:
         for neighbour in neighbours:
-            if neighbour.body_data.is_planet:
+            if neighbour.body_data is Planet:
                 has_unique_planet_around = true
     return has_unique_planet_around

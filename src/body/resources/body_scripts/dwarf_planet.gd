@@ -12,6 +12,6 @@ func has_2_planet_neighbor(game_grid: GridContainer, coordinates_center_body: Ve
     var neighbours:Array = game_grid.find_body_in_grid_with_condition(game_grid, coordinates_center_body, func distance_equal_one(x): return x == 1)
     var planet_count = 0
     for neighbour in neighbours:
-        if neighbour.body_data.is_planet:
+        if neighbour.body_data is Planet:
             planet_count += 1
     return (planet_count == 2)
