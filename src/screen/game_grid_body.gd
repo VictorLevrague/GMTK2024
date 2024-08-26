@@ -37,21 +37,21 @@ func display_tooltip():
         var tool_tip_instance = tool_tip.instantiate()
         tool_tip_instance.size = Vector2(150,125)
         if (x_mouse > x_window / 2) and (y_mouse > y_window / 2):
-            print("bottom right")
+#            print("bottom right")
             offset = - 1.05 * tool_tip_instance.size
             tool_tip_instance.position = 2* offset
         elif (x_mouse < x_window / 2) and (y_mouse < y_window / 2):
-            print("upper left")
+#            print("upper left")
             offset = 1.2 * tool_tip_instance.size
             tool_tip_instance.position = offset
         elif (x_mouse > x_window / 2) and (y_mouse < y_window / 2):
-            print("upper right")
+#            print("upper right")
             var offset_x = - 2* tool_tip_instance.size[0]
             var offset_y = 1.2*tool_tip_instance.size[1]
             offset = Vector2(offset_x, offset_y)
             tool_tip_instance.position = offset
         elif (x_mouse < x_window / 2) and (y_mouse > y_window / 2):
-            print("bottom left")
+#            print("bottom left")
             var offset_x = 1.2* tool_tip_instance.size[1] 
             var offset_y = - 2* tool_tip_instance.size[0]
             offset = Vector2(offset_x, offset_y)

@@ -15,7 +15,13 @@ func find_direct_neighbour(game_grid: GridContainer, coordinates: Vector2) ->Arr
     var neighbours_temp : Array
     var grid_slots = game_grid.get_children()
     for grid_slot in grid_slots:
+        print(game_grid)
+        var grid_slot_size_norm = Vector2(grid_slot.size.x + game_grid["theme_override_constants/h_separation"],
+         grid_slot.size.y + game_grid["theme_override_constants/v_separation"])
         var distance = coordinates.distance_to(grid_slot.position/grid_slot.size)
+        if grid_slot.get_child_count() >0:
+            print("slot normed size: ", grid_slot_size_norm)
+            print("name is: ", grid_slot.get_child(0).body_data.name, " position: ", grid_slot.position, " slot size: ", grid_slot.size)
         if distance <= sqrt(2) + 0.5 and distance > 0:
             #LE + 0.5 est là pour la marge liées aux pb de normalization. Je pense que je peux l'enlever maintenant, je laisse juste en sécurité.
             if grid_slot.get_child_count() >0:
