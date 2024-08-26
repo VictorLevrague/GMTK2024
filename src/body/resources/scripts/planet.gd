@@ -1,9 +1,5 @@
 extends BodyData
 
-#Test simple avec une contrainte de pas de planète à son voisinage
-
-#var constraint_array: Array[Constraint] = []
-
 var constraint1 = Constraint.new()
 var constraint1_description := "No neighboring\n planets"
 
@@ -11,17 +7,17 @@ func _init():
     constraint1.init(false, constraint1_description, has_no_neighbour_planet)
     constraint_array = [constraint1]
 
-func find_direct_neighbour(game_grid: GridContainer, coordinates: Vector2) ->Array:
+func find_direct_neighbour(game_grid: GridContainer, coordinates_center_body: Vector2) ->Array:
     var neighbours_temp : Array
     var grid_slots = game_grid.get_children()
     for grid_slot in grid_slots:
         #En théorie, toutes les cases sont censés faire la même taille, donc le calcul suivant est fait à chaque fois "pour rien"
         var grid_slot_size_normalized_in_grid = grid_slot.size + Vector2(game_grid["theme_override_constants/h_separation"], game_grid["theme_override_constants/v_separation"])
         var grid_slot_position_normalized = grid_slot.position / grid_slot_size_normalized_in_grid
-        var distance = coordinates.distance_to(grid_slot_position_normalized)
-        if distance <= sqrt(2) + 0.5 and distance > 0:
-            #LE + 0.5 est là pour la marge liées aux pb de normalization. Je pense que je peux l'enlever maintenant, je laisse juste en sécurité.
-            if grid_slot.get_child_count() >0:
+        var abs_diff_to_center_body = abs(coordinates_center_body - grid_slot_position_normalized)
+        var max_distance_x_y = max(abs_diff_to_center_body.x, abs_diff_to_center_body.y)
+        if max_distance_x_y == 1:
+            if grid_slot.get_child_count()>0:
                 if grid_slot.get_child(0).body_data.name != "Black Hole":
                     neighbours_temp.append(grid_slot.get_child(0))
     return neighbours_temp
