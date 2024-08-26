@@ -4,57 +4,25 @@ var constraint1 = Constraint.new()
 var constraint1_description := "No Body in front line"
 
 func _init():
-    constraint1.init(false, constraint1_description, has_no_body_in_direction)
-    constraint_array = [constraint1]
+    constraint1.init(false, constraint1_description, has_no_body_in_front_line)
+    constraint_array.append(constraint1)
 
-func find_body_in_direction(game_grid: GridContainer, coordinates: Vector2, direction: Vector2) ->Array:
-    var neighbours_temp : Array
+func find_body_in_direction(game_grid: GridContainer, coordinates_center_body: Vector2, direction: Vector2) ->Array:
+    var bodies_in_front_line : Array
     var grid_slots = game_grid.get_children()
     for grid_slot in grid_slots:
-        if direction == Vector2(1,0):
-            var x_to_compare = int(grid_slot.position[0]/grid_slot.custom_minimum_size[0])
-            var y_to_compare = int(grid_slot.position[1]/grid_slot.custom_minimum_size[1])
-            var x_comet = coordinates[0]
-            var y_comet = coordinates[1]
-            if int(y_comet) == int(y_to_compare): #pb de normalisation qui revient
-                if int(x_to_compare) - int(x_comet) > 0:
-                    if grid_slot.get_child_count() >0:
-                        neighbours_temp.append(grid_slot.get_child(0))
-        #Les directions suivantes sont non testées
-        elif direction == Vector2(-1,0):
-            var x_to_compare = int(grid_slot.position[0]/grid_slot.custom_minimum_size[0])
-            var y_to_compare = int(grid_slot.position[1]/grid_slot.custom_minimum_size[1])
-            var x_comet = coordinates[0]
-            var y_comet = coordinates[1]
-            if int(y_comet) == int(y_to_compare): #pb de normalisation qui revient
-                if int(x_to_compare) - int(x_comet) < 0:
-                    if grid_slot.get_child_count() >0:
-                        neighbours_temp.append(grid_slot.get_child(0))
-        elif direction == Vector2(0,1):
-            var x_to_compare = int(grid_slot.position[0]/grid_slot.custom_minimum_size[0])
-            var y_to_compare = int(grid_slot.position[1]/grid_slot.custom_minimum_size[1])
-            var x_comet = coordinates[0]
-            var y_comet = coordinates[1]
-            if int(x_comet) == int(x_to_compare): #pb de normalisation qui revient
-                if int(y_to_compare) - int(y_comet) > 0:
-                    if grid_slot.get_child_count() >0:
-                        neighbours_temp.append(grid_slot.get_child(0))
-        elif direction == Vector2(0,-1):
-            var x_to_compare = int(grid_slot.position[0]/grid_slot.custom_minimum_size[0])
-            var y_to_compare = int(grid_slot.position[1]/grid_slot.custom_minimum_size[1])
-            var x_comet = coordinates[0]
-            var y_comet = coordinates[1]
-            if int(x_comet) == int(x_to_compare): #pb de normalisation qui revient
-                if int(y_to_compare) - int(y_comet) < 0:
-                    if grid_slot.get_child_count() >0:
-                        if grid_slot.get_child(0).body_data.name != "Black Hole":
-                            neighbours_temp.append(grid_slot.get_child(0))
-    return neighbours_temp
-
-func has_no_body_in_direction(game_grid: GridContainer, coordinates: Vector2) -> bool:
-#Pourrait être mieux 
+        var grid_slot_size_normalized_in_grid = grid_slot.size + Vector2(game_grid["theme_override_constants/h_separation"], game_grid["theme_override_constants/v_separation"])
+        var grid_slot_position_normalized = grid_slot.position / grid_slot_size_normalized_in_grid
+        var vector_center_body_to_grid_slot = grid_slot_position_normalized - coordinates_center_body
+        if vector_center_body_to_grid_slot * direction > Vector2(0,0) and vector_center_body_to_grid_slot.cross(direction) == 0: #Test pour bonne direction (même signe entre vecteur direction et vecteur case ref vers case autre), et bonne ligne (vecteur parallèle au vecteur direction)
+            if grid_slot.get_child_count()>0:
+                if grid_slot.get_child(0).body_data.name != "Black Hole":
+                    bodies_in_front_line.append(grid_slot.get_child(0))
+    return bodies_in_front_line
+    
+func has_no_body_in_front_line(game_grid: GridContainer, coordinates_center_body: Vector2) -> bool:
     var has_body_in_direction: bool = false
-    var neighbours:Array = find_body_in_direction(game_grid, coordinates, orientation_vector)
+    var neighbours:Array = find_body_in_direction(game_grid, coordinates_center_body, orientation_vector)
     if neighbours.size() > 0:
         has_body_in_direction = true
     return not has_body_in_direction
