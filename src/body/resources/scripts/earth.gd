@@ -10,7 +10,7 @@ func _init():
     planet_init()
     constraint2.init(false, constraint2_description, has_sun_at_3_boxes)
     constraint3.init(false, constraint3_description, has_no_sun_below_2_boxes)
-    constraint_array.append_array([constraint2, constraint3])
+    constraint_array.append_array([constraint2])
 
 func has_sun_at_3_boxes(game_grid: GridContainer, coordinates_center_body: Vector2) -> bool:
     var is_sun_found: bool = false

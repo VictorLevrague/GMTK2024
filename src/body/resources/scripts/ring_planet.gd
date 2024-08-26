@@ -1,31 +1,16 @@
-extends BodyData
+extends Planet
 
-#Test simple avec une contrainte de pas de planète à son voisinage
-
-#var constraint_array: Array[Constraint] = []
-
-var constraint1 = Constraint.new()
-var constraint1_description := "No neighboring\n bodies"
+var constraint2 = Constraint.new()
+var constraint2_description := "No neighboring\n bodies"
 
 func _init():
-    constraint1.init(false, constraint1_description, has_no_neighbour_body)
-    constraint_array = [constraint1]
+#    planet_init() #No need for planet constraint because self constraint includes it
+    constraint2.init(false, constraint2_description, has_no_neighbour_body)
+    constraint_array.append(constraint2)
 
-func find_direct_neighbour(game_grid: GridContainer, coordinates: Vector2) ->Array:
-    var neighbours_temp : Array
-    var grid_slots = game_grid.get_children()
-    for grid_slot in grid_slots:
-        var distance = coordinates.distance_to(grid_slot.position/grid_slot.size)
-        if distance <= sqrt(2) + 0.5 and distance > 0:
-            #LE + 0.5 est là pour la marge liées aux pb de normalization. Je pense que je peux l'enlever maintenant, je laisse juste en sécurité.
-            if grid_slot.get_child_count() >0:
-                if grid_slot.get_child(0).body_data.name != "Black Hole":
-                    neighbours_temp.append(grid_slot.get_child(0))
-    return neighbours_temp
-
-func has_no_neighbour_body(game_grid: GridContainer, coordinates: Vector2) -> bool:
+func has_no_neighbour_body(game_grid: GridContainer, coordinates_center_body: Vector2) -> bool:
     var has_body_around: bool = false
-    var neighbours:Array = find_direct_neighbour(game_grid, coordinates)
+    var neighbours:Array = game_grid.find_body_in_grid_with_condition(game_grid, coordinates_center_body, func distance_equal_one(x): return x == 1)
     for neighbour in neighbours:
         if neighbour != null:
             has_body_around = true
