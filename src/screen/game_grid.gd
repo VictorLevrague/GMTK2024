@@ -28,8 +28,8 @@ func check_all_body_constraints(_slot: PanelContainer):
 
     return are_are_constraints_validated
 
-func find_body_in_grid_with_condition(game_grid: GridContainer, coordinates_center_body: Vector2, condition:Callable) ->Array:
-    var neighbours_temp : Array
+func find_body_in_grid_with_condition(game_grid: GridContainer, coordinates_center_body: Vector2, condition:Callable) ->Array[GridBody]:
+    var bodies : Array[GridBody]
     var grid_slots = game_grid.get_children()
     for grid_slot in grid_slots:
         #En théorie, toutes les cases sont censés faire la même taille, donc le calcul suivant est fait plusieurs fois "pour rien"
@@ -40,5 +40,5 @@ func find_body_in_grid_with_condition(game_grid: GridContainer, coordinates_cent
         if condition.call(max_distance_to_center_body):
             if grid_slot.get_child_count()>0:
                 if grid_slot.get_child(0).body_data.name != "Black Hole":
-                    neighbours_temp.append(grid_slot.get_child(0))
-    return neighbours_temp
+                    bodies.append(grid_slot.get_child(0))
+    return bodies

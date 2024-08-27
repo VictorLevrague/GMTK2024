@@ -14,7 +14,7 @@ func _init():
 
 func has_sun_at_3_boxes(game_grid: GridContainer, coordinates_center_body: Vector2) -> bool:
     var is_sun_found: bool = false
-    var neighbours:Array = game_grid.find_body_in_grid_with_condition(game_grid, coordinates_center_body, func distance_equal_one(x): return x == 3)
+    var neighbours:Array[GridBody] = game_grid.find_body_in_grid_with_condition(game_grid, coordinates_center_body, func distance_equal_one(x): return x == 3)
     for neighbour in neighbours:
         if neighbour.body_data.name == "Sun":
             is_sun_found = true
@@ -22,7 +22,7 @@ func has_sun_at_3_boxes(game_grid: GridContainer, coordinates_center_body: Vecto
 
 func has_no_sun_below_2_boxes(game_grid: GridContainer, coordinates_center_body: Vector2):
     var has_no_sun: bool = true
-    var neighbours:Array = game_grid.find_body_in_grid_with_condition(game_grid, coordinates_center_body, func distance_equal_one(x): return x <= 2)
+    var neighbours:Array[GridBody] = game_grid.find_body_in_grid_with_condition(game_grid, coordinates_center_body, func distance_equal_one(x): return x <= 2)
     for neighbour in neighbours:
         if neighbour.body_data.name == "Sun":
             has_no_sun = false

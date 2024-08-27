@@ -15,7 +15,7 @@ func planet_init():
 
 func has_no_neighbour_planet(game_grid: GridContainer, coordinates_center_body: Vector2) -> bool:
     var has_planet_around: bool = false
-    var neighbours:Array = game_grid.find_body_in_grid_with_condition(game_grid, coordinates_center_body, func distance_equal_one(x): return x == 1)
+    var neighbours:Array[GridBody] = game_grid.find_body_in_grid_with_condition(game_grid, coordinates_center_body, func distance_equal_one(x): return x == 1)
     for neighbour in neighbours:
         if neighbour.body_data is Planet:
             has_planet_around = true

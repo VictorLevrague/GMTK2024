@@ -7,8 +7,8 @@ func _init():
     constraint1.init(false, constraint1_description, has_no_body_in_front_line)
     constraint_array.append(constraint1)
 
-func find_body_in_direction(game_grid: GridContainer, coordinates_center_body: Vector2, direction: Vector2) ->Array:
-    var bodies_in_front_line : Array
+func find_body_in_direction(game_grid: GridContainer, coordinates_center_body: Vector2, direction: Vector2) ->Array[GridBody]:
+    var bodies_in_front_line : Array[GridBody]
     var grid_slots = game_grid.get_children()
     for grid_slot in grid_slots:
         var grid_slot_size_normalized_in_grid = grid_slot.size + Vector2(game_grid["theme_override_constants/h_separation"], game_grid["theme_override_constants/v_separation"])
@@ -22,7 +22,7 @@ func find_body_in_direction(game_grid: GridContainer, coordinates_center_body: V
     
 func has_no_body_in_front_line(game_grid: GridContainer, coordinates_center_body: Vector2) -> bool:
     var has_body_in_direction: bool = false
-    var neighbours:Array = find_body_in_direction(game_grid, coordinates_center_body, orientation_vector)
+    var neighbours:Array[GridBody] = find_body_in_direction(game_grid, coordinates_center_body, orientation_vector)
     if neighbours.size() > 0:
         has_body_in_direction = true
     return not has_body_in_direction
