@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://hx0l6thvj4f0"]
+[gd_scene load_steps=3 format=3 uid="uid://hx0l6thvj4f0"]
 
 [ext_resource type="Texture2D" uid="uid://bk0uacer4bs1y" path="res://assets/Background/space_background_cut.png" id="2_x32wo"]
 [ext_resource type="Script" path="res://src/buttons/ChangeSceneButton.gd" id="4_vets0"]
-[ext_resource type="PackedScene" uid="uid://cvwhx4k338txl" path="res://src/levels/level_2.tscn" id="5_7vm0v"]
 
 [node name="Level_UI" type="Control"]
 layout_mode = 3
@@ -73,7 +72,6 @@ size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 text = "Next Level"
 script = ExtResource("4_vets0")
-next_scene = ExtResource("5_7vm0v")
 
 [node name="Spacer" type="Control" parent="WinningLevelScreen/Background/Buttons"]
 layout_mode = 2

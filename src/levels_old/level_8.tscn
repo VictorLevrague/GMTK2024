@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://cbb1kg7buku6i"]
 
-[ext_resource type="Script" path="res://src/levels/level8.gd" id="1_2uhll"]
+[ext_resource type="Script" path="res://src/levels_old/level8.gd" id="1_2uhll"]
 [ext_resource type="PackedScene" uid="uid://dwag07f80ylsl" path="res://src/screens/game_grid_gui.tscn" id="2_qpvoe"]
 [ext_resource type="PackedScene" uid="uid://b60hpvyenvlpr" path="res://src/screens/inventory_gui.tscn" id="3_8c0u4"]
 [ext_resource type="FontFile" uid="uid://b36pl36vm8q6a" path="res://assets/fonts/good times rg.otf" id="4_lled0"]

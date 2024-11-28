@@ -21,7 +21,7 @@ func write_body_popup_info(body_data: BodyData):
     %Name.text = body_data.name
     clean_constraint_constainer()
     for constraint in body_data.constraint_array:
-        var constraint_display = load("res://src/Ui_items/constraint_display.tscn").instantiate()
+        var constraint_display = load("res://src/tooltip/constraint_display.tscn").instantiate()
         %ConstraintContainer.add_child(constraint_display)
         constraint_display.get_node("%Description").text = constraint.description
         constraint_display.get_node("%CheckBox").button_pressed = constraint.is_validated

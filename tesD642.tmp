@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://sr8kjfisw4k7"]
+
+[ext_resource type="Resource" uid="uid://clfomt1q6tuer" path="res://src/body/resources/planets/earth.tres" id="2_yn537"]
+[ext_resource type="Resource" uid="uid://b0q0yt0p2eg2t" path="res://src/body/resources/planets/ring_planet.tres" id="3_a261x"]
+[ext_resource type="Resource" uid="uid://dffpmg2egm67m" path="res://src/body/resources/asteroid.tres" id="4_4ppmy"]
+[ext_resource type="PackedScene" uid="uid://b21iijh888xc1" path="res://grid_slot_test2.tscn" id="5_qpqel"]
+
+[node name="TestScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridSlotTest3" parent="." instance=ExtResource("5_qpqel")]
+layout_mode = 1
+offset_left = 13.0
+offset_top = 24.0
+offset_right = -1011.0
+offset_bottom = -496.0
+body_data = ExtResource("2_yn537")
+
+[node name="GridSlotTest4" parent="." instance=ExtResource("5_qpqel")]
+layout_mode = 1
+offset_left = 11.0
+offset_top = 157.0
+offset_right = -1013.0
+offset_bottom = -363.0
+body_data = ExtResource("3_a261x")
+
+[node name="GridSlotTest5" parent="." instance=ExtResource("5_qpqel")]
+layout_mode = 1
+offset_left = 393.0
+offset_top = 106.0
+offset_right = -631.0
+offset_bottom = -414.0
+
+[node name="GridSlotTest7" parent="." instance=ExtResource("5_qpqel")]
+layout_mode = 1
+offset_left = 193.0
+offset_top = 385.0
+offset_right = -831.0
+offset_bottom = -135.0
+body_data = ExtResource("4_4ppmy")
+
+[node name="GridSlotTest6" parent="." instance=ExtResource("5_qpqel")]
+layout_mode = 1
+offset_left = 165.0
+offset_top = 139.0
+offset_right = -859.0
+offset_bottom = -381.0
