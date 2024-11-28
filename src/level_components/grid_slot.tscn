@@ -1,15 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://b21iijh888xc1"]
+[gd_scene load_steps=4 format=3 uid="uid://b21iijh888xc1"]
 
 [ext_resource type="Script" path="res://src/level_components/grid_slot.gd" id="1_0l1ko"]
+[ext_resource type="Texture2D" uid="uid://gc73ticq74v2" path="res://assets/lock.png" id="2_dhy2f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2puos"]
 bg_color = Color(0.682353, 0.560784, 0.627451, 0.188235)
 
-[node name="GridSlot" type="PanelContainer"]
+[node name="GridSlot" type="Panel"]
 custom_minimum_size = Vector2(128, 128)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -1024.0
+offset_bottom = -520.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_2puos")
@@ -17,9 +20,30 @@ script = ExtResource("1_0l1ko")
 
 [node name="TextureBody" type="TextureRect" parent="."]
 unique_name_in_owner = true
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 expand_mode = 1
 stretch_mode = 5
+
+[node name="Lock" type="TextureRect" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -29.0
+offset_top = 2.0
+offset_right = -1.0
+offset_bottom = 35.0
+grow_horizontal = 0
+texture = ExtResource("2_dhy2f")
+expand_mode = 1
+stretch_mode = 4
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

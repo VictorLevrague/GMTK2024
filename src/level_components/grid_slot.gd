@@ -1,6 +1,6 @@
 @tool
 
-extends PanelContainer
+extends Panel
 
 class_name GridSlot
 
@@ -9,17 +9,22 @@ class_name GridSlot
         body_data = value.duplicate() if value != null else null
         %TextureBody.texture = value.texture if value != null else null
 
+@export var is_fixed: bool = false:
+    set(value):
+        is_fixed = value
+        #%Lock.show() if value else %Lock.hide()
+        %Lock.visible = value 
+
 func _get_drag_data(at_position: Vector2):
     if self.body_data == null:
         return
-    if self.body_data.fixed:
+    if self.is_fixed:
         return 
     return self #slot
     
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool: #data = là où on on a drag
-    if self.body_data != null:
-        if self.body_data.fixed:
-            return false
+    if self.is_fixed:
+        return false
     return true
     
 func _drop_data(at_position: Vector2, data: Variant) -> void: #data = là où on on a drag
