@@ -6,15 +6,19 @@ class_name GridSlot
 
 @export var body_data: BodyData = null:
     set(value):
-        body_data = value
+        body_data = value.duplicate() if value != null else null
         %TextureBody.texture = value.texture if value != null else null
 
 func _get_drag_data(at_position: Vector2):
+    if self.body_data == null:
+        return
+    if self.body_data.fixed:
+        return 
     return self #slot
     
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool: #data = là où on on a drag
-    if data.body_data != null:
-        if data.body_data.fixed or self.body_data.fixed:
+    if self.body_data != null:
+        if self.body_data.fixed:
             return false
     return true
     
