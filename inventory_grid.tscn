@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dpfrc271x4llb"]
+
+[node name="InventoryGrid" type="GridContainer"]
+top_level = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 4
+theme_override_constants/v_separation = 4
+columns = 2

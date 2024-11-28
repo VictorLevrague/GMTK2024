@@ -1,6 +1,6 @@
 extends Control
 
-func body_popup(slot_dimensions: Rect2i, body_data: BodyData): #TO DO: type hints
+func body_popup(slot_dimensions: Rect2i, body_data: BodyData):
     if body_data != null:
         write_body_popup_info(body_data)
         place_body_popup(slot_dimensions)
