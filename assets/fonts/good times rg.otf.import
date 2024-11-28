@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://b36pl36vm8q6a"
-path="res://.godot/imported/good times rg.otf-d570a2b1e040490120a8813731851464.fontdata"
+path="res://.godot/imported/good times rg.otf-c2e3bc5857eaad19e0f92f461e3003f6.fontdata"
 
 [deps]
 
-source_file="res://good times rg.otf"
-dest_files=["res://.godot/imported/good times rg.otf-d570a2b1e040490120a8813731851464.fontdata"]
+source_file="res://assets/fonts/good times rg.otf"
+dest_files=["res://.godot/imported/good times rg.otf-c2e3bc5857eaad19e0f92f461e3003f6.fontdata"]
 
 [params]
 

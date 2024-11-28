@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://hx0l6thvj4f0" path="res://src/levels/level_ui.tscn" id="1_ct0hv"]
 [ext_resource type="Script" path="res://src/levels/level.gd" id="1_g1ogc"]
-[ext_resource type="PackedScene" uid="uid://bxndsaeok4itk" path="res://inventory_panel.tscn" id="2_xmfhj"]
-[ext_resource type="PackedScene" uid="uid://dpfrc271x4llb" path="res://inventory_grid.tscn" id="4_2p5q8"]
-[ext_resource type="PackedScene" uid="uid://dtwx8ngv1xj3j" path="res://game_grid.tscn" id="5_ppaoq"]
+[ext_resource type="PackedScene" uid="uid://bxndsaeok4itk" path="res://src/level_components/inventory_panel.tscn" id="2_xmfhj"]
+[ext_resource type="PackedScene" uid="uid://dpfrc271x4llb" path="res://src/level_components/inventory_grid.tscn" id="4_2p5q8"]
+[ext_resource type="PackedScene" uid="uid://dtwx8ngv1xj3j" path="res://src/level_components/game_grid.tscn" id="5_ppaoq"]
 
 [node name="Level" type="Control"]
 layout_mode = 3

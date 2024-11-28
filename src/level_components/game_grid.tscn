@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dtwx8ngv1xj3j"]
 
-[ext_resource type="Script" path="res://src/screen/game_grid.gd" id="1_3cuc5"]
+[ext_resource type="Script" path="res://src/level_components/game_grid.gd" id="1_3cuc5"]
 
 [node name="GameGrid" type="GridContainer"]
 top_level = true

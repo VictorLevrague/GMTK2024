@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dnvuvgfe657qg"]
+[gd_scene load_steps=9 format=3 uid="uid://dnvuvgfe657qg"]
 
 [ext_resource type="Theme" uid="uid://blm4c4n3ypua2" path="res://game_theme.tres" id="1_sb5qa"]
 [ext_resource type="Texture2D" uid="uid://c71bqos75p4xm" path="res://assets/Background/main_background_menu.png" id="2_f4qt2"]
@@ -6,16 +6,8 @@
 [ext_resource type="Script" path="res://src/buttons/OptionsButton.gd" id="5_bs3o5"]
 [ext_resource type="Script" path="res://src/buttons/CloseOptionsMenu.gd" id="6_a88st"]
 [ext_resource type="Texture2D" uid="uid://ckqu3v7v4nd6o" path="res://assets/Logo/GMTK_jam_logo.png" id="7_7ed75"]
-[ext_resource type="PackedScene" uid="uid://c0gqg8o2upioa" path="res://src/levels/level_1.tscn" id="7_l4o0d"]
-[ext_resource type="PackedScene" uid="uid://nn2nuye8cwu2" path="res://src/levels/level_3.tscn" id="8_6ff2n"]
-[ext_resource type="PackedScene" uid="uid://cvwhx4k338txl" path="res://src/levels/level_2.tscn" id="8_uyd1y"]
-[ext_resource type="PackedScene" uid="uid://c6krwsow3lab2" path="res://src/levels/level_4.tscn" id="9_adpkm"]
 [ext_resource type="AudioStream" uid="uid://n71c8lbs26e8" path="res://src/body/resources/sounds/effects/button_click.mp3" id="10_qrg7k"]
 [ext_resource type="Texture2D" uid="uid://o2wycfsp2m25" path="res://assets/Logo/game_logo.png" id="11_sschh"]
-[ext_resource type="PackedScene" uid="uid://tnuge4fjfe27" path="res://src/levels/level_5.tscn" id="11_v4rjx"]
-[ext_resource type="PackedScene" uid="uid://durtns400qy7j" path="res://src/levels/level_6.tscn" id="12_f2j21"]
-[ext_resource type="PackedScene" uid="uid://cdn2esm8mp2y" path="res://src/levels/level_7.tscn" id="13_pwn2n"]
-[ext_resource type="PackedScene" uid="uid://cbb1kg7buku6i" path="res://src/levels/level_8.tscn" id="14_xyy1s"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -84,7 +76,6 @@ size_flags_vertical = 3
 theme_override_font_sizes/font_size = 45
 text = "Play"
 script = ExtResource("3_elk5d")
-next_scene = ExtResource("7_l4o0d")
 
 [node name="Spacer" type="Control" parent="Buttons"]
 layout_mode = 2
@@ -157,7 +148,6 @@ size_flags_vertical = 3
 theme_override_font_sizes/font_size = 45
 text = "1"
 script = ExtResource("3_elk5d")
-next_scene = ExtResource("7_l4o0d")
 
 [node name="Button2" type="Button" parent="OptionsMenu/LevelSelection"]
 layout_mode = 2
@@ -166,7 +156,6 @@ size_flags_vertical = 3
 theme_override_font_sizes/font_size = 45
 text = "2"
 script = ExtResource("3_elk5d")
-next_scene = ExtResource("8_uyd1y")
 
 [node name="Button3" type="Button" parent="OptionsMenu/LevelSelection"]
 layout_mode = 2
@@ -175,7 +164,6 @@ size_flags_vertical = 3
 theme_override_font_sizes/font_size = 45
 text = "3"
 script = ExtResource("3_elk5d")
-next_scene = ExtResource("8_6ff2n")
 
 [node name="Button4" type="Button" parent="OptionsMenu/LevelSelection"]
 layout_mode = 2
@@ -184,7 +172,6 @@ size_flags_vertical = 3
 theme_override_font_sizes/font_size = 45
 text = "4"
 script = ExtResource("3_elk5d")
-next_scene = ExtResource("9_adpkm")
 
 [node name="Button5" type="Button" parent="OptionsMenu/LevelSelection"]
 layout_mode = 2
@@ -193,7 +180,6 @@ size_flags_vertical = 3
 theme_override_font_sizes/font_size = 45
 text = "5"
 script = ExtResource("3_elk5d")
-next_scene = ExtResource("11_v4rjx")
 
 [node name="Button6" type="Button" parent="OptionsMenu/LevelSelection"]
 layout_mode = 2
@@ -202,7 +188,6 @@ size_flags_vertical = 3
 theme_override_font_sizes/font_size = 45
 text = "6"
 script = ExtResource("3_elk5d")
-next_scene = ExtResource("12_f2j21")
 
 [node name="Button7" type="Button" parent="OptionsMenu/LevelSelection"]
 layout_mode = 2
@@ -211,7 +196,6 @@ size_flags_vertical = 3
 theme_override_font_sizes/font_size = 45
 text = "7"
 script = ExtResource("3_elk5d")
-next_scene = ExtResource("13_pwn2n")
 
 [node name="Button8" type="Button" parent="OptionsMenu/LevelSelection"]
 layout_mode = 2
@@ -219,25 +203,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 45
 text = "8"
-script = ExtResource("3_elk5d")
-next_scene = ExtResource("14_xyy1s")
-
-[node name="Button9" type="Button" parent="OptionsMenu/LevelSelection"]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 45
-text = "9"
-script = ExtResource("3_elk5d")
-
-[node name="Button10" type="Button" parent="OptionsMenu/LevelSelection"]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 45
-text = "10"
 script = ExtResource("3_elk5d")
 
 [node name="GMTKLogo" type="TextureRect" parent="."]
@@ -269,5 +234,3 @@ stream = ExtResource("10_qrg7k")
 [connection signal="button_up" from="OptionsMenu/LevelSelection/Button6" to="OptionsMenu/LevelSelection/Button6" method="_on_button_up"]
 [connection signal="button_up" from="OptionsMenu/LevelSelection/Button7" to="OptionsMenu/LevelSelection/Button7" method="_on_button_up"]
 [connection signal="button_up" from="OptionsMenu/LevelSelection/Button8" to="OptionsMenu/LevelSelection/Button8" method="_on_button_up"]
-[connection signal="button_up" from="OptionsMenu/LevelSelection/Button9" to="OptionsMenu/LevelSelection/Button9" method="_on_button_up"]
-[connection signal="button_up" from="OptionsMenu/LevelSelection/Button10" to="OptionsMenu/LevelSelection/Button10" method="_on_button_up"]

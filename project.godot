@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="Gmtk 2024"
-run/main_scene="res://src/main.tscn"
+run/main_scene="res://src/screens/main_screen.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Signals="*res://src/autoload/signals.gd"
-Tooltip="*res://tootip.tscn"
+Tooltip="*res://src/tooltip/tootip.tscn"
 
 [display]
 
@@ -32,7 +32,7 @@ enabled=PackedStringArray()
 [gui]
 
 theme/custom="res://game_theme.tres"
-theme/custom_font="res://good times rg.otf"
+theme/custom_font="res://assets/fonts/good times rg.otf"
 
 [rendering]
 

@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://cgvkqd4gdbrx7"
-path="res://.godot/imported/SpaceQuest-Xj4o.ttf-e7cb58ea2c0e3092c3f4f32493880b62.fontdata"
+path="res://.godot/imported/SpaceQuest-Xj4o.ttf-136725240af0a2b4fcaeac3aa5dc20ae.fontdata"
 
 [deps]
 
-source_file="res://SpaceQuest-Xj4o.ttf"
-dest_files=["res://.godot/imported/SpaceQuest-Xj4o.ttf-e7cb58ea2c0e3092c3f4f32493880b62.fontdata"]
+source_file="res://assets/fonts/SpaceQuest-Xj4o.ttf"
+dest_files=["res://.godot/imported/SpaceQuest-Xj4o.ttf-136725240af0a2b4fcaeac3aa5dc20ae.fontdata"]
 
 [params]
 

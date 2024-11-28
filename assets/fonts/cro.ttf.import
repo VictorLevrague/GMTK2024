@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://c2felii4vpnho"
-path="res://.godot/imported/cro.ttf-f6005e4eedd1460d4d6868df80952d26.fontdata"
+path="res://.godot/imported/cro.ttf-73bd96c92c2b613d6ec4aae6e388adf7.fontdata"
 
 [deps]
 
-source_file="res://cro.ttf"
-dest_files=["res://.godot/imported/cro.ttf-f6005e4eedd1460d4d6868df80952d26.fontdata"]
+source_file="res://assets/fonts/cro.ttf"
+dest_files=["res://.godot/imported/cro.ttf-73bd96c92c2b613d6ec4aae6e388adf7.fontdata"]
 
 [params]
 

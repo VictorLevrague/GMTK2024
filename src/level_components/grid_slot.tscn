@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b21iijh888xc1"]
 
-[ext_resource type="Script" path="res://src/screen/grid_slot.gd" id="1_hith8"]
+[ext_resource type="Script" path="res://src/level_components/grid_slot.gd" id="1_0l1ko"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2puos"]
 bg_color = Color(0.682353, 0.560784, 0.627451, 0.188235)
@@ -13,7 +13,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_2puos")
-script = ExtResource("1_hith8")
+script = ExtResource("1_0l1ko")
 
 [node name="TextureBody" type="TextureRect" parent="."]
 unique_name_in_owner = true

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dwag07f80ylsl"]
 
-[ext_resource type="Script" path="res://src/screen/game_grid.gd" id="2_hm5hr"]
-[ext_resource type="Texture2D" uid="uid://dd2sscjfibxyp" path="res://assets/Background/space_background.png" id="2_xpdcm"]
+[ext_resource type="Texture2D" uid="uid://dd2sscjfibxyp" path="res://assets/Background/space_background.png" id="1_tmbe0"]
+[ext_resource type="Script" path="res://src/level_components/game_grid.gd" id="2_do7ag"]
 
 [node name="GameGridGUI" type="Control"]
 layout_mode = 3
@@ -20,7 +20,7 @@ offset_right = 516.0
 offset_bottom = 456.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_xpdcm")
+texture = ExtResource("1_tmbe0")
 expand_mode = 1
 
 [node name="GameGrid" type="GridContainer" parent="."]
@@ -36,4 +36,4 @@ grow_vertical = 2
 theme_override_constants/h_separation = 4
 theme_override_constants/v_separation = 4
 columns = 3
-script = ExtResource("2_hm5hr")
+script = ExtResource("2_do7ag")

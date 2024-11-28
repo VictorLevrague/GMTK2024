@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://6icdgno8k63v"]
 
-[ext_resource type="Script" path="res://tooltip.gd" id="1_uu52l"]
-[ext_resource type="FontFile" uid="uid://cgvkqd4gdbrx7" path="res://SpaceQuest-Xj4o.ttf" id="2_ddbh8"]
-[ext_resource type="PackedScene" uid="uid://dk0b7exmfeim0" path="res://src/Ui_items/constraint_display.tscn" id="3_coj6s"]
+[ext_resource type="Script" path="res://src/tooltip/tooltip.gd" id="1_uu52l"]
+[ext_resource type="FontFile" uid="uid://cgvkqd4gdbrx7" path="res://assets/fonts/SpaceQuest-Xj4o.ttf" id="2_ddbh8"]
+[ext_resource type="PackedScene" uid="uid://dk0b7exmfeim0" path="res://src/tooltip/constraint_display.tscn" id="3_coj6s"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_05e3p"]
 content_margin_left = 10.0
