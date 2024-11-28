@@ -1,14 +1,62 @@
-[gd_scene load_steps=10 format=3 uid="uid://c0gqg8o2upioa"]
+[gd_scene load_steps=22 format=3 uid="uid://cji4n7a35mqjq"]
 
-[ext_resource type="Script" path="res://src/levels/level1.gd" id="1_ccjm6"]
-[ext_resource type="PackedScene" uid="uid://dwag07f80ylsl" path="res://src/screens/game_grid_gui.tscn" id="2_3biw5"]
-[ext_resource type="PackedScene" uid="uid://b60hpvyenvlpr" path="res://src/screens/inventory_gui.tscn" id="3_nunol"]
-[ext_resource type="Script" path="res://src/buttons/ChangeSceneButton.gd" id="4_uw5qy"]
-[ext_resource type="PackedScene" uid="uid://cvwhx4k338txl" path="res://src/levels/level_2.tscn" id="5_eph16"]
-[ext_resource type="AudioStream" uid="uid://cpjke71oxp8nt" path="res://src/body/resources/sounds/effects/body_movement.wav" id="6_tfda7"]
-[ext_resource type="AudioStream" uid="uid://d3eicufy0ma5e" path="res://src/body/resources/sounds/musics/Galactic Rap.mp3" id="7_6ifpx"]
-[ext_resource type="AudioStream" uid="uid://n71c8lbs26e8" path="res://src/body/resources/sounds/effects/button_click.mp3" id="7_ap6rf"]
-[ext_resource type="AudioStream" uid="uid://bdf3x2e10v8le" path="res://src/body/resources/sounds/effects/validation_success.mp3" id="8_pkfsw"]
+[ext_resource type="Script" path="res://src/levels/level.gd" id="1_nwodu"]
+[ext_resource type="PackedScene" uid="uid://hx0l6thvj4f0" path="res://src/levels_old/level_ui.tscn" id="2_wbfgq"]
+[ext_resource type="PackedScene" uid="uid://bxndsaeok4itk" path="res://src/level_components/inventory_panel.tscn" id="3_f1n75"]
+[ext_resource type="PackedScene" uid="uid://dpfrc271x4llb" path="res://src/level_components/inventory_grid.tscn" id="4_1h28f"]
+[ext_resource type="PackedScene" uid="uid://dtwx8ngv1xj3j" path="res://src/level_components/game_grid.tscn" id="5_882nd"]
+[ext_resource type="PackedScene" uid="uid://b21iijh888xc1" path="res://src/level_components/grid_slot.tscn" id="5_qy44c"]
+[ext_resource type="Script" path="res://src/body/resources/body_scripts/earth.gd" id="6_r7lit"]
+[ext_resource type="Texture2D" uid="uid://de26g86cefdnu" path="res://assets/body/Mathilde/earth.png" id="7_ct7e6"]
+[ext_resource type="Script" path="res://src/body/resources/body_scripts/ring_planet.gd" id="9_qrhfr"]
+[ext_resource type="Texture2D" uid="uid://dof5wbe01jrsr" path="res://assets/body/Mathilde/ring_planet.png" id="10_340fo"]
+[ext_resource type="Script" path="res://src/body/resources/body_scripts/satellite.gd" id="10_ndltv"]
+[ext_resource type="Texture2D" uid="uid://cvjxhe1r18yg0" path="res://assets/body/Mathilde/satellite.png" id="11_00be1"]
+[ext_resource type="Script" path="res://src/body/body_data.gd" id="13_4f5pf"]
+[ext_resource type="Texture2D" uid="uid://d08la4cradqpo" path="res://assets/body/Mathilde/sun.png" id="14_d573y"]
+[ext_resource type="Texture2D" uid="uid://cbs8s36cgt4mc" path="res://assets/body/Mathilde/asteroid.png" id="15_na4c1"]
+
+[sub_resource type="Resource" id="Resource_fak7h"]
+script = ExtResource("6_r7lit")
+name = "Earth"
+fixed = false
+texture = ExtResource("7_ct7e6")
+orientation_vector = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_04474"]
+script = ExtResource("9_qrhfr")
+name = "Ring Planet"
+fixed = false
+texture = ExtResource("10_340fo")
+orientation_vector = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_remf4"]
+script = ExtResource("10_ndltv")
+name = "Satellite"
+fixed = false
+texture = ExtResource("11_00be1")
+orientation_vector = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_db1i6"]
+script = ExtResource("13_4f5pf")
+name = "Sun"
+fixed = false
+texture = ExtResource("14_d573y")
+orientation_vector = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_c0gqw"]
+script = ExtResource("13_4f5pf")
+name = "Asteroid"
+fixed = false
+texture = ExtResource("15_na4c1")
+orientation_vector = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_uohxa"]
+script = ExtResource("13_4f5pf")
+name = "Asteroid"
+fixed = false
+texture = ExtResource("15_na4c1")
+orientation_vector = Vector2(0, 0)
 
 [node name="Level1" type="Control"]
 layout_mode = 3
@@ -17,109 +65,110 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_ccjm6")
+script = ExtResource("1_nwodu")
 
-[node name="GameGridGUI" parent="." instance=ExtResource("2_3biw5")]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -232.0
-offset_top = -324.0
-offset_right = 464.0
-offset_bottom = 324.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="InventoryGUI" parent="." instance=ExtResource("3_nunol")]
+[node name="Level_UI" parent="." instance=ExtResource("2_wbfgq")]
 unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 264.0
-grow_vertical = 2
 
-[node name="WinningLevelScreen" type="CanvasLayer" parent="."]
+[node name="InventoryPanel" parent="." instance=ExtResource("3_f1n75")]
+layout_mode = 0
+
+[node name="InventoryGrid" parent="InventoryPanel" instance=ExtResource("4_1h28f")]
 unique_name_in_owner = true
-visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
 
-[node name="Background" type="ColorRect" parent="WinningLevelScreen"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 376.0
-offset_top = 136.0
-offset_right = -128.0
-offset_bottom = -136.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.533333, 1, 0.647059, 0.235294)
-
-[node name="Label" type="Label" parent="WinningLevelScreen/Background"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -92.0
-offset_right = 108.0
-offset_bottom = 48.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 24
-text = "Congratulations!
- 
-Your solar system is perfectly balanced"
-horizontal_alignment = 1
-
-[node name="Buttons" type="VBoxContainer" parent="WinningLevelScreen/Background"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -132.0
-offset_top = -216.0
-offset_right = 140.0
-offset_bottom = -112.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="PlayButton" type="Button" parent="WinningLevelScreen/Background/Buttons"]
+[node name="GridSlot" parent="InventoryPanel/InventoryGrid" instance=ExtResource("5_qy44c")]
 layout_mode = 2
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-text = "Next Level"
-script = ExtResource("4_uw5qy")
-next_scene = ExtResource("5_eph16")
+body_data = SubResource("Resource_fak7h")
 
-[node name="Spacer" type="Control" parent="WinningLevelScreen/Background/Buttons"]
+[node name="GridSlot2" parent="InventoryPanel/InventoryGrid" instance=ExtResource("5_qy44c")]
 layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 0.3
+body_data = SubResource("Resource_04474")
 
-[node name="MenuButton" type="Button" parent="WinningLevelScreen/Background/Buttons"]
-visible = false
+[node name="GridSlot3" parent="InventoryPanel/InventoryGrid" instance=ExtResource("5_qy44c")]
 layout_mode = 2
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-text = "Menu
-"
-script = ExtResource("4_uw5qy")
+body_data = SubResource("Resource_remf4")
 
-[node name="BodyMovement" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_tfda7")
+[node name="GridSlot4" parent="InventoryPanel/InventoryGrid" instance=ExtResource("5_qy44c")]
+layout_mode = 2
 
-[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_ap6rf")
+[node name="GridSlot5" parent="InventoryPanel/InventoryGrid" instance=ExtResource("5_qy44c")]
+layout_mode = 2
 
-[node name="ValidationSuccess" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_pkfsw")
+[node name="GridSlot6" parent="InventoryPanel/InventoryGrid" instance=ExtResource("5_qy44c")]
+layout_mode = 2
 
-[node name="Music1" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_6ifpx")
-autoplay = true
+[node name="GridSlot7" parent="InventoryPanel/InventoryGrid" instance=ExtResource("5_qy44c")]
+layout_mode = 2
 
-[connection signal="button_up" from="WinningLevelScreen/Background/Buttons/PlayButton" to="WinningLevelScreen/Background/Buttons/PlayButton" method="_on_button_up"]
-[connection signal="button_up" from="WinningLevelScreen/Background/Buttons/MenuButton" to="WinningLevelScreen/Background/Buttons/MenuButton" method="_on_button_up"]
+[node name="GridSlot8" parent="InventoryPanel/InventoryGrid" instance=ExtResource("5_qy44c")]
+layout_mode = 2
+
+[node name="GridSlot9" parent="InventoryPanel/InventoryGrid" instance=ExtResource("5_qy44c")]
+layout_mode = 2
+
+[node name="GridSlot10" parent="InventoryPanel/InventoryGrid" instance=ExtResource("5_qy44c")]
+layout_mode = 2
+
+[node name="GameGrid" parent="." instance=ExtResource("5_882nd")]
+unique_name_in_owner = true
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 483.0
+offset_top = 46.0
+offset_right = 1083.0
+offset_bottom = 570.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="GridSlot" parent="GameGrid" instance=ExtResource("5_qy44c")]
+layout_mode = 2
+body_data = SubResource("Resource_db1i6")
+is_fixed = true
+
+[node name="GridSlot2" parent="GameGrid" instance=ExtResource("5_qy44c")]
+layout_mode = 2
+
+[node name="GridSlot3" parent="GameGrid" instance=ExtResource("5_qy44c")]
+layout_mode = 2
+
+[node name="GridSlot4" parent="GameGrid" instance=ExtResource("5_qy44c")]
+layout_mode = 2
+body_data = SubResource("Resource_c0gqw")
+is_fixed = true
+
+[node name="GridSlot5" parent="GameGrid" instance=ExtResource("5_qy44c")]
+layout_mode = 2
+
+[node name="GridSlot6" parent="GameGrid" instance=ExtResource("5_qy44c")]
+layout_mode = 2
+
+[node name="GridSlot7" parent="GameGrid" instance=ExtResource("5_qy44c")]
+layout_mode = 2
+
+[node name="GridSlot8" parent="GameGrid" instance=ExtResource("5_qy44c")]
+layout_mode = 2
+
+[node name="GridSlot9" parent="GameGrid" instance=ExtResource("5_qy44c")]
+layout_mode = 2
+body_data = SubResource("Resource_uohxa")
+is_fixed = true
+
+[node name="GridSlot10" parent="GameGrid" instance=ExtResource("5_qy44c")]
+layout_mode = 2
+
+[node name="GridSlot11" parent="GameGrid" instance=ExtResource("5_qy44c")]
+layout_mode = 2
+
+[node name="GridSlot12" parent="GameGrid" instance=ExtResource("5_qy44c")]
+layout_mode = 2

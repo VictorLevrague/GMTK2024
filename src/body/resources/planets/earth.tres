@@ -7,6 +7,5 @@
 script = ExtResource("1_bhucd")
 name = "Earth"
 fixed = false
-is_planet = true
 texture = ExtResource("2_ua3ll")
 orientation_vector = Vector2(0, 0)

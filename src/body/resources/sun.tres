@@ -7,6 +7,5 @@
 script = ExtResource("1_j42o4")
 name = "Sun"
 fixed = false
-is_planet = false
 texture = ExtResource("2_brjkr")
 orientation_vector = Vector2(0, 0)
