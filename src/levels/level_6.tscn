@@ -1,0 +1,259 @@
+[gd_scene load_steps=36 format=3 uid="uid://ca60yf2liwtdr"]
+
+[ext_resource type="Script" path="res://src/levels/level.gd" id="1_eo1f1"]
+[ext_resource type="PackedScene" uid="uid://hx0l6thvj4f0" path="res://src/levels_old/level_ui.tscn" id="2_5ow5v"]
+[ext_resource type="PackedScene" uid="uid://bxndsaeok4itk" path="res://src/level_components/inventory_panel.tscn" id="3_7v3hx"]
+[ext_resource type="PackedScene" uid="uid://dpfrc271x4llb" path="res://src/level_components/inventory_grid.tscn" id="4_8060e"]
+[ext_resource type="PackedScene" uid="uid://b21iijh888xc1" path="res://src/level_components/grid_slot.tscn" id="5_yd2x3"]
+[ext_resource type="PackedScene" uid="uid://dtwx8ngv1xj3j" path="res://src/level_components/game_grid.tscn" id="6_j6ujf"]
+[ext_resource type="Script" path="res://src/body/resources/body_scripts/dwarf_planet.gd" id="6_r1073"]
+[ext_resource type="Texture2D" uid="uid://dnnu2gs5jevnm" path="res://assets/body/Mathilde/dwarf_planet.png" id="7_aa3he"]
+[ext_resource type="Script" path="res://src/body/resources/body_scripts/ufo.gd" id="8_edmww"]
+[ext_resource type="Texture2D" uid="uid://djjutvrma6u6l" path="res://assets/body/Mathilde/ufo.png" id="9_8b5jf"]
+[ext_resource type="Script" path="res://src/body/resources/body_scripts/ring_planet.gd" id="10_m8v0o"]
+[ext_resource type="Texture2D" uid="uid://dof5wbe01jrsr" path="res://assets/body/Mathilde/ring_planet.png" id="11_qff24"]
+[ext_resource type="Script" path="res://src/body/resources/body_scripts/earth.gd" id="12_noqts"]
+[ext_resource type="Texture2D" uid="uid://de26g86cefdnu" path="res://assets/body/Mathilde/earth.png" id="13_u4e17"]
+[ext_resource type="Script" path="res://src/body/resources/body_scripts/satellite.gd" id="14_dlakk"]
+[ext_resource type="Texture2D" uid="uid://cvjxhe1r18yg0" path="res://assets/body/Mathilde/satellite.png" id="15_ssot1"]
+[ext_resource type="Script" path="res://src/body/body_data.gd" id="17_sdyh6"]
+[ext_resource type="Texture2D" uid="uid://d08la4cradqpo" path="res://assets/body/Mathilde/sun.png" id="18_lhvgw"]
+[ext_resource type="Texture2D" uid="uid://cbs8s36cgt4mc" path="res://assets/body/Mathilde/asteroid.png" id="19_88w1l"]
+[ext_resource type="Script" path="res://src/body/resources/body_scripts/star_dust.gd" id="20_085yu"]
+[ext_resource type="Texture2D" uid="uid://iaxyt4hha8ud" path="res://assets/body/Mathilde/star_dust.png" id="21_8ojpk"]
+[ext_resource type="Script" path="res://src/body/resources/body_scripts/comet.gd" id="22_iwwpf"]
+[ext_resource type="Texture2D" uid="uid://cwmlouc0agu0q" path="res://assets/body/Mathilde/fixed/comet_top_fixed.png" id="23_o0fg2"]
+
+[sub_resource type="Resource" id="Resource_4nbsx"]
+script = ExtResource("6_r1073")
+name = "Dwarf Planet"
+texture = ExtResource("7_aa3he")
+orientation_vector = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_veb02"]
+script = ExtResource("8_edmww")
+name = "UFO"
+texture = ExtResource("9_8b5jf")
+orientation_vector = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_ia6cr"]
+script = ExtResource("8_edmww")
+name = "UFO"
+texture = ExtResource("9_8b5jf")
+orientation_vector = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_1mh7s"]
+script = ExtResource("10_m8v0o")
+name = "Ring Planet"
+texture = ExtResource("11_qff24")
+orientation_vector = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_msuq0"]
+script = ExtResource("12_noqts")
+name = "Earth"
+texture = ExtResource("13_u4e17")
+orientation_vector = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_3c57k"]
+script = ExtResource("14_dlakk")
+name = "Satellite"
+texture = ExtResource("15_ssot1")
+orientation_vector = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_dxx57"]
+script = ExtResource("14_dlakk")
+name = "Satellite"
+texture = ExtResource("15_ssot1")
+orientation_vector = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_s8qe7"]
+script = ExtResource("17_sdyh6")
+name = "Sun"
+texture = ExtResource("18_lhvgw")
+orientation_vector = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_0fgnw"]
+script = ExtResource("17_sdyh6")
+name = "Asteroid"
+texture = ExtResource("19_88w1l")
+orientation_vector = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_qwicc"]
+script = ExtResource("20_085yu")
+name = "Star Dust"
+texture = ExtResource("21_8ojpk")
+orientation_vector = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_rk54m"]
+script = ExtResource("22_iwwpf")
+name = "Comet"
+texture = ExtResource("23_o0fg2")
+orientation_vector = Vector2(0, -1)
+
+[sub_resource type="Resource" id="Resource_21vwj"]
+script = ExtResource("12_noqts")
+name = "Earth"
+texture = ExtResource("13_u4e17")
+orientation_vector = Vector2(0, 0)
+
+[node name="Level" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eo1f1")
+
+[node name="Level_UI" parent="." instance=ExtResource("2_5ow5v")]
+unique_name_in_owner = true
+layout_mode = 1
+
+[node name="InventoryPanel" parent="." instance=ExtResource("3_7v3hx")]
+layout_mode = 0
+
+[node name="InventoryGrid" parent="InventoryPanel" instance=ExtResource("4_8060e")]
+unique_name_in_owner = true
+layout_mode = 0
+anchors_preset = 0
+anchor_top = 0.0
+anchor_bottom = 0.0
+grow_vertical = 1
+
+[node name="GridSlot" parent="InventoryPanel/InventoryGrid" instance=ExtResource("5_yd2x3")]
+layout_mode = 2
+body_data = SubResource("Resource_4nbsx")
+
+[node name="GridSlot2" parent="InventoryPanel/InventoryGrid" instance=ExtResource("5_yd2x3")]
+layout_mode = 2
+body_data = SubResource("Resource_veb02")
+
+[node name="GridSlot3" parent="InventoryPanel/InventoryGrid" instance=ExtResource("5_yd2x3")]
+layout_mode = 2
+body_data = SubResource("Resource_ia6cr")
+
+[node name="GridSlot4" parent="InventoryPanel/InventoryGrid" instance=ExtResource("5_yd2x3")]
+layout_mode = 2
+body_data = SubResource("Resource_1mh7s")
+
+[node name="GridSlot5" parent="InventoryPanel/InventoryGrid" instance=ExtResource("5_yd2x3")]
+layout_mode = 2
+body_data = SubResource("Resource_msuq0")
+
+[node name="GridSlot6" parent="InventoryPanel/InventoryGrid" instance=ExtResource("5_yd2x3")]
+layout_mode = 2
+body_data = SubResource("Resource_3c57k")
+
+[node name="GridSlot7" parent="InventoryPanel/InventoryGrid" instance=ExtResource("5_yd2x3")]
+layout_mode = 2
+body_data = SubResource("Resource_dxx57")
+
+[node name="GridSlot8" parent="InventoryPanel/InventoryGrid" instance=ExtResource("5_yd2x3")]
+layout_mode = 2
+
+[node name="GridSlot9" parent="InventoryPanel/InventoryGrid" instance=ExtResource("5_yd2x3")]
+layout_mode = 2
+
+[node name="GridSlot10" parent="InventoryPanel/InventoryGrid" instance=ExtResource("5_yd2x3")]
+layout_mode = 2
+
+[node name="GameGrid" parent="." instance=ExtResource("6_j6ujf")]
+unique_name_in_owner = true
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 441.0
+offset_top = 12.0
+offset_right = 1057.0
+offset_bottom = 628.0
+grow_horizontal = 1
+grow_vertical = 1
+columns = 5
+
+[node name="GridSlot" parent="GameGrid" instance=ExtResource("5_yd2x3")]
+layout_mode = 2
+
+[node name="GridSlot2" parent="GameGrid" instance=ExtResource("5_yd2x3")]
+layout_mode = 2
+
+[node name="GridSlot3" parent="GameGrid" instance=ExtResource("5_yd2x3")]
+layout_mode = 2
+
+[node name="GridSlot4" parent="GameGrid" instance=ExtResource("5_yd2x3")]
+layout_mode = 2
+
+[node name="GridSlot5" parent="GameGrid" instance=ExtResource("5_yd2x3")]
+layout_mode = 2
+body_data = SubResource("Resource_s8qe7")
+is_fixed = true
+
+[node name="GridSlot6" parent="GameGrid" instance=ExtResource("5_yd2x3")]
+layout_mode = 2
+
+[node name="GridSlot7" parent="GameGrid" instance=ExtResource("5_yd2x3")]
+layout_mode = 2
+
+[node name="GridSlot8" parent="GameGrid" instance=ExtResource("5_yd2x3")]
+layout_mode = 2
+
+[node name="GridSlot9" parent="GameGrid" instance=ExtResource("5_yd2x3")]
+layout_mode = 2
+
+[node name="GridSlot10" parent="GameGrid" instance=ExtResource("5_yd2x3")]
+layout_mode = 2
+body_data = SubResource("Resource_0fgnw")
+is_fixed = true
+
+[node name="GridSlot11" parent="GameGrid" instance=ExtResource("5_yd2x3")]
+layout_mode = 2
+
+[node name="GridSlot12" parent="GameGrid" instance=ExtResource("5_yd2x3")]
+layout_mode = 2
+body_data = SubResource("Resource_qwicc")
+is_fixed = true
+
+[node name="GridSlot13" parent="GameGrid" instance=ExtResource("5_yd2x3")]
+layout_mode = 2
+
+[node name="GridSlot14" parent="GameGrid" instance=ExtResource("5_yd2x3")]
+layout_mode = 2
+
+[node name="GridSlot15" parent="GameGrid" instance=ExtResource("5_yd2x3")]
+layout_mode = 2
+
+[node name="GridSlot16" parent="GameGrid" instance=ExtResource("5_yd2x3")]
+layout_mode = 2
+body_data = SubResource("Resource_rk54m")
+is_fixed = true
+
+[node name="GridSlot17" parent="GameGrid" instance=ExtResource("5_yd2x3")]
+layout_mode = 2
+
+[node name="GridSlot18" parent="GameGrid" instance=ExtResource("5_yd2x3")]
+layout_mode = 2
+body_data = SubResource("Resource_21vwj")
+is_fixed = true
+
+[node name="GridSlot19" parent="GameGrid" instance=ExtResource("5_yd2x3")]
+layout_mode = 2
+
+[node name="GridSlot20" parent="GameGrid" instance=ExtResource("5_yd2x3")]
+layout_mode = 2
+
+[node name="GridSlot21" parent="GameGrid" instance=ExtResource("5_yd2x3")]
+layout_mode = 2
+
+[node name="GridSlot22" parent="GameGrid" instance=ExtResource("5_yd2x3")]
+layout_mode = 2
+
+[node name="GridSlot23" parent="GameGrid" instance=ExtResource("5_yd2x3")]
+layout_mode = 2
+
+[node name="GridSlot24" parent="GameGrid" instance=ExtResource("5_yd2x3")]
+layout_mode = 2
+
+[node name="GridSlot25" parent="GameGrid" instance=ExtResource("5_yd2x3")]
+layout_mode = 2
