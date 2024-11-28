@@ -3,7 +3,6 @@ extends Resource
 class_name BodyData
 
 @export var name: String
-@export var fixed: bool = true
 @export var texture: Texture
 @export var orientation_vector: Vector2
 var constraint_array = []
