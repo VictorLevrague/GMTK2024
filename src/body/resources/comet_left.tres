@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dsnpriw0cix0n"]
+
+[ext_resource type="Script" path="res://src/body/resources/body_scripts/comet.gd" id="1_qsm2q"]
+[ext_resource type="Texture2D" uid="uid://1q3dqp7oj173" path="res://assets/body/Mathilde/fixed/comet_left_lock.png" id="2_6r6b1"]
+
+[resource]
+script = ExtResource("1_qsm2q")
+name = "Comet"
+texture = ExtResource("2_6r6b1")
+orientation_vector = Vector2(-1, 0)
