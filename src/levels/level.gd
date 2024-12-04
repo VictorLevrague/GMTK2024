@@ -1,8 +1,11 @@
 extends Node
 
+@export var next_level:PackedScene
+
 func _ready() -> void:
     Signals.drop.connect(check_all_body_constraints)
     Signals.all_constraints_validated.connect(show_victory_screen)
+    Signals.next_level_signal.connect(change_to_next_level)
     call_deferred("check_all_body_constraints") #call_deferred nécessaire pour retarder l'appel de cette fonction. La position d'un objet dans un container n'est pas actualisée dès le début, il faut attendre la fin de la frame. Et ces positions sont nécessaires pour le calcul des contraintes.
 
 func check_all_body_constraints():
@@ -31,3 +34,6 @@ func is_inventory_grid_empty():
 func show_victory_screen():
     #get_tree().root.get_child(1).get_node("ValidationSuccess").play()
     %Level_UI/WinningLevelScreen.show()
+
+func change_to_next_level():
+    get_tree().change_scene_to_packed(next_level)
