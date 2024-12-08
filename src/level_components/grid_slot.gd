@@ -21,8 +21,10 @@ func _get_drag_data(at_position: Vector2):
     if self.body_data == null:
         return
     if self.is_fixed:
-        return 
-    set_drag_preview(make_drag_preview(at_position))    
+        return
+    Input.set_custom_mouse_cursor(load("res://assets/mouse_click.png"), Input.CURSOR_CAN_DROP)
+    Input.set_custom_mouse_cursor(load("res://assets/mouse_click.png"), Input.CURSOR_FORBIDDEN)
+    set_drag_preview(make_drag_preview(at_position))
     return self #slot
 
 func make_drag_preview(at_position: Vector2):
@@ -54,7 +56,6 @@ func swap_bodies(drag_slot: GridSlot, drop_slot: GridSlot):
     var previous_body_data = drag_slot.body_data
     drag_slot.body_data = drop_slot.body_data
     drop_slot.body_data = previous_body_data
-    
     
 func _on_mouse_entered():
     if body_data != null:
