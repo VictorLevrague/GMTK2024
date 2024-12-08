@@ -12,7 +12,6 @@ class_name GridSlot
 @export var is_fixed: bool = false:
     set(value):
         is_fixed = value
-        #%Lock.show() if value else %Lock.hide()
         %Lock.visible = value 
 
 func _get_drag_data(at_position: Vector2):
@@ -20,7 +19,20 @@ func _get_drag_data(at_position: Vector2):
         return
     if self.is_fixed:
         return 
+    set_drag_preview(make_drag_preview(at_position))    
     return self #slot
+
+func make_drag_preview(at_position: Vector2):
+    var drag_texture:= TextureRect.new()
+    drag_texture.texture = %TextureBody.texture
+    drag_texture.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+    drag_texture.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+    drag_texture.custom_minimum_size = size
+    drag_texture.modulate.a = 0.8 #Transparency
+    drag_texture.position = Vector2(-at_position)
+    var drag_control_node := Control.new()
+    drag_control_node.add_child(drag_texture)
+    return drag_control_node
     
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool: #data = là où on on a drag
     if self.is_fixed:
@@ -36,6 +48,7 @@ func swap_bodies(drag_slot: GridSlot, drop_slot: GridSlot):
     var previous_body_data = drag_slot.body_data
     drag_slot.body_data = drop_slot.body_data
     drop_slot.body_data = previous_body_data
+    
     
 func _on_mouse_entered():
     if body_data != null:

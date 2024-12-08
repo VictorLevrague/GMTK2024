@@ -11,7 +11,7 @@ func _ready() -> void:
 func check_all_body_constraints():
     var are_are_constraints_validated:= true
     for grid_slot in %GameGrid.get_children():
-        if grid_slot.body_data != null:
+        if grid_slot is GridSlot and grid_slot.body_data != null:
             var slot_data:BodyData = grid_slot.body_data
             var grid_slot_size_normalized_in_grid = grid_slot.size + Vector2(%GameGrid["theme_override_constants/h_separation"],
                                                                      %GameGrid["theme_override_constants/v_separation"])
@@ -27,7 +27,7 @@ func check_all_body_constraints():
 func is_inventory_grid_empty():
     var empty_inventory:= true
     for slot in %InventoryGrid.get_children():
-        if slot.body_data != null:
+        if slot is GridSlot and slot.body_data != null:
             empty_inventory = false
     return empty_inventory
 
