@@ -27,79 +27,79 @@
 [ext_resource type="Texture2D" uid="uid://djjutvrma6u6l" path="res://assets/body/Mathilde/ufo.png" id="22_571jg"]
 [ext_resource type="Texture2D" uid="uid://cktgovtvedou4" path="res://assets/body/Mathilde/black_hole.png" id="25_bw58h"]
 
-[sub_resource type="Resource" id="Resource_cf3me"]
+[sub_resource type="Resource" id="Resource_s3oym"]
 script = ExtResource("6_1klek")
 name = "Earth"
 texture = ExtResource("7_x7y2s")
 orientation_vector = Vector2(0, 0)
 
-[sub_resource type="Resource" id="Resource_njqc2"]
+[sub_resource type="Resource" id="Resource_perg7"]
 script = ExtResource("8_lief8")
 name = "Ring Planet"
 texture = ExtResource("9_qsexa")
 orientation_vector = Vector2(0, 0)
 
-[sub_resource type="Resource" id="Resource_1dub8"]
+[sub_resource type="Resource" id="Resource_ha16e"]
 script = ExtResource("10_uty5g")
 name = "Sun"
 texture = ExtResource("11_7gnxt")
 orientation_vector = Vector2(0, 0)
 
-[sub_resource type="Resource" id="Resource_pfcrc"]
+[sub_resource type="Resource" id="Resource_opf2t"]
 script = ExtResource("8_u34il")
 name = "Satellite"
 texture = ExtResource("9_j45ny")
 orientation_vector = Vector2(0, 0)
 
-[sub_resource type="Resource" id="Resource_5b1fh"]
+[sub_resource type="Resource" id="Resource_b7ngh"]
 script = ExtResource("8_u34il")
 name = "Satellite"
 texture = ExtResource("9_j45ny")
 orientation_vector = Vector2(0, 0)
 
-[sub_resource type="Resource" id="Resource_2cfxq"]
+[sub_resource type="Resource" id="Resource_lunre"]
 script = ExtResource("14_q26i6")
 name = "Sister Planet"
 texture = ExtResource("15_b62xb")
 orientation_vector = Vector2(0, 0)
 
-[sub_resource type="Resource" id="Resource_myqt7"]
+[sub_resource type="Resource" id="Resource_624xf"]
 script = ExtResource("14_q26i6")
 name = "Sister Planet"
 texture = ExtResource("16_uxyxc")
 orientation_vector = Vector2(0, 0)
 
-[sub_resource type="Resource" id="Resource_a8sb3"]
+[sub_resource type="Resource" id="Resource_t0h7j"]
 script = ExtResource("17_6in4g")
 name = "Gazeous Planet"
 texture = ExtResource("18_53l3k")
 orientation_vector = Vector2(0, 0)
 
-[sub_resource type="Resource" id="Resource_e7b14"]
+[sub_resource type="Resource" id="Resource_xk65l"]
 script = ExtResource("10_uty5g")
 name = "Asteroid"
 texture = ExtResource("15_3n34w")
 orientation_vector = Vector2(0, 0)
 
-[sub_resource type="Resource" id="Resource_y266v"]
+[sub_resource type="Resource" id="Resource_1veht"]
 script = ExtResource("21_uqwkj")
 name = "Comet"
 texture = ExtResource("22_17y28")
 orientation_vector = Vector2(0, 1)
 
-[sub_resource type="Resource" id="Resource_ngif3"]
+[sub_resource type="Resource" id="Resource_qurm3"]
 script = ExtResource("21_uqwkj")
 name = "Comet"
 texture = ExtResource("22_17y28")
 orientation_vector = Vector2(0, 1)
 
-[sub_resource type="Resource" id="Resource_heixs"]
+[sub_resource type="Resource" id="Resource_8d1pe"]
 script = ExtResource("21_tvv35")
 name = "UFO"
 texture = ExtResource("22_571jg")
 orientation_vector = Vector2(0, 0)
 
-[sub_resource type="Resource" id="Resource_wu02j"]
+[sub_resource type="Resource" id="Resource_3tiv4"]
 script = ExtResource("10_uty5g")
 name = "Black Hole"
 texture = ExtResource("25_bw58h")
@@ -131,35 +131,35 @@ offset_bottom = 308.0
 
 [node name="GridSlot" parent="InventoryPanel/InventoryGrid" instance=ExtResource("5_w4xvm")]
 layout_mode = 2
-body_data = SubResource("Resource_cf3me")
+body_data = SubResource("Resource_s3oym")
 
 [node name="GridSlot2" parent="InventoryPanel/InventoryGrid" instance=ExtResource("5_w4xvm")]
 layout_mode = 2
-body_data = SubResource("Resource_njqc2")
+body_data = SubResource("Resource_perg7")
 
 [node name="GridSlot3" parent="InventoryPanel/InventoryGrid" instance=ExtResource("5_w4xvm")]
 layout_mode = 2
-body_data = SubResource("Resource_1dub8")
+body_data = SubResource("Resource_ha16e")
 
 [node name="GridSlot4" parent="InventoryPanel/InventoryGrid" instance=ExtResource("5_w4xvm")]
 layout_mode = 2
-body_data = SubResource("Resource_pfcrc")
+body_data = SubResource("Resource_opf2t")
 
 [node name="GridSlot5" parent="InventoryPanel/InventoryGrid" instance=ExtResource("5_w4xvm")]
 layout_mode = 2
-body_data = SubResource("Resource_5b1fh")
+body_data = SubResource("Resource_b7ngh")
 
 [node name="GridSlot6" parent="InventoryPanel/InventoryGrid" instance=ExtResource("5_w4xvm")]
 layout_mode = 2
-body_data = SubResource("Resource_2cfxq")
+body_data = SubResource("Resource_lunre")
 
 [node name="GridSlot7" parent="InventoryPanel/InventoryGrid" instance=ExtResource("5_w4xvm")]
 layout_mode = 2
-body_data = SubResource("Resource_myqt7")
+body_data = SubResource("Resource_624xf")
 
 [node name="GridSlot8" parent="InventoryPanel/InventoryGrid" instance=ExtResource("5_w4xvm")]
 layout_mode = 2
-body_data = SubResource("Resource_a8sb3")
+body_data = SubResource("Resource_t0h7j")
 
 [node name="GridSlot9" parent="InventoryPanel/InventoryGrid" instance=ExtResource("5_w4xvm")]
 layout_mode = 2
@@ -194,7 +194,7 @@ layout_mode = 2
 
 [node name="GridSlot4" parent="GameGrid" instance=ExtResource("5_w4xvm")]
 layout_mode = 2
-body_data = SubResource("Resource_e7b14")
+body_data = SubResource("Resource_xk65l")
 is_fixed = true
 
 [node name="GridSlot5" parent="GameGrid" instance=ExtResource("5_w4xvm")]
@@ -217,7 +217,7 @@ layout_mode = 2
 
 [node name="GridSlot11" parent="GameGrid" instance=ExtResource("5_w4xvm")]
 layout_mode = 2
-body_data = SubResource("Resource_y266v")
+body_data = SubResource("Resource_1veht")
 is_fixed = true
 
 [node name="GridSlot12" parent="GameGrid" instance=ExtResource("5_w4xvm")]
@@ -225,12 +225,12 @@ layout_mode = 2
 
 [node name="GridSlot13" parent="GameGrid" instance=ExtResource("5_w4xvm")]
 layout_mode = 2
-body_data = SubResource("Resource_ngif3")
+body_data = SubResource("Resource_qurm3")
 is_fixed = true
 
 [node name="GridSlot14" parent="GameGrid" instance=ExtResource("5_w4xvm")]
 layout_mode = 2
-body_data = SubResource("Resource_heixs")
+body_data = SubResource("Resource_8d1pe")
 is_fixed = true
 
 [node name="GridSlot15" parent="GameGrid" instance=ExtResource("5_w4xvm")]
@@ -241,7 +241,7 @@ layout_mode = 2
 
 [node name="GridSlot17" parent="GameGrid" instance=ExtResource("5_w4xvm")]
 layout_mode = 2
-body_data = SubResource("Resource_wu02j")
+body_data = SubResource("Resource_3tiv4")
 is_fixed = true
 
 [node name="GridSlot18" parent="GameGrid" instance=ExtResource("5_w4xvm")]

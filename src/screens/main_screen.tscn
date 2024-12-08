@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dnvuvgfe657qg"]
+[gd_scene load_steps=10 format=3 uid="uid://dnvuvgfe657qg"]
 
 [ext_resource type="Theme" uid="uid://blm4c4n3ypua2" path="res://game_theme.tres" id="1_sb5qa"]
 [ext_resource type="Texture2D" uid="uid://c71bqos75p4xm" path="res://assets/Background/main_background_menu.png" id="2_f4qt2"]
 [ext_resource type="Script" path="res://src/buttons/ChangeSceneButton.gd" id="3_elk5d"]
+[ext_resource type="PackedScene" uid="uid://cji4n7a35mqjq" path="res://src/levels/level_1.tscn" id="5_57onf"]
 [ext_resource type="Script" path="res://src/buttons/OptionsButton.gd" id="5_bs3o5"]
 [ext_resource type="Script" path="res://src/buttons/CloseOptionsMenu.gd" id="6_a88st"]
 [ext_resource type="Texture2D" uid="uid://ckqu3v7v4nd6o" path="res://assets/Logo/GMTK_jam_logo.png" id="7_7ed75"]
@@ -76,6 +77,7 @@ size_flags_vertical = 3
 theme_override_font_sizes/font_size = 45
 text = "Play"
 script = ExtResource("3_elk5d")
+next_scene = ExtResource("5_57onf")
 
 [node name="Spacer" type="Control" parent="Buttons"]
 layout_mode = 2
