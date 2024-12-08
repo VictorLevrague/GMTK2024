@@ -14,6 +14,9 @@ class_name GridSlot
         is_fixed = value
         %Lock.visible = value 
 
+func _ready():
+    self.theme_type_variation = "BasePanel"
+
 func _get_drag_data(at_position: Vector2):
     if self.body_data == null:
         return
@@ -36,11 +39,14 @@ func make_drag_preview(at_position: Vector2):
     
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool: #data = là où on on a drag
     if self.is_fixed:
+        self.theme_type_variation = "ForbiddenPanel"
         return false
+    self.theme_type_variation = "HighlightedPanel"
     return true
     
 func _drop_data(at_position: Vector2, data: Variant) -> void: #data = là où on on a drag
     swap_bodies(self, data)
+    self.theme_type_variation = "BasePanel"
     Signals.emit_signal("drop")
     Tooltip.body_popup(Rect2i(Vector2i(global_position), Vector2i(size)), body_data)
     
@@ -55,4 +61,9 @@ func _on_mouse_entered():
         Tooltip.body_popup(Rect2i(Vector2i(global_position), Vector2i(size)), body_data)
 
 func _on_mouse_exited():
+    self.theme_type_variation = "BasePanel"
     Tooltip.hide_body_popup()
+
+func _notification(what: int) -> void:
+  if what == NOTIFICATION_DRAG_END and not get_viewport().gui_is_drag_successful():
+    self.theme_type_variation = "BasePanel"
