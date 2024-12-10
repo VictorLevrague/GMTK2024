@@ -6,7 +6,8 @@ class_name GridSlot
 
 @export var body_data: BodyData = null:
     set(value):
-        body_data = value.duplicate() if value != null else null
+        #body_data = value.duplicate() if value != null else null
+        body_data = value if value != null else null
         %TextureBody.texture = value.texture if value != null else null
 
 @export var is_fixed: bool = false:
@@ -16,6 +17,7 @@ class_name GridSlot
 
 func _ready():
     self.theme_type_variation = "BasePanel"
+    body_data = body_data.duplicate() if body_data != null else null
 
 func _get_drag_data(at_position: Vector2):
     if self.body_data == null:
@@ -33,7 +35,7 @@ func make_drag_preview(at_position: Vector2):
     drag_texture.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
     drag_texture.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
     drag_texture.custom_minimum_size = size
-    drag_texture.modulate.a = 0.8 #Transparency
+    drag_texture.modulate.a = 0.5 #Transparency
     drag_texture.position = Vector2(-at_position)
     var drag_control_node := Control.new()
     drag_control_node.add_child(drag_texture)
