@@ -6,6 +6,6 @@
 [resource]
 script = ExtResource("1_j42o4")
 name = "Sun"
-fixed = false
 texture = ExtResource("2_brjkr")
 orientation_vector = Vector2(0, 0)
+description = ""
