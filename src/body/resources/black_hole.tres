@@ -9,3 +9,4 @@ name = "Black Hole"
 texture = ExtResource("2_nf3pl")
 orientation_vector = Vector2(0, 0)
 description = "This is not a body"
+is_body = false

@@ -11,6 +11,6 @@ func find_body_in_grid_with_condition(game_grid: GridContainer, coordinates_cent
         var max_distance_to_center_body = max(abs_diff_to_center_body.x, abs_diff_to_center_body.y)
         if condition.call(max_distance_to_center_body):
             if grid_slot.body_data != null:
-                if grid_slot.body_data.name != "Black Hole":
+                if grid_slot.body_data.is_body:
                     slots_within_condition.append(grid_slot)
     return slots_within_condition

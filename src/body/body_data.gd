@@ -6,6 +6,7 @@ class_name BodyData
 @export var texture: Texture
 @export var orientation_vector: Vector2
 @export var description: String
+@export var is_body: bool = true
 var constraint_array = []
 
 func check_constraints(constraint_array: Array, game_grid: GridContainer, coordinates: Vector2) -> bool:

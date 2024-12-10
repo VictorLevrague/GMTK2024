@@ -17,7 +17,7 @@ func find_body_in_front_box(game_grid: GridContainer, coordinates_center_body: V
         var vector_center_body_to_grid_slot = grid_slot_position_normalized - coordinates_center_body
         if vector_center_body_to_grid_slot == direction:
             if grid_slot.body_data != null:
-                if grid_slot.body_data.name != "Black Hole":
+                if grid_slot.body_data.is_body:
                     bodies_in_front_line.append(grid_slot)
     return bodies_in_front_line
 

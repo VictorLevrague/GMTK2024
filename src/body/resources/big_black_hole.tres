@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_3t5tt")
 name = "Large Black Hole"
-fixed = true
-is_planet = false
 texture = ExtResource("2_vh1f6")
 orientation_vector = Vector2(0, 0)
+description = ""
+is_body = false

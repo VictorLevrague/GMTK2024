@@ -16,7 +16,7 @@ func find_body_in_direction(game_grid: GridContainer, coordinates_center_body: V
         var vector_center_body_to_grid_slot = grid_slot_position_normalized - coordinates_center_body
         if vector_center_body_to_grid_slot * direction > Vector2(0,0) and vector_center_body_to_grid_slot.cross(direction) == 0: #Test pour bonne direction (même signe entre vecteur direction et vecteur case ref vers case autre), et bonne ligne (vecteur parallèle au vecteur direction)
             if grid_slot.body_data != null:
-                if grid_slot.body_data.name != "Black Hole":
+                if grid_slot.body_data.is_body:
                     bodies_in_front_line.append(grid_slot)
     return bodies_in_front_line
     
