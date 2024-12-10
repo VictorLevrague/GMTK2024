@@ -17,7 +17,8 @@ class_name GridSlot
 
 func _ready():
     self.theme_type_variation = "BasePanel"
-    body_data = body_data.duplicate() if body_data != null else null
+    if not Engine.is_editor_hint():
+        body_data = body_data.duplicate() if body_data != null else null
 
 func _get_drag_data(at_position: Vector2):
     if self.body_data == null:
