@@ -19,6 +19,8 @@ func place_body_popup(slot_dimensions: Rect2i):
 
 func write_body_popup_info(body_data: BodyData):
     %Name.text = body_data.name
+    %Description.text = body_data.description
+    %Description.visible = true if %Description.text != "" else false
     clean_constraint_constainer()
     for constraint in body_data.constraint_array:
         var constraint_display = load("res://src/tooltip/constraint_display.tscn").instantiate()
