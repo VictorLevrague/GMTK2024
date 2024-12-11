@@ -32,7 +32,7 @@ func is_inventory_grid_empty():
     return empty_inventory
 
 func show_victory_screen():
-    #get_tree().root.get_child(1).get_node("ValidationSuccess").play()
+    AudioManager.get_node("ValidationSuccess").play()
     %Level_UI/WinningLevelScreen.show()
 
 func change_to_next_level():
