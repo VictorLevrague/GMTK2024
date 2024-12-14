@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://hgotek6mfsmh"]
+[gd_scene load_steps=19 format=3 uid="uid://hgotek6mfsmh"]
 
 [ext_resource type="Script" path="res://src/levels/level.gd" id="1_0uw1o"]
 [ext_resource type="PackedScene" uid="uid://bh2xx5hai1eif" path="res://src/levels/level_ui.tscn" id="2_7xbwo"]
+[ext_resource type="AudioStream" uid="uid://ck2kmbjr4rqj2" path="res://src/body/resources/sounds/musics/Equatorial Complex.mp3" id="2_yluti"]
 [ext_resource type="PackedScene" uid="uid://bxndsaeok4itk" path="res://src/level_components/inventory_panel.tscn" id="3_dwu00"]
 [ext_resource type="PackedScene" uid="uid://dpfrc271x4llb" path="res://src/level_components/inventory_grid.tscn" id="4_umj28"]
 [ext_resource type="PackedScene" uid="uid://b21iijh888xc1" path="res://src/level_components/grid_slot.tscn" id="5_ijyti"]
@@ -26,6 +27,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0uw1o")
+music_level = ExtResource("2_yluti")
 
 [node name="Level_UI" parent="." instance=ExtResource("2_7xbwo")]
 unique_name_in_owner = true

@@ -1,8 +1,10 @@
 extends Node
 
 @export var next_level:PackedScene
+@export var music_level:AudioStreamMP3
 
 func _ready() -> void:
+    play_music()
     Signals.drop.connect(check_all_body_constraints)
     Signals.all_constraints_validated.connect(show_victory_screen)
     Signals.next_level_signal.connect(change_to_next_level)
@@ -37,3 +39,10 @@ func show_victory_screen():
 
 func change_to_next_level():
     get_tree().change_scene_to_packed(next_level)
+
+func play_music():
+    var is_same_music:bool = AudioManager.get_node("Music").stream == music_level
+    if not music_level == null:
+        if not (AudioManager.get_node("Music").stream == music_level): #pour ne pas que la musique se relance si c'est la même que sur l'écran principal ou niveau précédent
+            AudioManager.get_node("Music").stream = music_level
+            AudioManager.get_node("Music").play()

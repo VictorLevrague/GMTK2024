@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dck2n1na4jn11"]
+[gd_scene load_steps=4 format=3 uid="uid://dck2n1na4jn11"]
 
 [ext_resource type="AudioStream" uid="uid://bdf3x2e10v8le" path="res://src/body/resources/sounds/effects/validation_success.mp3" id="1_qrcmi"]
 [ext_resource type="AudioStream" uid="uid://n71c8lbs26e8" path="res://src/body/resources/sounds/effects/button_click.mp3" id="2_sin3g"]
+[ext_resource type="AudioStream" uid="uid://dmoc6kl0cft1" path="res://src/body/resources/sounds/musics/Blippy Trance.mp3" id="3_4jc3v"]
 
 [node name="AudioManager" type="Node"]
 
@@ -12,3 +13,7 @@ stream = ExtResource("1_qrcmi")
 [node name="ButtonClick" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("2_sin3g")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_4jc3v")

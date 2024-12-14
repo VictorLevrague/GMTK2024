@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://b7uuyywpnm3sf"]
+[gd_scene load_steps=15 format=3 uid="uid://b7uuyywpnm3sf"]
 
 [ext_resource type="Script" path="res://src/levels/level.gd" id="1_gbt67"]
 [ext_resource type="PackedScene" uid="uid://d3juk6vxs57en" path="res://src/levels/level_3.tscn" id="2_73ugl"]
 [ext_resource type="PackedScene" uid="uid://bh2xx5hai1eif" path="res://src/levels/level_ui.tscn" id="2_muvpv"]
+[ext_resource type="AudioStream" uid="uid://d3eicufy0ma5e" path="res://src/body/resources/sounds/musics/Galactic Rap.mp3" id="3_75rko"]
 [ext_resource type="PackedScene" uid="uid://bxndsaeok4itk" path="res://src/level_components/inventory_panel.tscn" id="3_g2i3j"]
 [ext_resource type="PackedScene" uid="uid://dpfrc271x4llb" path="res://src/level_components/inventory_grid.tscn" id="4_fa63p"]
 [ext_resource type="PackedScene" uid="uid://b21iijh888xc1" path="res://src/level_components/grid_slot.tscn" id="5_0eyo2"]
@@ -23,6 +24,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gbt67")
 next_level = ExtResource("2_73ugl")
+music_level = ExtResource("3_75rko")
 
 [node name="Level_UI" parent="." instance=ExtResource("2_muvpv")]
 unique_name_in_owner = true

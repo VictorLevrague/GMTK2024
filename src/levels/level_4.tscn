@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://erdwv388bmqc"]
+[gd_scene load_steps=20 format=3 uid="uid://erdwv388bmqc"]
 
 [ext_resource type="Script" path="res://src/levels/level.gd" id="1_bbkxs"]
 [ext_resource type="PackedScene" uid="uid://y0s5vnopbsqh" path="res://src/levels/level_5.tscn" id="2_744bg"]
 [ext_resource type="PackedScene" uid="uid://bh2xx5hai1eif" path="res://src/levels/level_ui.tscn" id="2_ab2oo"]
 [ext_resource type="PackedScene" uid="uid://bxndsaeok4itk" path="res://src/level_components/inventory_panel.tscn" id="3_c16sy"]
+[ext_resource type="AudioStream" uid="uid://eyg4d05tqdp5" path="res://src/body/resources/sounds/musics/Mesmerizing Galaxy Loop.mp3" id="3_h7sn2"]
 [ext_resource type="PackedScene" uid="uid://dpfrc271x4llb" path="res://src/level_components/inventory_grid.tscn" id="4_agm5y"]
 [ext_resource type="PackedScene" uid="uid://b21iijh888xc1" path="res://src/level_components/grid_slot.tscn" id="5_w4xvm"]
 [ext_resource type="Resource" uid="uid://clfomt1q6tuer" path="res://src/body/resources/planets/earth.tres" id="7_xnvq1"]
@@ -28,6 +29,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bbkxs")
 next_level = ExtResource("2_744bg")
+music_level = ExtResource("3_h7sn2")
 
 [node name="Level_UI" parent="." instance=ExtResource("2_ab2oo")]
 unique_name_in_owner = true
