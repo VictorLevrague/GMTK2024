@@ -1,8 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://y0s5vnopbsqh"]
+[gd_scene load_steps=20 format=3 uid="uid://y0s5vnopbsqh"]
 
 [ext_resource type="Script" path="res://src/levels/level.gd" id="1_troqg"]
 [ext_resource type="PackedScene" uid="uid://ca60yf2liwtdr" path="res://src/levels/level_6.tscn" id="2_esx6t"]
 [ext_resource type="PackedScene" uid="uid://bh2xx5hai1eif" path="res://src/levels/level_ui.tscn" id="2_l6u36"]
+[ext_resource type="AudioStream" uid="uid://b6p3ynuopqkcf" path="res://src/body/resources/sounds/musics/Vibing Over Venus.mp3" id="3_f68jx"]
 [ext_resource type="PackedScene" uid="uid://bxndsaeok4itk" path="res://src/level_components/inventory_panel.tscn" id="3_i2vcy"]
 [ext_resource type="PackedScene" uid="uid://dpfrc271x4llb" path="res://src/level_components/inventory_grid.tscn" id="4_us46h"]
 [ext_resource type="PackedScene" uid="uid://b21iijh888xc1" path="res://src/level_components/grid_slot.tscn" id="5_6khxi"]
@@ -28,6 +29,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_troqg")
 next_level = ExtResource("2_esx6t")
+music_level = ExtResource("3_f68jx")
 
 [node name="Level_UI" parent="." instance=ExtResource("2_l6u36")]
 unique_name_in_owner = true

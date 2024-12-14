@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://dck2n1na4jn11"]
+[gd_scene load_steps=6 format=3 uid="uid://dck2n1na4jn11"]
 
+[ext_resource type="Script" path="res://src/autoload/audio_manager.gd" id="1_1bbqc"]
 [ext_resource type="AudioStream" uid="uid://bdf3x2e10v8le" path="res://src/body/resources/sounds/effects/validation_success.mp3" id="1_qrcmi"]
+[ext_resource type="AudioStream" uid="uid://d3eicufy0ma5e" path="res://src/body/resources/sounds/musics/Galactic Rap.mp3" id="2_c1myf"]
 [ext_resource type="AudioStream" uid="uid://n71c8lbs26e8" path="res://src/body/resources/sounds/effects/button_click.mp3" id="2_sin3g"]
 [ext_resource type="AudioStream" uid="uid://dmoc6kl0cft1" path="res://src/body/resources/sounds/musics/Blippy Trance.mp3" id="3_4jc3v"]
 
 [node name="AudioManager" type="Node"]
+script = ExtResource("1_1bbqc")
+first_music = ExtResource("2_c1myf")
 
 [node name="ValidationSuccess" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true

@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://l3fooo5147fq"]
+[gd_scene load_steps=18 format=3 uid="uid://l3fooo5147fq"]
 
 [ext_resource type="Script" path="res://src/levels/level.gd" id="1_afk31"]
 [ext_resource type="PackedScene" uid="uid://bh2xx5hai1eif" path="res://src/levels/level_ui.tscn" id="2_2g2mq"]
 [ext_resource type="PackedScene" uid="uid://hgotek6mfsmh" path="res://src/levels/level_8.tscn" id="2_70asp"]
 [ext_resource type="PackedScene" uid="uid://bxndsaeok4itk" path="res://src/level_components/inventory_panel.tscn" id="3_3uil8"]
+[ext_resource type="AudioStream" uid="uid://dmoc6kl0cft1" path="res://src/body/resources/sounds/musics/Blippy Trance.mp3" id="3_rlcpt"]
 [ext_resource type="PackedScene" uid="uid://dpfrc271x4llb" path="res://src/level_components/inventory_grid.tscn" id="4_gydov"]
 [ext_resource type="PackedScene" uid="uid://b21iijh888xc1" path="res://src/level_components/grid_slot.tscn" id="5_f3a8c"]
 [ext_resource type="PackedScene" uid="uid://dtwx8ngv1xj3j" path="res://src/level_components/game_grid.tscn" id="6_hdq5a"]
@@ -26,6 +27,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_afk31")
 next_level = ExtResource("2_70asp")
+music_level = ExtResource("3_rlcpt")
 
 [node name="Level_UI" parent="." instance=ExtResource("2_2g2mq")]
 unique_name_in_owner = true
