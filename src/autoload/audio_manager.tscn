@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://dmoc6kl0cft1" path="res://src/body/resources/sounds/musics/Blippy Trance.mp3" id="3_4jc3v"]
 
 [node name="AudioManager" type="Node"]
+process_mode = 3
 script = ExtResource("1_1bbqc")
 first_music = ExtResource("2_c1myf")
 

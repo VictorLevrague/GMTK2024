@@ -35,6 +35,7 @@ func is_inventory_grid_empty():
 
 func show_victory_screen():
     AudioManager.get_node("ValidationSuccess").play()
+    get_tree().paused = true
     %Level_UI/WinningLevelScreen.show()
 
 func change_to_next_level():

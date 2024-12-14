@@ -22,6 +22,7 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [node name="Tooltip" type="Control"]
+process_mode = 1
 show_behind_parent = true
 layout_mode = 3
 anchors_preset = 15

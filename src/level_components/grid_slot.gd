@@ -6,7 +6,6 @@ class_name GridSlot
 
 @export var body_data: BodyData = null:
     set(value):
-        #body_data = value.duplicate() if value != null else null
         body_data = value if value != null else null
         %TextureBody.texture = value.texture if value != null else null
 

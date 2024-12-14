@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dpfrc271x4llb"]
 
 [node name="InventoryGrid" type="GridContainer"]
+process_mode = 1
 top_level = true
 anchors_preset = 4
 anchor_top = 0.5
