@@ -3,18 +3,25 @@ extends Control
 func body_popup(slot_dimensions: Rect2i, body_data: BodyData):
     if body_data != null:
         write_body_popup_info(body_data)
+        %BodyPopup.size = Vector2i.ZERO #Reset size of container to minimal size. Set before the place_body_popup function to ensure right positionning correction
         place_body_popup(slot_dimensions)
-        %BodyPopup.size = Vector2i.ZERO #Reset size of container to miniaml size
         %BodyPopup.show()
 
 func place_body_popup(slot_dimensions: Rect2i):
     var mouse_pos = get_viewport().get_mouse_position()
     var correction: Vector2i
     var padding = 10
+    var x_correction:= 0
+    var y_correction:= 0
     if mouse_pos.x <= get_viewport_rect().size.x/2:
-        correction = Vector2i(slot_dimensions.size.x + padding, 0)
+        x_correction = slot_dimensions.size.x + padding
     else:
-        correction = -Vector2i(%BodyPopup.size.x + padding, 0)
+        x_correction = -(%BodyPopup.size.x + padding)
+    if mouse_pos.y >= get_viewport_rect().size.y/2:
+        y_correction = - (slot_dimensions.size.y + padding)
+    else:
+        y_correction = 0
+    correction = Vector2i(x_correction, y_correction)
     %BodyPopup.position = slot_dimensions.position + correction
 
 func write_body_popup_info(body_data: BodyData):
