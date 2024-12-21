@@ -42,6 +42,8 @@ func make_drag_preview(at_position: Vector2):
     drag_texture.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
     drag_texture.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
     drag_texture.custom_minimum_size = size
+    drag_texture.pivot_offset = size/2
+    drag_texture.rotation = atan2(orientation_vector.x,-orientation_vector.y)
     drag_texture.modulate.a = 0.5 #Transparency
     drag_texture.position = Vector2(-at_position)
     var drag_control_node := Control.new()
