@@ -34,10 +34,11 @@ layout_mode = 0
 
 [node name="InventoryGrid" parent="InventoryPanel" instance=ExtResource("4_1h28f")]
 unique_name_in_owner = true
-layout_mode = 1
-offset_top = -308.0
-offset_right = 244.0
-offset_bottom = 308.0
+layout_mode = 0
+offset_left = 1.0
+offset_top = 22.0
+offset_right = 245.0
+offset_bottom = 638.0
 
 [node name="GridSlot" parent="InventoryPanel/InventoryGrid" instance=ExtResource("5_qy44c")]
 layout_mode = 2
