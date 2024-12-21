@@ -1,7 +1,7 @@
 extends BodyData
 
 var constraint1 = Constraint.new()
-var constraint1_description := "Has Earth at\n exactly 2 boxes"
+var constraint1_description := "Has Earth at\n exactly 2 orbits"
 var constraint2 = Constraint.new()
 var constraint2_description := "Has no Sun or Mini-sun\n neighbor"
 var constraint3 = Constraint.new()

@@ -59,6 +59,7 @@ func _drop_data(at_position: Vector2, data: Variant) -> void: #data = là où on
     swap_bodies(self, data)
     self.theme_type_variation = "BasePanel"
     Signals.emit_signal("drop")
+    AudioManager.get_node("BodyDropSuccess").play()
     Tooltip.body_popup(Rect2i(Vector2i(global_position), Vector2i(size)), body_data)
     
 func swap_bodies(drag_slot: GridSlot, drop_slot: GridSlot):
@@ -77,3 +78,4 @@ func _on_mouse_exited():
 func _notification(what: int) -> void:
   if what == NOTIFICATION_DRAG_END and not get_viewport().gui_is_drag_successful():
     self.theme_type_variation = "BasePanel"
+    AudioManager.get_node("BodyDropFail").play()

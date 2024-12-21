@@ -1,10 +1,10 @@
 extends Planet
 
 var constraint2 = Constraint.new()
-var constraint2_description := "Has sun at\n exactly 3 boxes"
+var constraint2_description := "Has sun at\n exactly 3 orbits"
 
 var constraint3 = Constraint.new()
-var constraint3_description := "No sun\nunder 2 boxes"
+var constraint3_description := "No sun\nunder 2 orbits"
 
 func _init():
     planet_init()
