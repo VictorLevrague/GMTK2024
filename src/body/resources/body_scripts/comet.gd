@@ -20,9 +20,9 @@ func find_body_in_direction(game_grid: GridContainer, coordinates_center_body: V
                     bodies_in_front_line.append(grid_slot)
     return bodies_in_front_line
     
-func has_no_body_in_front_line(game_grid: GridContainer, coordinates_center_body: Vector2) -> bool:
+func has_no_body_in_front_line(game_grid: GridContainer, coordinates_center_body: Vector2, _orientation_in_slot: Vector2) -> bool:
     var has_body_in_direction: bool = false
-    var neighbours:Array[GridSlot] = find_body_in_direction(game_grid, coordinates_center_body, orientation_vector)
+    var neighbours:Array[GridSlot] = find_body_in_direction(game_grid, coordinates_center_body, _orientation_in_slot)
     if neighbours.size() > 0:
         has_body_in_direction = true
     return not has_body_in_direction

@@ -7,7 +7,7 @@ func _init():
     constraint1.init(false, constraint1_description, has_2_planet_neighbor)
     constraint_array = [constraint1]
 
-func has_2_planet_neighbor(game_grid: GridContainer, coordinates_center_body: Vector2) -> bool:
+func has_2_planet_neighbor(game_grid: GridContainer, coordinates_center_body: Vector2, _orientation_in_slot: Vector2) -> bool:
     var has_ufo_around: bool = false
     var neighbours:Array[GridSlot] = game_grid.find_body_in_grid_with_condition(game_grid, coordinates_center_body, func distance_equal_one(x): return x == 1)
     var planet_count = 0

@@ -12,7 +12,7 @@ func _init():
     constraint3.init(false, constraint3_description, has_no_sun_below_2_boxes)
     constraint_array.append_array([constraint2])
 
-func has_sun_at_3_boxes(game_grid: GridContainer, coordinates_center_body: Vector2) -> bool:
+func has_sun_at_3_boxes(game_grid: GridContainer, coordinates_center_body: Vector2, _orientation_in_slot: Vector2) -> bool:
     var is_sun_found: bool = false
     var neighbours:Array[GridSlot] = game_grid.find_body_in_grid_with_condition(game_grid, coordinates_center_body, func distance_equal_one(x): return x == 3)
     for neighbour in neighbours:
@@ -20,7 +20,7 @@ func has_sun_at_3_boxes(game_grid: GridContainer, coordinates_center_body: Vecto
             is_sun_found = true
     return is_sun_found
 
-func has_no_sun_below_2_boxes(game_grid: GridContainer, coordinates_center_body: Vector2):
+func has_no_sun_below_2_boxes(game_grid: GridContainer, coordinates_center_body: Vector2, _orientation_in_slot: Vector2):
     var has_no_sun: bool = true
     var neighbours:Array[GridSlot] = game_grid.find_body_in_grid_with_condition(game_grid, coordinates_center_body, func distance_equal_one(x): return x <= 2)
     for neighbour in neighbours:

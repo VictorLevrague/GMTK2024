@@ -14,6 +14,13 @@ class_name GridSlot
         is_fixed = value
         %Lock.visible = value 
 
+@export var orientation_vector:= Vector2(0, -1): #orientation up
+    set(value):
+        orientation_vector = value
+        %TextureBody.rotation = atan2(orientation_vector.x,-orientation_vector.y)
+    get:
+        return orientation_vector
+
 func _ready():
     self.theme_type_variation = "BasePanel"
     if not Engine.is_editor_hint():

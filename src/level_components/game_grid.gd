@@ -14,3 +14,16 @@ func find_body_in_grid_with_condition(game_grid: GridContainer, coordinates_cent
                 if grid_slot.body_data.is_body:
                     slots_within_condition.append(grid_slot)
     return slots_within_condition
+
+func check_all_body_constraints():
+    var are_are_constraints_validated:= true
+    for grid_slot in %GameGrid.get_children():
+        if grid_slot is GridSlot and grid_slot.body_data != null:
+            var slot_data:BodyData = grid_slot.body_data
+            var grid_slot_size_normalized_in_grid = grid_slot.size + Vector2(%GameGrid["theme_override_constants/h_separation"],
+                                                                     %GameGrid["theme_override_constants/v_separation"])
+            var grid_slot_position_normalized = grid_slot.position / grid_slot_size_normalized_in_grid
+            if not slot_data.check_constraints(slot_data.constraint_array, %GameGrid, grid_slot_position_normalized, grid_slot.orientation_vector):
+                print("failed constraint")
+                are_are_constraints_validated = false
+    return are_are_constraints_validated

@@ -16,7 +16,7 @@ func _init():
     constraint4.init(false, constraint4_description, has_no_stardust_neighbor)
     constraint_array.append_array([constraint1, constraint2, constraint3, constraint4])
 
-func has_no_sun_or_mini_sun_neighbor(game_grid: GridContainer, coordinates_center_body: Vector2) -> bool:
+func has_no_sun_or_mini_sun_neighbor(game_grid: GridContainer, coordinates_center_body: Vector2, _orientation_in_slot: Vector2) -> bool:
     var has_sun_around: bool = false
     var neighbours:Array[GridSlot] = game_grid.find_body_in_grid_with_condition(game_grid, coordinates_center_body, func distance_equal_one(x): return x == 1)
     for neighbour in neighbours:
@@ -24,7 +24,7 @@ func has_no_sun_or_mini_sun_neighbor(game_grid: GridContainer, coordinates_cente
             has_sun_around = true
     return not has_sun_around
 
-func has_no_ufo_neighbor(game_grid: GridContainer, coordinates_center_body: Vector2) -> bool:
+func has_no_ufo_neighbor(game_grid: GridContainer, coordinates_center_body: Vector2, _orientation_in_slot: Vector2) -> bool:
     var has_ufo_around: bool = false
     var neighbours:Array[GridSlot] = game_grid.find_body_in_grid_with_condition(game_grid, coordinates_center_body, func distance_equal_one(x): return x == 1)
     for neighbour in neighbours:
@@ -32,7 +32,7 @@ func has_no_ufo_neighbor(game_grid: GridContainer, coordinates_center_body: Vect
             has_ufo_around = true
     return not has_ufo_around
 
-func has_no_stardust_neighbor(game_grid: GridContainer, coordinates_center_body: Vector2) -> bool:
+func has_no_stardust_neighbor(game_grid: GridContainer, coordinates_center_body: Vector2, _orientation_in_slot: Vector2) -> bool:
     var has_stardust_around: bool = false
     var neighbours:Array[GridSlot] = game_grid.find_body_in_grid_with_condition(game_grid, coordinates_center_body, func distance_equal_one(x): return x == 1)
     for neighbour in neighbours:
@@ -40,7 +40,7 @@ func has_no_stardust_neighbor(game_grid: GridContainer, coordinates_center_body:
             has_stardust_around = true
     return not has_stardust_around
     
-func has_earth_at_2_boxes(game_grid: GridContainer, coordinates_center_body: Vector2) -> bool:
+func has_earth_at_2_boxes(game_grid: GridContainer, coordinates_center_body: Vector2, _orientation_in_slot: Vector2) -> bool:
     var is_earth_found: bool = false
     var neighbours:Array[GridSlot] = game_grid.find_body_in_grid_with_condition(game_grid, coordinates_center_body, func distance_equal_one(x): return x == 2)
     for neighbour in neighbours:

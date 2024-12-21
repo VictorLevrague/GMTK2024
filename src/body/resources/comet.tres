@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://d3upvxhpm6q3n"]
+
+[ext_resource type="Script" path="res://src/body/resources/body_scripts/comet.gd" id="1_bkj0u"]
+[ext_resource type="Texture2D" uid="uid://b2c18nvxxpmvx" path="res://assets/body/Mathilde/comet.png" id="2_0cpbh"]
+
+[resource]
+script = ExtResource("1_bkj0u")
+name = "Comet"
+texture = ExtResource("2_0cpbh")
+description = ""
+is_body = true
