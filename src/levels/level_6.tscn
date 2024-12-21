@@ -16,7 +16,7 @@
 [ext_resource type="Resource" uid="uid://blgvcwg58b6fk" path="res://src/body/resources/sun.tres" id="13_2b31d"]
 [ext_resource type="Resource" uid="uid://dffpmg2egm67m" path="res://src/body/resources/asteroid.tres" id="14_m12wb"]
 [ext_resource type="Resource" uid="uid://cb13dt247ra87" path="res://src/body/resources/star_dust.tres" id="15_dp0f4"]
-[ext_resource type="Resource" uid="uid://dfqdptldevn17" path="res://src/body/resources/comet_top.tres" id="16_h3vn4"]
+[ext_resource type="Resource" uid="uid://d3upvxhpm6q3n" path="res://src/body/resources/comet.tres" id="17_ks3hf"]
 
 [node name="Level6" type="Control"]
 layout_mode = 3
@@ -150,7 +150,7 @@ layout_mode = 2
 
 [node name="GridSlot16" parent="GameGrid" instance=ExtResource("5_yd2x3")]
 layout_mode = 2
-body_data = ExtResource("16_h3vn4")
+body_data = ExtResource("17_ks3hf")
 is_fixed = true
 
 [node name="GridSlot17" parent="GameGrid" instance=ExtResource("5_yd2x3")]
