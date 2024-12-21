@@ -1,0 +1,101 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhd6eqgtjgr0j"]
+
+[ext_resource type="FontFile" uid="uid://b36pl36vm8q6a" path="res://assets/fonts/good times rg.otf" id="1_8nrpj"]
+[ext_resource type="Script" path="res://src/screens/echap_menu.gd" id="1_8v5no"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cx8ej"]
+bg_color = Color(0.588235, 0.513726, 1, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0.964706, 0.737255, 0.690196, 1)
+border_blend = true
+corner_radius_top_left = 50
+corner_radius_top_right = 25
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e6373"]
+bg_color = Color(0.886275, 0.454902, 0.411765, 1)
+border_color = Color(0.729412, 0.431373, 0.839216, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 20
+
+[node name="EchapMenu" type="CanvasLayer"]
+script = ExtResource("1_8v5no")
+
+[node name="TransparentLayer" type="ColorRect" parent="."]
+show_behind_parent = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Panel" type="Panel" parent="."]
+top_level = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -263.0
+offset_top = -130.0
+offset_right = 310.0
+offset_bottom = 151.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cx8ej")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 78.0
+offset_top = 50.0
+offset_right = -87.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 36
+
+[node name="ResetLevel" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_8nrpj")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_e6373")
+text = "Reset Level"
+
+[node name="BackToMenu" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_8nrpj")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_e6373")
+text = "REturn To MENU"
+
+[node name="CloseMenu" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -65.0
+offset_top = 22.0
+offset_right = -24.0
+offset_bottom = 54.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 20
+text = "X"
+
+[connection signal="button_up" from="Panel/VBoxContainer/ResetLevel" to="." method="_on_reset_level_button_up"]
+[connection signal="button_up" from="Panel/VBoxContainer/BackToMenu" to="." method="_on_back_to_menu_button_up"]
+[connection signal="button_up" from="Panel/CloseMenu" to="." method="_on_close_menu_button_up"]

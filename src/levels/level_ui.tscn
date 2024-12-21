@@ -1,7 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://bh2xx5hai1eif"]
+[gd_scene load_steps=8 format=3 uid="uid://bh2xx5hai1eif"]
 
+[ext_resource type="Script" path="res://src/levels/level_ui.gd" id="1_otvuc"]
 [ext_resource type="PackedScene" uid="uid://c7fkxrgwlr8lw" path="res://src/screens/winning_level_screen.tscn" id="2_pa10l"]
 [ext_resource type="Texture2D" uid="uid://bk0uacer4bs1y" path="res://assets/Background/space_background_cut.png" id="2_x32wo"]
+[ext_resource type="PackedScene" uid="uid://dhd6eqgtjgr0j" path="res://src/screens/echap_menu.tscn" id="3_cr4dt"]
+[ext_resource type="FontFile" uid="uid://b36pl36vm8q6a" path="res://assets/fonts/good times rg.otf" id="4_235mv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_21q4r"]
+bg_color = Color(0.690196, 0.247059, 0.270588, 0.596078)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ot7nd"]
 
 [node name="Level_UI" type="Control"]
 layout_mode = 3
@@ -10,6 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_otvuc")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -22,3 +35,29 @@ texture = ExtResource("2_x32wo")
 expand_mode = 1
 
 [node name="WinningLevelScreen" parent="." instance=ExtResource("2_pa10l")]
+visible = false
+
+[node name="OpenMenuButton" type="Button" parent="."]
+top_level = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -76.0
+offset_top = 14.0
+offset_right = -10.0
+offset_bottom = 62.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0.882353, 0.882353, 0.882353, 1)
+theme_override_fonts/font = ExtResource("4_235mv")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_21q4r")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ot7nd")
+text = "Echap
+Menu"
+
+[node name="EchapMenu" parent="." instance=ExtResource("3_cr4dt")]
+unique_name_in_owner = true
+visible = false
+
+[connection signal="button_up" from="OpenMenuButton" to="." method="_on_open_menu_button_button_up"]
