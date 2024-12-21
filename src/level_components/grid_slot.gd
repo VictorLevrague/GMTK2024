@@ -64,8 +64,12 @@ func _drop_data(at_position: Vector2, data: Variant) -> void: #data = là où on
     
 func swap_bodies(drag_slot: GridSlot, drop_slot: GridSlot):
     var previous_body_data = drag_slot.body_data
+    var previous_orientation:= drag_slot.orientation_vector
+    #
     drag_slot.body_data = drop_slot.body_data
+    drag_slot.orientation_vector = drop_slot.orientation_vector
     drop_slot.body_data = previous_body_data
+    drop_slot.orientation_vector = previous_orientation
     
 func _on_mouse_entered():
     if body_data != null:
