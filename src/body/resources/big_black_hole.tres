@@ -1,12 +1,11 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://dyor0n2loa8a3"]
 
 [ext_resource type="Script" path="res://src/body/resources/body_scripts/big_black_hole.gd" id="1_3t5tt"]
-[ext_resource type="Texture2D" uid="uid://cx3wuw087hq2s" path="res://assets/body/Mathilde/fixed/large_black_hole_lock.png" id="2_vh1f6"]
+[ext_resource type="Texture2D" uid="uid://bys8stqofrnmx" path="res://assets/body/Mathilde/large_black_hole.png" id="2_j2xv7"]
 
 [resource]
 script = ExtResource("1_3t5tt")
 name = "Large Black Hole"
-texture = ExtResource("2_vh1f6")
-orientation_vector = Vector2(0, 0)
+texture = ExtResource("2_j2xv7")
 description = ""
 is_body = false

@@ -21,11 +21,9 @@ func find_body_in_front_box(game_grid: GridContainer, coordinates_center_body: V
                     bodies_in_front_line.append(grid_slot)
     return bodies_in_front_line
 
-func has_body_in_front_box(game_grid: GridContainer, coordinates: Vector2, _orientation_in_slot: Vector2) -> bool:
-#Pourrait être mieux 
+func has_body_in_front_box(game_grid: GridContainer, coordinates: Vector2, orientation_in_slot: Vector2) -> bool:
     var has_body_in_front_box: bool = false
-    var orientation = Vector2(0, 0)
-    var neighbours:Array[GridSlot] = find_body_in_front_box(game_grid, coordinates, orientation)
+    var neighbours:Array[GridSlot] = find_body_in_front_box(game_grid, coordinates, orientation_in_slot)
     if neighbours.size() > 0:
         has_body_in_front_box = true
     return has_body_in_front_box

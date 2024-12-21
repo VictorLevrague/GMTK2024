@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://l3fooo5147fq"]
+[gd_scene load_steps=16 format=3 uid="uid://l3fooo5147fq"]
 
 [ext_resource type="Script" path="res://src/levels/level.gd" id="1_afk31"]
 [ext_resource type="PackedScene" uid="uid://bh2xx5hai1eif" path="res://src/levels/level_ui.tscn" id="2_2g2mq"]
@@ -9,14 +9,12 @@
 [ext_resource type="PackedScene" uid="uid://b21iijh888xc1" path="res://src/level_components/grid_slot.tscn" id="5_f3a8c"]
 [ext_resource type="PackedScene" uid="uid://dtwx8ngv1xj3j" path="res://src/level_components/game_grid.tscn" id="6_hdq5a"]
 [ext_resource type="Resource" uid="uid://b0q0yt0p2eg2t" path="res://src/body/resources/planets/ring_planet.tres" id="7_qam3d"]
-[ext_resource type="Resource" uid="uid://cwuoyayakrirj" path="res://src/body/resources/planets/magnet_planet_right.tres" id="8_by5wq"]
-[ext_resource type="Resource" uid="uid://y6ru3oeasno" path="res://src/body/resources/planets/magnet_planet_left.tres" id="9_54a1u"]
+[ext_resource type="Resource" uid="uid://djisi8wiilk8l" path="res://src/body/resources/planets/magnet_planet.tres" id="9_4fw6g"]
 [ext_resource type="Resource" uid="uid://23gtorupg3e1" path="res://src/body/resources/satellite.tres" id="10_14rbq"]
 [ext_resource type="Resource" uid="uid://bdsvi0avqgwuq" path="res://src/body/resources/dwarf_planet.tres" id="11_l30j5"]
 [ext_resource type="Resource" uid="uid://dffpmg2egm67m" path="res://src/body/resources/asteroid.tres" id="13_i1g50"]
-[ext_resource type="Resource" uid="uid://bq0x01y6oq2fk" path="res://src/body/resources/comet_right.tres" id="14_7qdel"]
 [ext_resource type="Resource" uid="uid://c2d0j0sxumei4" path="res://src/body/resources/black_hole.tres" id="15_7vye1"]
-[ext_resource type="Resource" uid="uid://dsnpriw0cix0n" path="res://src/body/resources/comet_left.tres" id="16_m8uo7"]
+[ext_resource type="Resource" uid="uid://d3upvxhpm6q3n" path="res://src/body/resources/comet.tres" id="15_e0e6k"]
 
 [node name="Level7" type="Control"]
 layout_mode = 3
@@ -50,15 +48,18 @@ body_data = ExtResource("7_qam3d")
 
 [node name="GridSlot2" parent="InventoryPanel/InventoryGrid" instance=ExtResource("5_f3a8c")]
 layout_mode = 2
-body_data = ExtResource("8_by5wq")
+body_data = ExtResource("9_4fw6g")
+orientation_vector = Vector2(1, 0)
 
 [node name="GridSlot3" parent="InventoryPanel/InventoryGrid" instance=ExtResource("5_f3a8c")]
 layout_mode = 2
-body_data = ExtResource("9_54a1u")
+body_data = ExtResource("9_4fw6g")
+orientation_vector = Vector2(-1, 0)
 
 [node name="GridSlot4" parent="InventoryPanel/InventoryGrid" instance=ExtResource("5_f3a8c")]
 layout_mode = 2
-body_data = ExtResource("9_54a1u")
+body_data = ExtResource("9_4fw6g")
+orientation_vector = Vector2(-1, 0)
 
 [node name="GridSlot5" parent="InventoryPanel/InventoryGrid" instance=ExtResource("5_f3a8c")]
 layout_mode = 2
@@ -116,8 +117,9 @@ layout_mode = 2
 
 [node name="GridSlot6" parent="GameGrid" instance=ExtResource("5_f3a8c")]
 layout_mode = 2
-body_data = ExtResource("14_7qdel")
+body_data = ExtResource("15_e0e6k")
 is_fixed = true
+orientation_vector = Vector2(1, 0)
 
 [node name="GridSlot7" parent="GameGrid" instance=ExtResource("5_f3a8c")]
 layout_mode = 2
@@ -164,8 +166,9 @@ layout_mode = 2
 
 [node name="GridSlot20" parent="GameGrid" instance=ExtResource("5_f3a8c")]
 layout_mode = 2
-body_data = ExtResource("16_m8uo7")
+body_data = ExtResource("15_e0e6k")
 is_fixed = true
+orientation_vector = Vector2(-1, 0)
 
 [node name="GridSlot21" parent="GameGrid" instance=ExtResource("5_f3a8c")]
 layout_mode = 2

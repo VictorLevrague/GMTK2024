@@ -16,7 +16,7 @@
 [ext_resource type="Resource" uid="uid://bogd8ey4jkvqv" path="res://src/body/resources/planets/gazeous_planet.tres" id="13_dsqcp"]
 [ext_resource type="PackedScene" uid="uid://dtwx8ngv1xj3j" path="res://src/level_components/game_grid.tscn" id="14_kwfxv"]
 [ext_resource type="Resource" uid="uid://dffpmg2egm67m" path="res://src/body/resources/asteroid.tres" id="15_o0h7m"]
-[ext_resource type="Resource" uid="uid://cf13frgauef32" path="res://src/body/resources/comet_bottom.tres" id="16_rcxh1"]
+[ext_resource type="Resource" uid="uid://d3upvxhpm6q3n" path="res://src/body/resources/comet.tres" id="17_gdjgf"]
 [ext_resource type="Resource" uid="uid://diif70vfjgo7e" path="res://src/body/resources/ufo.tres" id="17_oe2ra"]
 [ext_resource type="Resource" uid="uid://c2d0j0sxumei4" path="res://src/body/resources/black_hole.tres" id="18_85y7j"]
 
@@ -133,16 +133,18 @@ layout_mode = 2
 
 [node name="GridSlot11" parent="GameGrid" instance=ExtResource("5_w4xvm")]
 layout_mode = 2
-body_data = ExtResource("16_rcxh1")
+body_data = ExtResource("17_gdjgf")
 is_fixed = true
+orientation_vector = Vector2(0, 1)
 
 [node name="GridSlot12" parent="GameGrid" instance=ExtResource("5_w4xvm")]
 layout_mode = 2
 
 [node name="GridSlot13" parent="GameGrid" instance=ExtResource("5_w4xvm")]
 layout_mode = 2
-body_data = ExtResource("16_rcxh1")
+body_data = ExtResource("17_gdjgf")
 is_fixed = true
+orientation_vector = Vector2(0, 1)
 
 [node name="GridSlot14" parent="GameGrid" instance=ExtResource("5_w4xvm")]
 layout_mode = 2

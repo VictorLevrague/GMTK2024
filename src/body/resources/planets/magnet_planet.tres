@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://djisi8wiilk8l"]
+
+[ext_resource type="Script" path="res://src/body/resources/body_scripts/magnet_planet.gd" id="1_o2xy8"]
+[ext_resource type="Texture2D" uid="uid://djnfkr2c3lyd8" path="res://assets/body/Mathilde/magnet_planet.png" id="2_20yvy"]
+
+[resource]
+script = ExtResource("1_o2xy8")
+name = "Magnet Planet"
+texture = ExtResource("2_20yvy")
+description = ""
+is_body = true

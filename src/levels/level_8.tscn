@@ -15,7 +15,7 @@
 [ext_resource type="Resource" uid="uid://cpr2w5ptn35vt" path="res://src/body/resources/planets/sister_planet1.tres" id="11_lycyh"]
 [ext_resource type="Resource" uid="uid://b7e6sluugfxpi" path="res://src/body/resources/planets/sister_planet2.tres" id="12_mue0e"]
 [ext_resource type="Resource" uid="uid://bdsvi0avqgwuq" path="res://src/body/resources/dwarf_planet.tres" id="13_pxsex"]
-[ext_resource type="Resource" uid="uid://bq0x01y6oq2fk" path="res://src/body/resources/comet_right.tres" id="14_q6057"]
+[ext_resource type="Resource" uid="uid://d3upvxhpm6q3n" path="res://src/body/resources/comet.tres" id="15_0eq2p"]
 [ext_resource type="Resource" uid="uid://dyor0n2loa8a3" path="res://src/body/resources/big_black_hole.tres" id="16_37w6y"]
 [ext_resource type="Resource" uid="uid://drrxl1yqtbaex" path="res://src/body/resources/mini_sun.tres" id="17_7ilcb"]
 
@@ -78,7 +78,8 @@ body_data = ExtResource("13_pxsex")
 
 [node name="GridSlot9" parent="InventoryPanel/InventoryGrid" instance=ExtResource("5_ijyti")]
 layout_mode = 2
-body_data = ExtResource("14_q6057")
+body_data = ExtResource("15_0eq2p")
+orientation_vector = Vector2(1, 0)
 
 [node name="GridSlot10" parent="InventoryPanel/InventoryGrid" instance=ExtResource("5_ijyti")]
 layout_mode = 2

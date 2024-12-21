@@ -18,7 +18,7 @@
 [ext_resource type="Resource" uid="uid://c2d0j0sxumei4" path="res://src/body/resources/black_hole.tres" id="15_6lehe"]
 [ext_resource type="Resource" uid="uid://b7e6sluugfxpi" path="res://src/body/resources/planets/sister_planet2.tres" id="16_n3pbe"]
 [ext_resource type="Resource" uid="uid://dffpmg2egm67m" path="res://src/body/resources/asteroid.tres" id="17_gw8kj"]
-[ext_resource type="Resource" uid="uid://gtrusyuwk562" path="res://src/body/resources/planets/magnet_planet_up.tres" id="18_krn5b"]
+[ext_resource type="Resource" uid="uid://djisi8wiilk8l" path="res://src/body/resources/planets/magnet_planet.tres" id="19_0363e"]
 
 [node name="Level5" type="Control"]
 layout_mode = 3
@@ -162,7 +162,7 @@ layout_mode = 2
 
 [node name="GridSlot18" parent="GameGrid" instance=ExtResource("5_6khxi")]
 layout_mode = 2
-body_data = ExtResource("18_krn5b")
+body_data = ExtResource("19_0363e")
 is_fixed = true
 
 [node name="GridSlot19" parent="GameGrid" instance=ExtResource("5_6khxi")]
