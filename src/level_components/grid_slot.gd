@@ -26,6 +26,17 @@ func _ready():
     if not Engine.is_editor_hint():
         body_data = body_data.duplicate() if body_data != null else null
 
+var drag_texture = null #save the icon to update visibility
+var updatePreview = false #to save whether to update or not 
+var i = 0 #counter for updating visibility after on the second call
+func _physics_process(delta):
+    if updatePreview:
+        i = i + 1 #update counter
+        if i == 2 :
+            drag_texture.visible = true
+            updatePreview = false 
+            i = 0
+
 func _get_drag_data(at_position: Vector2):
     if self.body_data == null:
         return
@@ -33,11 +44,13 @@ func _get_drag_data(at_position: Vector2):
         return
     Input.set_custom_mouse_cursor(load("res://assets/mouse_click.png"), Input.CURSOR_CAN_DROP)
     Input.set_custom_mouse_cursor(load("res://assets/mouse_click.png"), Input.CURSOR_FORBIDDEN)
-    set_drag_preview(make_drag_preview(at_position))
+    #
+    var drag_control = make_drag_preview(at_position)
+    set_drag_preview(drag_control)
     return self #slot
 
 func make_drag_preview(at_position: Vector2):
-    var drag_texture:= TextureRect.new()
+    drag_texture = TextureRect.new()
     drag_texture.texture = %TextureBody.texture
     drag_texture.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
     drag_texture.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
@@ -48,6 +61,8 @@ func make_drag_preview(at_position: Vector2):
     drag_texture.position = Vector2(-at_position)
     var drag_control_node := Control.new()
     drag_control_node.add_child(drag_texture)
+    drag_texture.visible = false #here set the visibility to false
+    updatePreview = true #set the flag to update visibility
     return drag_control_node
     
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool: #data = là où on on a drag
