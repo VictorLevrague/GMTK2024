@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dnvuvgfe657qg"]
+[gd_scene load_steps=17 format=3 uid="uid://dnvuvgfe657qg"]
 
 [ext_resource type="Theme" uid="uid://blm4c4n3ypua2" path="res://game_theme.tres" id="1_sb5qa"]
 [ext_resource type="Texture2D" uid="uid://c71bqos75p4xm" path="res://assets/Background/main_background_menu.png" id="2_f4qt2"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://ca60yf2liwtdr" path="res://src/levels/level_6.tscn" id="12_m7h4m"]
 [ext_resource type="PackedScene" uid="uid://l3fooo5147fq" path="res://src/levels/level_7.tscn" id="13_0eh5p"]
 [ext_resource type="PackedScene" uid="uid://hgotek6mfsmh" path="res://src/levels/level_8.tscn" id="14_hn6w7"]
+[ext_resource type="PackedScene" uid="uid://ck06npppo5v3y" path="res://src/levels/level_9.tscn" id="15_a7o1k"]
 
 [node name="MainMenu" type="Control"]
 process_mode = 3
@@ -222,6 +223,23 @@ text = "8"
 script = ExtResource("3_elk5d")
 next_scene = ExtResource("14_hn6w7")
 
+[node name="Button9" type="Button" parent="OptionsMenu/LevelSelection"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 45
+text = "9"
+script = ExtResource("3_elk5d")
+next_scene = ExtResource("15_a7o1k")
+
+[node name="Button10" type="Button" parent="OptionsMenu/LevelSelection"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 45
+text = "10"
+script = ExtResource("3_elk5d")
+
 [node name="ButtonClick" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_qrg7k")
 
@@ -236,3 +254,5 @@ stream = ExtResource("10_qrg7k")
 [connection signal="button_up" from="OptionsMenu/LevelSelection/Button6" to="OptionsMenu/LevelSelection/Button6" method="_on_button_up"]
 [connection signal="button_up" from="OptionsMenu/LevelSelection/Button7" to="OptionsMenu/LevelSelection/Button7" method="_on_button_up"]
 [connection signal="button_up" from="OptionsMenu/LevelSelection/Button8" to="OptionsMenu/LevelSelection/Button8" method="_on_button_up"]
+[connection signal="button_up" from="OptionsMenu/LevelSelection/Button9" to="OptionsMenu/LevelSelection/Button9" method="_on_button_up"]
+[connection signal="button_up" from="OptionsMenu/LevelSelection/Button10" to="OptionsMenu/LevelSelection/Button10" method="_on_button_up"]

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dalq3cuynr36q"]
+
+[ext_resource type="Script" path="res://src/body/resources/body_scripts/x_planet.gd" id="1_8hiel"]
+[ext_resource type="Texture2D" uid="uid://c544a5r4um3hm" path="res://assets/body/Mathilde/X_planets.png" id="2_18tc2"]
+
+[resource]
+script = ExtResource("1_8hiel")
+name = "X Planets"
+texture = ExtResource("2_18tc2")
+description = ""
+is_body = true
