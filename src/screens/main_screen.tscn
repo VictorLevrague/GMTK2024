@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dnvuvgfe657qg"]
+[gd_scene load_steps=18 format=3 uid="uid://dnvuvgfe657qg"]
 
 [ext_resource type="Theme" uid="uid://blm4c4n3ypua2" path="res://game_theme.tres" id="1_sb5qa"]
 [ext_resource type="Texture2D" uid="uid://c71bqos75p4xm" path="res://assets/Background/main_background_menu.png" id="2_f4qt2"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://l3fooo5147fq" path="res://src/levels/level_7.tscn" id="13_0eh5p"]
 [ext_resource type="PackedScene" uid="uid://hgotek6mfsmh" path="res://src/levels/level_8.tscn" id="14_hn6w7"]
 [ext_resource type="PackedScene" uid="uid://ck06npppo5v3y" path="res://src/levels/level_9.tscn" id="15_a7o1k"]
+[ext_resource type="PackedScene" uid="uid://c2sieuoo5wcop" path="res://src/levels/level_10.tscn" id="16_odmvn"]
 
 [node name="MainMenu" type="Control"]
 process_mode = 3
@@ -239,6 +240,7 @@ size_flags_vertical = 3
 theme_override_font_sizes/font_size = 45
 text = "10"
 script = ExtResource("3_elk5d")
+next_scene = ExtResource("16_odmvn")
 
 [node name="ButtonClick" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_qrg7k")

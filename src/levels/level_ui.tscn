@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bh2xx5hai1eif"]
+[gd_scene load_steps=9 format=3 uid="uid://bh2xx5hai1eif"]
 
 [ext_resource type="Script" path="res://src/levels/level_ui.gd" id="1_otvuc"]
 [ext_resource type="PackedScene" uid="uid://c7fkxrgwlr8lw" path="res://src/screens/winning_level_screen.tscn" id="2_pa10l"]
 [ext_resource type="Texture2D" uid="uid://bk0uacer4bs1y" path="res://assets/Background/space_background_cut.png" id="2_x32wo"]
 [ext_resource type="PackedScene" uid="uid://dhd6eqgtjgr0j" path="res://src/screens/echap_menu.tscn" id="3_cr4dt"]
+[ext_resource type="PackedScene" uid="uid://b3po37kpn8cpg" path="res://src/screens/winning_game_screen.tscn" id="4_67d66"]
 [ext_resource type="FontFile" uid="uid://b36pl36vm8q6a" path="res://assets/fonts/good times rg.otf" id="4_235mv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_21q4r"]
@@ -35,6 +36,9 @@ texture = ExtResource("2_x32wo")
 expand_mode = 1
 
 [node name="WinningLevelScreen" parent="." instance=ExtResource("2_pa10l")]
+visible = false
+
+[node name="WinningGameScreen" parent="." instance=ExtResource("4_67d66")]
 visible = false
 
 [node name="OpenMenuButton" type="Button" parent="."]

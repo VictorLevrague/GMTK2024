@@ -1,8 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://b3po37kpn8cpg"]
+[gd_scene load_steps=4 format=3 uid="uid://b3po37kpn8cpg"]
 
-[ext_resource type="Script" path="res://src/buttons/ChangeSceneButton.gd" id="1_wjj1n"]
+[ext_resource type="Script" path="res://src/screens/winning_game_screen.gd" id="1_p37tw"]
+[ext_resource type="FontFile" uid="uid://b36pl36vm8q6a" path="res://assets/fonts/good times rg.otf" id="2_1mbmb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fvj87"]
+bg_color = Color(0.886275, 0.454902, 0.411765, 1)
+border_color = Color(0.729412, 0.431373, 0.839216, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 20
 
 [node name="WinningGameScreen" type="CanvasLayer"]
+script = ExtResource("1_p37tw")
 
 [node name="TransparentLayer" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -13,16 +24,17 @@ grow_vertical = 2
 color = Color(1, 1, 1, 0)
 
 [node name="Background" type="ColorRect" parent="."]
+top_level = true
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 376.0
+offset_left = 347.0
 offset_top = 136.0
-offset_right = -128.0
+offset_right = -103.0
 offset_bottom = -136.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.533333, 1, 0.647059, 0.235294)
+color = Color(0.533333, 1, 0.647059, 0.352941)
 
 [node name="Label" type="Label" parent="Background"]
 layout_mode = 1
@@ -37,7 +49,7 @@ theme_override_font_sizes/font_size = 24
 text = "Congratulations,
 You are now the galaxy maker master.
 
-Thank you so much for playing our game !!!"
+Thank you so much for playing !"
 horizontal_alignment = 1
 
 [node name="Buttons" type="VBoxContainer" parent="Background"]
@@ -54,12 +66,12 @@ offset_bottom = -112.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="MenuButton" type="Button" parent="Background/Buttons"]
+[node name="BackToMenu" type="Button" parent="Background/Buttons"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_1mbmb")
 theme_override_font_sizes/font_size = 30
-text = "Menu
-"
-script = ExtResource("1_wjj1n")
+theme_override_styles/normal = SubResource("StyleBoxFlat_fvj87")
+text = "REturn To MENU"
 
-[connection signal="button_up" from="Background/Buttons/MenuButton" to="Background/Buttons/MenuButton" method="_on_button_up"]
+[connection signal="button_up" from="Background/Buttons/BackToMenu" to="." method="_on_back_to_menu_button_up"]

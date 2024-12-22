@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=3 uid="uid://ck06npppo5v3y"]
 
 [ext_resource type="Script" path="res://src/levels/level.gd" id="1_y8a7p"]
-[ext_resource type="PackedScene" uid="uid://hgotek6mfsmh" path="res://src/levels/level_8.tscn" id="2_13j7y"]
+[ext_resource type="PackedScene" uid="uid://c2sieuoo5wcop" path="res://src/levels/level_10.tscn" id="2_5y2xi"]
 [ext_resource type="AudioStream" uid="uid://dmoc6kl0cft1" path="res://src/body/resources/sounds/musics/Blippy Trance.mp3" id="3_4atel"]
 [ext_resource type="PackedScene" uid="uid://bh2xx5hai1eif" path="res://src/levels/level_ui.tscn" id="4_0vxj7"]
 [ext_resource type="PackedScene" uid="uid://bxndsaeok4itk" path="res://src/level_components/inventory_panel.tscn" id="5_8u4xk"]
@@ -27,7 +27,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_y8a7p")
-next_level = ExtResource("2_13j7y")
+next_level = ExtResource("2_5y2xi")
 music_level = ExtResource("3_4atel")
 
 [node name="Level_UI" parent="." instance=ExtResource("4_0vxj7")]

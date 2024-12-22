@@ -2,6 +2,7 @@ extends Node
 
 @export var next_level:PackedScene
 @export var music_level:AudioStreamMP3
+@export var is_last_level:= false
 
 func _ready() -> void:
     play_music()
@@ -23,8 +24,11 @@ func is_inventory_grid_empty():
 
 func show_victory_screen():
     AudioManager.get_node("ValidationSuccess").play()
-    get_tree().paused = true
-    %Level_UI/WinningLevelScreen.show()
+    if not is_last_level:
+        get_tree().paused = true
+        %Level_UI/WinningLevelScreen.show()
+    else:
+        %Level_UI/WinningGameScreen.show()
 
 func change_to_next_level():
     get_tree().change_scene_to_packed(next_level)
